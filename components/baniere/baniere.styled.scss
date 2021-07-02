@@ -1,0 +1,26 @@
+.container_baniere{
+    margin-left: 13.5%;
+    margin-right: 13.5%;
+    margin-top: 3%;
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+        margin-left: 5%;
+        margin-right: 5%; 
+    }
+    .image_baniere{
+        position: relative;
+        width: 100%;
+        height: 200px;
+        @media only screen and (min-width: 320px) and (max-width: 480px) {
+            width: 100% !important;
+            height: 6rem !important;
+           
+            
+        }
+    }
+    // tablette
+    @media only screen and (min-width: 481px) and (max-width: 1024px) {
+        margin-right: 7.5%;
+        margin-left: 7.5%;
+    }
+
+}

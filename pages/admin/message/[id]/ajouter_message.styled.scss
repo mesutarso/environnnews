@@ -1,0 +1,37 @@
+.container_details_message{
+    .btn_none{
+        display: none;
+    }
+    .content_child_page{
+        padding: 1rem 2rem;
+        height: 100% !important;
+        .conent_details_message{
+            height: 70% !important;
+            div{
+                display: flex;
+                h2{
+                    font-size: 22px;
+                    font-weight: 300;
+                }
+                p{
+                    &:nth-child(1){
+                        margin: auto 0;
+                    }
+                    width: 15rem !important;
+                    span{
+                        font-weight: 600;
+                    }
+                }
+            }
+            
+        }
+        .container_modal{
+            .modals{
+                height: 30% !important;
+                width: 70% !important;
+            }
+        }
+
+    }
+    
+}

@@ -1,0 +1,21 @@
+.card_realisation{
+    width: 30%;
+    margin-bottom: 1rem;
+    transition-duration: 0.5s;
+    &:hover{
+        cursor: pointer;
+        .content_text_realisation{
+            
+        }
+    }
+    .content_text_realisation{
+        p{
+            font-weight: 600;
+        }
+    }
+    .image{
+        img{
+            border-bottom: 3px green solid !important;
+        }
+    }
+}

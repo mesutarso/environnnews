@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "es6",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx", "contexts/auth.jsx", "models/article.ts"
+, "next.config.js", "components/editor-edit-article/editor_edit_article.jsx", "components/header/activeLink.jsx", "components/editor/editor.jsx", "components/seo.tsx", "pages/api/article/create-comment/[id].js", "pages/api/article/delete-comment/[id].js", "pages/api/article/[id].js", "components/error.jsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

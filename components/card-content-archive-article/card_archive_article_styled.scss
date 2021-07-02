@@ -1,0 +1,17 @@
+.card_archive_article{
+    width: 100%;
+    padding: 0 0.5rem;
+    .title_archive{
+        text-align: center;
+    }
+    .title_card_archive{
+        text-align: center;
+        color: #fff;
+        .line_title_art{
+            height: 4px;
+            background-color: #fff;
+            width: 3.5rem;
+            margin: 0.5rem auto;
+        }
+    }
+}

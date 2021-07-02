@@ -1,0 +1,20 @@
+.container_card_archive{
+    display: flex;
+    .title_archive{
+        margin: 0;
+        font-size: 16px;
+        font-weight: 200;
+    }
+    ul{
+        color: #fff;
+        padding-left: 1.5rem;
+        li{
+            margin-bottom: 0.5rem;
+            transition-duration: 0.8s;
+            &:hover{
+                cursor: pointer;
+                color: #000;
+            }
+        }
+    }
+}

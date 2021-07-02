@@ -1,0 +1,53 @@
+{
+  "name": "environews",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@auth0/nextjs-auth0": "^0.16.0",
+    "@material-ui/core": "^4.11.1",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@types/mongoose": "^5.10.3",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.21.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "file-loader": "^6.2.0",
+    "isomorphic-dompurify": "^0.12.0",
+    "isomorphic-unfetch": "^3.1.0",
+    "mini-css-extract-plugin": "^1.4.0",
+    "mongoose": "^5.11.8",
+    "next": "^10.0.1",
+    "next-compose-plugins": "^2.2.1",
+    "next-redux-wrapper": "^6.0.2",
+    "nprogress": "^0.2.0",
+    "react": "17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hook-form": "^6.12.2",
+    "react-icons": "^4.1.0",
+    "react-loading-skeleton": "^2.2.0",
+    "react-lottie": "^1.2.3",
+    "react-quill": "^1.3.3",
+    "react-redux": "^7.2.2",
+    "react-reveal": "^1.2.2",
+    "react-share": "^4.3.1",
+    "react-slick": "^0.27.13",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.29.0",
+    "styled-components": "^5.2.1",
+    "tslib": "^2.1.0",
+    "url-loader": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.14",
+    "@types/react": "^17.0.0",
+    "typescript": "^4.1.3"
+  }
+}

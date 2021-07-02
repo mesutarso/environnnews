@@ -1,0 +1,21 @@
+#container_btn_general{
+    #button_general{
+        height: 3rem;
+        width: 7rem;
+        border: none !important;
+        color: #fff;
+        background-color:  #1A6309;
+        transition-duration: 0.3s;
+        font-family: 'Roboto';
+        text-align: center;
+        &:hover{
+            background-color:  #fff;
+            border: solid 2px #1A6309 !important;
+            color: #1A6309;
+            cursor: pointer;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+}
