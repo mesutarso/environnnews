@@ -1,3 +1,0 @@
-export const GET_ARTICLE = "GET_ARTICLE"
-export const LOAD_ARTICLE = "LOAD_ARTICLE"
-export const ERROR_GET_ARTICLE = "ERROR_GET_ARTICLE"
