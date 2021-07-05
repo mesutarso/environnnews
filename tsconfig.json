@@ -9,7 +9,8 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -17,7 +18,11 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "sourceMap": true,
+    "declaration": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": [
     "next-env.d.ts",
@@ -25,6 +30,7 @@
     "**/*.tsx", "contexts/auth.jsx", "models/article.ts"
 , "next.config.js", "components/editor-edit-article/editor_edit_article.jsx", "components/header/activeLink.jsx", "components/editor/editor.jsx", "components/seo.tsx", "pages/api/article/create-comment/[id].js", "pages/api/article/delete-comment/[id].js", "pages/api/article/[id].js", "components/error.jsx"  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "coverage"
   ]
 }
