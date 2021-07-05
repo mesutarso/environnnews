@@ -2,5 +2,12 @@
   "endOfLine": "lf",
   "printWidth": 80,
   "tabWidth": 2,
-  "trailingComma": "es5"
+  "trailingComma": "es5",
+  "semi": false,
+  "useTabs": true,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "arrowParens": "always"
 }
