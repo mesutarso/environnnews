@@ -42,6 +42,9 @@
 	background-color: white;
 	cursor: pointer;
 }
+.menu_item:hover {
+	background-color: #34a468;
+}
 
 .divider {
 	height: 100%;
@@ -65,4 +68,7 @@
 	font-size: 0.75rem;
 	color: white;
 	text-transform: uppercase;
+}
+.link:hover {
+	color: #fff;
 }
