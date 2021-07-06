@@ -39,4 +39,4 @@ npm run check-lint ||
 # )
 
 #If it builds we can commit
-echo '💚💚💚💚💚💚You win this time ... I am committing this now.💚💚💚💚💚'
+echo '💚💚💚💚💚You win this time ... I am committing this now.💚💚💚💚'
