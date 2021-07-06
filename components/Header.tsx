@@ -11,7 +11,7 @@ const Appbar: React.FC = () => {
 	const [showMenu, setShowMenu] = useState<boolean>(false);
 	return (
 		<div className={headerStyles.header}>
-			<Image src={Logo} alt='Environews Logo' width={175} height={90} />
+			<Image src={Logo} alt='Environews Logo' width={142} height={81} />
 			<div className={headerStyles.weather}>
 				<WiSleet
 					fontSize={30}
