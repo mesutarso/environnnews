@@ -94,11 +94,12 @@ const NavBar: React.FC = () => {
 		<div className={headerStyles.nav}>
 			<Link href='/' passHref>
 				<a className={`${headerStyles.link}`}>
-					<BsHouseFill fontSize={30} />
+					<BsHouseFill fontSize={25} />
 				</a>
 			</Link>
 			{categories.map((categorie) => (
 				<Link
+					key={categorie.id}
 					href='/categories/[name]'
 					as={`/categories/${categorie.categorie_name}`}
 					passHref>
