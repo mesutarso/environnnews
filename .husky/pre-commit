@@ -1,14 +1,14 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo '####################################################################'
-echo '#### Styling, testing and building your project before commiting ###'
-echo '####################################################################'
+
+echo '💫🌱🌱Styling, testing and building your project before commiting 💫🌱🌱'
+
 
 # Check tsconfig standards
 npm run check-types || 
 (
-    echo 'Failed Type check
+    echo '⛔Failed Type check
           Are you seriously trying to write that ? Make the changes required above.'
           false;
 )
@@ -16,14 +16,14 @@ npm run check-types ||
 # Check Prettier standards
 npm run check-format || 
 (
-    echo 'Its F**KING RAW - Your styling looks disgusting.
+    echo '⛔Its F**KING RAW - Your styling looks disgusting.
           Prettier Chec Failed. Run npm run format, add changes and try commit again.'
           false;
 )
 # Check Eslint standards
 npm run check-lint || 
 (
-    echo 'Get that weaks s**t out of here !
+    echo '⛔Get that weaks s**t out of here !
           Eslint Check Failed. Make the required changes listed above, add changes and try to commit again.'
           false;
 )
@@ -39,4 +39,4 @@ npm run check-lint ||
 # )
 
 #If it builds we can commit
-echo 'You win this time ... I am committing this now.'
+echo '💚💚💚💚💚💚You win this time ... I am committing this now.💚💚💚💚💚'
