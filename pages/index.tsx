@@ -1,8 +1,35 @@
+import React, { useState } from 'react';
 import Head from 'next/head';
 import heroStyles from '../styles/Hero.module.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import BreakingNews from '../components/BreakingNews';
+
+export interface IState {
+	breakingNews: {
+		id: string;
+		title: string;
+		description: string;
+	}[];
+}
 
 export default function Home() {
+	const [breakingNews, setBreakingNews] = useState<IState['breakingNews']>([
+		{
+			id: '334',
+			title: 'Covid en Rdc',
+			description: 'Corona virus is a virus, okay!',
+		},
+		{
+			id: '45',
+			title: 'Covid en Rdc',
+			description: 'Corona virus is a virus, okay!',
+		},
+		{
+			id: '88',
+			title: 'Covid en Rdc',
+			description: 'Corona virus is a virus, okay!',
+		},
+	]);
 	return (
 		<div className='container'>
 			<Head>
@@ -13,7 +40,12 @@ export default function Home() {
 
 			<div className={`row ${heroStyles.hero}`}>
 				<div className='col-md-8 col-sm-12'>cool</div>
-				<div className='col-md-4 col-sm-12'>cool</div>
+				<div className='col-md-4 col-sm-12'>
+					<h5 className='border-start px-3 border-success border-5'>
+						BREAKING NEWS
+						<BreakingNews breakingNews={breakingNews} />
+					</h5>
+				</div>
 			</div>
 		</div>
 	);
