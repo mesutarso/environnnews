@@ -8,7 +8,7 @@ on:
 
 jobs:
   format-and-test:
-    name: Format and test
+    name: Format and test the project
     runs-on: ubuntu-latest
     environment : development
     strategy:
