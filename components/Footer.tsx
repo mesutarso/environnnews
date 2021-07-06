@@ -91,7 +91,7 @@ const Footer: React.FC = () => (
 								<div></div>
 							</div>
 							<div className='text-white col-md-2'>
-								<h5 className=''>Suivez-nous sur</h5>
+								<h5 className='px-3'>Suivez-nous sur</h5>
 								<div>
 									<Link href='/'>
 										<a>
