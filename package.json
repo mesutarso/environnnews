@@ -32,9 +32,11 @@
 		"test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build"
 	},
 	"dependencies": {
+		"bootstrap": "^5.0.0-beta3",
 		"next": "11.0.1",
 		"react": "17.0.2",
-		"react-dom": "17.0.2"
+		"react-dom": "17.0.2",
+		"react-icons": "^4.2.0"
 	},
 	"devDependencies": {
 		"@types/node": "^16.0.0",
