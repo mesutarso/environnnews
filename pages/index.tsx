@@ -39,11 +39,10 @@ export default function Home() {
 			</Head>
 
 			<div className={`row ${heroStyles.hero}`}>
-				<div className='col-md-8 col-sm-12'>
-
-				</div>
+				<div className='col-md-8 col-sm-12'></div>
 				<div className='col-md-4 col-sm-12'>
-					<h5 className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
+					<h5
+						className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
 						BREAKING NEWS
 					</h5>
 					<BreakingNews breakingNews={breakingNews} />
