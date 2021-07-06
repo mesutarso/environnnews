@@ -49,17 +49,17 @@
 }
 
 .nav {
-	height: 45px;
 	background: #089047;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	padding: 2px 7vw;
+	flex-wrap: wrap;
+	padding: 0 7vw;
 }
 
 .link {
 	text-decoration: none;
-	padding: 0rem 0.5rem;
+	padding: 10px 20px;
 	font-weight: bold;
 	font-size: 0.75rem;
 	color: white;

@@ -11,7 +11,7 @@ const Appbar: React.FC = () => {
 	const [showMenu, setShowMenu] = useState<boolean>(false);
 	return (
 		<div className={headerStyles.header}>
-			<Image src={Logo} alt='Environews Logo' width={150} height={75} />
+			<Image src={Logo} alt='Environews Logo' width={175} height={90} />
 			<div className={headerStyles.weather}>
 				<WiSleet
 					fontSize={30}
@@ -40,60 +40,67 @@ const NavBar: React.FC = () => {
 	return (
 		<div className={headerStyles.nav}>
 			<Link href='/' passHref>
-				<a className={headerStyles.link}>
+				<a className={`${headerStyles.link}`}>
 					<BsHouseFill fontSize={30} />
 				</a>
 			</Link>
-			<VerticalDivider />
 			<Link href='/' passHref>
-				<a className={headerStyles.link}>CONSERVATION</a>
+				<a className={`${headerStyles.link} border-start px-2 border-1`}>
+					CONSERVATION
+				</a>
 			</Link>
-			<VerticalDivider />
 			<Link href='/' passHref>
-				<a className={headerStyles.link}>SANTE</a>
+				<a className={`${headerStyles.link} border-start px-2 border-1`}>
+					SANTE
+				</a>
 			</Link>
-			<VerticalDivider />
 			<Link href='/' passHref>
-				<a className={headerStyles.link}>FORET</a>
+				<a className={`${headerStyles.link} border-start px-2 border-1`}>
+					FORET
+				</a>
 			</Link>
-			<VerticalDivider />
 			<Link href='/' passHref>
-				<a className={headerStyles.link}>ENVIRONNEMENT</a>
+				<a className={`${headerStyles.link} border-start px-2 border-1`}>
+					ENVIRONNEMENT
+				</a>
 			</Link>
-			<VerticalDivider />
 			<Link href='/' passHref>
-				<a className={headerStyles.link}>CLIMAT</a>
+				<a className={`${headerStyles.link} border-start px-2 border-1`}>
+					CLIMAT
+				</a>
 			</Link>
-			<VerticalDivider />
 			<Link href='/' passHref>
-				<a className={headerStyles.link}>BIODIVESERSITE</a>
+				<a className={`${headerStyles.link} border-start px-2 border-1`}>
+					BIODIVESERSITE
+				</a>
 			</Link>
-			<VerticalDivider />
 			<Link href='/' passHref>
-				<a className={headerStyles.link}>ENERGIE</a>
+				<a className={`${headerStyles.link} border-start px-2 border-1`}>
+					ENERGIE
+				</a>
 			</Link>
-			<VerticalDivider />
 			<Link href='/' passHref>
-				<a className={headerStyles.link}>POLLUTION</a>
+				<a className={`${headerStyles.link} border-start px-2 border-1`}>
+					POLLUTION
+				</a>
 			</Link>
-			<VerticalDivider />
 			<Link href='/' passHref>
-				<a className={headerStyles.link}>AUTRES</a>
+				<a className={`${headerStyles.link} border-start px-2 border-1`}>
+					AUTRES
+				</a>
 			</Link>
-			<VerticalDivider />
 			<Link href='/' passHref>
-				<a className={headerStyles.link}>DOSSIER</a>
+				<a className={`${headerStyles.link} border-start px-2 border-1`}>
+					DOSSIER
+				</a>
 			</Link>
-			<VerticalDivider />
 			<Link href='/' passHref>
-				<a className={headerStyles.link}>OPPORTUNITE</a>
+				<a className={`${headerStyles.link} border-start px-2 border-1`}>
+					OPPORTUNITE
+				</a>
 			</Link>
 		</div>
 	);
-};
-
-const VerticalDivider: React.FC = () => {
-	return <div className={headerStyles.divider}></div>;
 };
 
 const Header: React.FC = () => {
