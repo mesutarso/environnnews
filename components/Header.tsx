@@ -98,7 +98,7 @@ const NavBar: React.FC = () => {
 				</a>
 			</Link>
 			{categories.map((categorie) => (
-				<Link
+				<Link key={categorie.id}
 					href='/categories/[name]'
 					as={`/categories/${categorie.categorie_name}`}
 					passHref>
