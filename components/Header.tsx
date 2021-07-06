@@ -7,6 +7,13 @@ import Link from 'next/link';
 import headerStyles from '../styles/Header.module.css';
 import Logo from '../public/assets/environews_logo.png';
 
+interface NavProps {
+	nav: {
+		id: number;
+		categorie_name: string;
+	}[];
+}
+
 const Appbar: React.FC = () => {
 	const [showMenu, setShowMenu] = useState<boolean>(false);
 	return (
@@ -37,6 +44,52 @@ const Appbar: React.FC = () => {
 };
 
 const NavBar: React.FC = () => {
+	const [categories, setCategories] = useState<NavProps['nav']>([
+		{
+			id: 1,
+			categorie_name: 'conservation',
+		},
+		{
+			id: 2,
+			categorie_name: 'sante',
+		},
+		{
+			id: 3,
+			categorie_name: 'foret',
+		},
+		{
+			id: 4,
+			categorie_name: 'environement',
+		},
+		{
+			id: 5,
+			categorie_name: 'climat',
+		},
+		{
+			id: 6,
+			categorie_name: 'biodiversite',
+		},
+		{
+			id: 7,
+			categorie_name: 'energie',
+		},
+		{
+			id: 8,
+			categorie_name: 'pollution',
+		},
+		{
+			id: 9,
+			categorie_name: 'autres',
+		},
+		{
+			id: 10,
+			categorie_name: 'dossier',
+		},
+		{
+			id: 11,
+			categorie_name: 'opportunite',
+		},
+	]);
 	return (
 		<div className={headerStyles.nav}>
 			<Link href='/' passHref>
@@ -44,62 +97,17 @@ const NavBar: React.FC = () => {
 					<BsHouseFill fontSize={25} />
 				</a>
 			</Link>
-
-			<Link href='/' passHref>
-				<a className={`${headerStyles.link} border-start px-2 border-1`}>
-					CONSERVATION
-				</a>
-			</Link>
-			<Link href='/' passHref>
-				<a className={`${headerStyles.link} border-start px-2 border-1`}>
-					SANTE
-				</a>
-			</Link>
-			<Link href='/' passHref>
-				<a className={`${headerStyles.link} border-start px-2 border-1`}>
-					FORET
-				</a>
-			</Link>
-			<Link href='/' passHref>
-				<a className={`${headerStyles.link} border-start px-2 border-1`}>
-					ENVIRONNEMENT
-				</a>
-			</Link>
-			<Link href='/' passHref>
-				<a className={`${headerStyles.link} border-start px-2 border-1`}>
-					CLIMAT
-				</a>
-			</Link>
-			<Link href='/' passHref>
-				<a className={`${headerStyles.link} border-start px-2 border-1`}>
-					BIODIVESERSITE
-				</a>
-			</Link>
-			<Link href='/' passHref>
-				<a className={`${headerStyles.link} border-start px-2 border-1`}>
-					ENERGIE
-				</a>
-			</Link>
-			<Link href='/' passHref>
-				<a className={`${headerStyles.link} border-start px-2 border-1`}>
-					POLLUTION
-				</a>
-			</Link>
-			<Link href='/' passHref>
-				<a className={`${headerStyles.link} border-start px-2 border-1`}>
-					AUTRES
-				</a>
-			</Link>
-			<Link href='/' passHref>
-				<a className={`${headerStyles.link} border-start px-2 border-1`}>
-					DOSSIER
-				</a>
-			</Link>
-			<Link href='/' passHref>
-				<a className={`${headerStyles.link} border-start px-2 border-1`}>
-					OPPORTUNITE
-				</a>
-			</Link>
+			{categories.map((categorie) => (
+				<Link
+					key={categorie.id}
+					href='/categories/[name]'
+					as={`/categories/${categorie.categorie_name}`}
+					passHref>
+					<a className={`${headerStyles.link} border-start px-2 border-1`}>
+						{categorie.categorie_name}
+					</a>
+				</Link>
+			))}
 		</div>
 	);
 };

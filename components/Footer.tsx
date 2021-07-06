@@ -12,7 +12,7 @@ import {
 
 const Footer: React.FC = () => (
 	<div className={footerStyles.footer}>
-		<div className='container-fluid bg-dark py-5 fixed-bottom'>
+		<div className='container-fluid bg-dark py-5 '>
 			<div className='row justify-content-around'>
 				<div className='col-12'>
 					<div className='row justify-content-center'>
