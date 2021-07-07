@@ -9,7 +9,6 @@ import BreakingNews from '../components/BreakingNews';
 import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
-import { getPostsByCategory } from '../lib/api';
 
 export interface IState {
 	breakingNews: {
