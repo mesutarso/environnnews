@@ -1,3 +1,6 @@
+.card {
+	padding: 5px;
+}
 .title {
 	text-transform: uppercase;
 	font-weight: 600;
@@ -11,4 +14,23 @@
 	color: #a09b9b;
 	font-size: small;
 	font-weight: 300;
+}
+
+.category {
+	padding: 20px 50px;
+}
+
+.sectionTitle {
+	padding: 0 50px;
+	display: flex;
+	justify-content: space-between;
+}
+.sectionTitle h5 {
+	text-transform: uppercase;
+}
+
+.sectionTitle a {
+	text-decoration: none;
+	color: #089047;
+	font-weight: bold;
 }
