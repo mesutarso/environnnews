@@ -41,6 +41,12 @@
 	font-weight: bold;
 }
 
+/* TOP ARTICLES */
+
+.topArticle {
+	padding: 20px 0px;
+}
+
 /* SINGLE ARTICLE PAGE STYLES */
 
 .articleContent {

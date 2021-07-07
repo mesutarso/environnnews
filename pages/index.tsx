@@ -5,7 +5,7 @@ import Link from 'next/link';
 import heroStyles from '../styles/Hero.module.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import BreakingNews from '../components/BreakingNews';
-import Articles from '../components/Articles';
+import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
 
@@ -149,15 +149,30 @@ export default function Home() {
 				<Categories articles={articles} title='conservation' />
 				<Categories articles={articles} title='environement' />
 				<Categories articles={articles} title='biodiversite' />
+				<div className='row'>
+					<div className='col-md-7 col-sm-12'>cool</div>
+					<div className='col-md-5 col-sm-12'>
+						<h5 className='border-start px-3 border-success border-5'>
+							TOP ARTICLES
+						</h5>
+						<div>
+							{articles.map((article, index) => (
+								<TopArticle key={article.id} article={article} index={index} />
+							))}
+						</div>
+					</div>
+				</div>
 			</div>
 			<div className={heroStyles.newsLetter}>
 				<h3>NEWSLETTER</h3>
-				<input type='email' placeholder='Adresse Email' />
-				<p>
-					Inscrivez-vous à notre newsletter pour vous tenir au courant de nos
-					activités.
-				</p>
-				<button>S'INSCRIRE</button>
+				<form>
+					<input type='email' placeholder='Adresse Email' />
+					<p>
+						Inscrivez-vous à notre newsletter pour vous tenir au courant de nos
+						activités.
+					</p>
+					<button>S'INSCRIRE</button>
+				</form>
 			</div>
 			<div className={heroStyles.partners}>
 				<h3 className='border-start px-3 border-success border-5'>

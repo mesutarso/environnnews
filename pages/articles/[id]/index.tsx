@@ -125,29 +125,6 @@ const Article = () => {
 							Tenetur magni molestias exercitationem alias, dignissimos quos
 							earum recusandae?
 						</p>
-
-						<p>
-							Corrupti explicabo voluptates soluta asperiores? Tenetur magni
-							molestias exercitationem alias, dignissimos quos earum
-							recusandae?Corrupti explicabo voluptates soluta asperiores?
-							Tenetur magni molestias exercitationem alias, dignissimos quos
-							earum recusandae?Corrupti explicabo voluptates soluta asperiores?
-							Tenetur magni molestias exercitationem alias, dignissimos quos
-							earum recusandae?Corrupti explicabo voluptates soluta asperiores?
-							Tenetur magni molestias exercitationem alias, dignissimos quos
-							earum recusandae?
-						</p>
-						<p>
-							Corrupti explicabo voluptates soluta asperiores? Tenetur magni
-							molestias exercitationem alias, dignissimos quos earum
-							recusandae?Corrupti explicabo voluptates soluta asperiores?
-							Tenetur magni molestias exercitationem alias, dignissimos quos
-							earum recusandae?Corrupti explicabo voluptates soluta asperiores?
-							Tenetur magni molestias exercitationem alias, dignissimos quos
-							earum recusandae?Corrupti explicabo voluptates soluta asperiores?
-							Tenetur magni molestias exercitationem alias, dignissimos quos
-							earum recusandae?
-						</p>
 					</div>
 				</div>
 				<div className='col-md-4 col-sm-12'>cool</div>

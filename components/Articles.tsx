@@ -27,6 +27,38 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 	);
 };
 
+export const TopArticle = ({ article, index }) => {
+	return (
+		<div className={articleStyles.topArticle}>
+			<Link href='/articles/[id]' as={`articles/${article.id}`} passHref>
+				<a>
+					<div className='row'>
+						<div className='col-md-1'>
+							<h1>{index + 1}</h1>
+						</div>
+						<div className='col-md-4'>
+							<Image
+								src={article.image}
+								alt={article.description}
+								width={150}
+								height={100}
+							/>
+						</div>
+						<div className='col-md-7'>
+							<h5 className={` ${articleStyles.title}`}>{article.category}</h5>
+							<span className={articleStyles.description}>
+								{article.description}
+							</span>
+							<br />
+							<span className={articleStyles.author}>{article.author}</span>
+						</div>
+					</div>
+				</a>
+			</Link>
+		</div>
+	);
+};
+
 const Articles: React.FC<IArticles> = ({ articles }) => {
 	return (
 		<div className='row d-flex justify-content-center'>
