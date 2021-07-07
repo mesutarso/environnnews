@@ -1,6 +1,7 @@
 import Banner from '../../../components/Banner';
 import { ArticleCard } from '../../../components/Articles';
 import { useState } from 'react';
+import PubliciteStyle from '../../../styles/Publicite.module.css';
 
 export interface IArticles {
 	articles: {
@@ -61,7 +62,26 @@ const Categorie: React.FC = () => {
 				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
 			author: 'Marcos Musafiri',
 		},
+		{
+			id: '7',
+			image: '/assets/bird.jpg',
+			category: 'conservation',
+			description:
+				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
+			author: 'Marcos Musafiri',
+		},
+		{
+			id: '8',
+			image: '/assets/bird.jpg',
+			category: 'conservation',
+			description:
+				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
+			author: 'Marcos Musafiri',
+		},
 	]);
+
+	const articlesTwoLines = articles.filter((article) => +article.id <= 6);
+	const articlesOneLine = articles.filter((article) => +article.id <= 4);
 
 	return (
 		<div>
@@ -74,7 +94,7 @@ const Categorie: React.FC = () => {
 				<div className='row'>
 					<div className='col-md-9'>
 						<div className='row'>
-							{articles.map((article) => (
+							{articlesTwoLines.map((article) => (
 								<ArticleCard
 									key={article.id}
 									article={article}
@@ -85,8 +105,45 @@ const Categorie: React.FC = () => {
 							))}
 						</div>
 					</div>
-					<div className='col-md-3'>
-						<div className=''></div>
+					<div className='col-md-3 mt-1'>
+						<div className={PubliciteStyle.squeleton}></div>
+					</div>
+				</div>
+			</div>
+			<div className='container'>
+				<div className='row'>
+					<div className='col-md-12'>
+						<div className='row mb-3'>
+							{articlesOneLine.map((article) => (
+								<ArticleCard
+									key={article.id}
+									article={article}
+									size={3}
+									imageHeight={250}
+									imageWidth={380}
+								/>
+							))}
+						</div>
+					</div>
+					<div className='col-md-12'>
+						<div className={PubliciteStyle.squeleton_hr}></div>
+					</div>
+				</div>
+			</div>
+			<div className='container'>
+				<div className='row'>
+					<div className='col-md-12'>
+						<div className='row justify-content-center mb-3'>
+							{articles.map((article) => (
+								<ArticleCard
+									key={article.id}
+									article={article}
+									size={3}
+									imageHeight={250}
+									imageWidth={380}
+								/>
+							))}
+						</div>
 					</div>
 				</div>
 			</div>

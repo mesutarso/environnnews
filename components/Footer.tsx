@@ -12,7 +12,7 @@ import {
 } from 'react-icons/fa';
 
 const Footer: React.FC = () => (
-	<div className={footerStyles.footer}>
+	<div className={`mt-3 ${footerStyles.footer}`}>
 		<div className='container-fluid bg-dark pt-5 '>
 			<div className='row justify-content-center py-4'>
 				<div className='col-12'>
