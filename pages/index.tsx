@@ -103,14 +103,11 @@ export default function Home() {
 					<Articles articles={articles} />
 				</div>
 				<div className='col-md-3 col-sm-12'>
-					<h5
-						className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
-						BREAKING NEWS
-					</h5>
 					<BreakingNews breakingNews={breakingNews} />
 					<br />
-					<br />
 					<Opportunities opportunities={opportunities} />
+					<br />
+					<div className={heroStyles.pub}></div>
 				</div>
 			</div>
 		</div>

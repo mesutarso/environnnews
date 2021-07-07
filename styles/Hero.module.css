@@ -33,3 +33,8 @@
 .opportunities p {
 	font-weight: 600;
 }
+
+.pub {
+	height: 512px;
+	background-color: #089047;
+}

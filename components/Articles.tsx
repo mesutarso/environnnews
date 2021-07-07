@@ -3,7 +3,7 @@ import { IArticles } from '../pages';
 
 import articleStyles from '../styles/Article.module.css';
 
-const ArticleCard = ({ article }) => {
+export const ArticleCard = ({ article }) => {
 	return (
 		<div className='col-md-4 col-12'>
 			<Image
