@@ -13,7 +13,7 @@ import {
 
 const Footer: React.FC = () => (
 	<div className={footerStyles.footer}>
-		<div className='container-fluid bg-dark pt-5 '>
+		<div className='container-fluid pt-5 '>
 			<div className='row justify-content-center py-4'>
 				<div className='col-12'>
 					<div className='row justify-content-center'>
@@ -21,13 +21,13 @@ const Footer: React.FC = () => (
 							<img
 								src='/assets/environews_logo.png'
 								alt="logo d'environ news"
-								className={`img-fluid p-4  ${footerStyles.img_top}`}
+								className={`img-fluid  ${footerStyles.img_top}`}
 							/>
 						</div>
 						<div className='col-md-2'>
-							<h5 className='text-white border-start px-3 border-success border-5'>
+							<h6 className='text-white border-start px-2 border-success border-5'>
 								ENVIRONEWS
-							</h5>
+							</h6>
 							<ul className={footerStyles.footerlinkstyle}>
 								<Link href='/'>
 									<a>
@@ -52,9 +52,9 @@ const Footer: React.FC = () => (
 							</ul>
 						</div>
 						<div className='col-md-2'>
-							<h5 className='text-white border-start px-3 border-success border-5'>
-								SERVICES
-							</h5>
+							<h6 className='text-white border-start px-2 border-success border-5'>
+								SERVICE
+							</h6>
 							<ul className={footerStyles.footerlinkstyle}>
 								<Link href='/'>
 									<a>
@@ -87,15 +87,15 @@ const Footer: React.FC = () => (
 							</ul>
 						</div>
 						<div className=' text-white col-md-2'>
-							<h5 className='border-start px-3 border-success border-5'>
+							<h6 className='border-start px-2 border-success border-5'>
 								ENVIRONEWSTV
-							</h5>
+							</h6>
 							<div></div>
 						</div>
-						<div className='text-white col-md-2'>
-							<h5 className='px-3'>Suivez-nous sur</h5>
+						<div className={`text-white col-md-2 ${footerStyles.icons}`}>
+							<span className='px-1'>Suivez-nous sur</span>
 							<div>
-								<Link href='/'>
+								<Link href='https://web.facebook.com/EnvironewsRDC/?_rdc=1&_rdr'>
 									<a>
 										<FaFacebookSquare
 											className='mx-1 mt-3'
@@ -103,7 +103,7 @@ const Footer: React.FC = () => (
 										/>
 									</a>
 								</Link>
-								<Link href='/'>
+								<Link href='https://twitter.com/environews_rdc?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'>
 									<a>
 										<FaTwitter
 											className='mx-1 mt-3'
@@ -111,7 +111,8 @@ const Footer: React.FC = () => (
 										/>
 									</a>
 								</Link>
-								<Link href='/'>
+								<br />
+								<Link href='https://www.linkedin.com/company/environews-rdc/'>
 									<a>
 										<FaLinkedinIn
 											className='mx-1 mt-3'
@@ -119,16 +120,15 @@ const Footer: React.FC = () => (
 										/>
 									</a>
 								</Link>
-								<Link href='/'>
+								<Link href='https://www.instagram.com/environewsrdc1/'>
 									<a>
-										{' '}
 										<FaInstagramSquare
 											className='mx-1 mt-3'
 											style={{ fontSize: '1.5rem' }}
 										/>
 									</a>
 								</Link>
-								<Link href='/'>
+								<Link href='https://www.youtube.com/c/environnementrdc/featured'>
 									<a>
 										<FaYoutubeSquare
 											className='mx-1 mt-3'
@@ -139,8 +139,9 @@ const Footer: React.FC = () => (
 							</div>
 						</div>
 					</div>
-					<hr className={` mt-5 bg-white ${footerStyles.footer_line}`} />
-					<p className={` mt-3 text-white text-center`}>
+					<hr className={` mt-4 bg-white ${footerStyles.footer_line}`} />
+					<p
+						className={` mt-3 text-white text-center ${footerStyles.copyright} `}>
 						copyright &copy; Environews-rdc 2021
 					</p>
 				</div>
