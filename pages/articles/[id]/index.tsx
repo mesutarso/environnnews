@@ -80,8 +80,8 @@ const Article = () => {
 				vague était congolaise ?
 			</h5>
 			<div className='row'>
-				<div className='col-md-8 col-sm-12'>
-					<Image src='/assets/bird.jpg' height={400} width={800} />
+				<div className='col-md-9 col-sm-12'>
+					<Image src='/assets/bird.jpg' height={500} width={1000} />
 					<div>
 						<Link href='/'>
 							<a>
@@ -185,8 +185,27 @@ const Article = () => {
 							earum recusandae?
 						</p>
 					</div>
+					<div className={`row ${articleStyles.footer}`}>
+						<div className='col-md-5 col-sm-12'>
+							<h4 className='border-start px-2 border-success border-5'>
+								LAISSER UN COMMENTAIRE
+							</h4>
+							<div className={articleStyles.form}>
+								<input type='text' placeholder='Pseudo' />
+								<textarea placeholder='Comment'></textarea>
+								<button>Envoyer</button>
+							</div>
+						</div>
+						<div className='col-md-1 col-sm-12'></div>
+						<div className='col-md-6 col-sm-12'>
+							<h4 className='border-start px-2 border-success border-5'>
+								DERNIERS COMMENTAIRES
+							</h4>
+							<Comments comments={comments} />
+						</div>
+					</div>
 				</div>
-				<div className='col-md-4 col-sm-12'>
+				<div className='col-md-3 col-sm-12'>
 					<div className={articleStyles.pub}></div>
 					<div style={{ paddingTop: '20px' }}>
 						<h6 className='border-start px-2 border-success border-5'>
@@ -235,25 +254,6 @@ const Article = () => {
 							<button>S'INSCRIRE</button>
 						</form>
 					</div>
-				</div>
-			</div>
-			<div className={`row ${articleStyles.footer}`}>
-				<div className='col-md-5 col-sm-12'>
-					<h4 className='border-start px-2 border-success border-5'>
-						LAISSER UN COMMENTAIRE
-					</h4>
-					<div className={articleStyles.form}>
-						<input type='text' placeholder='Pseudo' />
-						<textarea placeholder='Comment'></textarea>
-						<button>Envoyer</button>
-					</div>
-				</div>
-				<div className='col-md-1 col-sm-12'></div>
-				<div className='col-md-6 col-sm-12'>
-					<h4 className='border-start px-2 border-success border-5'>
-						DERNIERS COMMENTAIRES
-					</h4>
-					<Comments comments={comments} />
 				</div>
 			</div>
 		</div>

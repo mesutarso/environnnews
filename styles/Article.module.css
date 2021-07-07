@@ -66,6 +66,9 @@
 .divider {
 	border-left: 1px solid #089047;
 }
+.footer {
+	padding: 30px 0px;
+}
 .footer h4 {
 	font-size: 1.25rem;
 }
