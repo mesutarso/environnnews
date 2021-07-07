@@ -40,3 +40,27 @@
 	color: #089047;
 	font-weight: bold;
 }
+
+/* SINGLE ARTICLE PAGE STYLES */
+
+.articleContent {
+	padding-top: 180px;
+	padding-bottom: 50px;
+}
+ .articleContent h4{
+	 font-weight: bold;
+ }
+
+ .articleContent h5{
+	 font-weight: bold;
+	 font-size: 1.75rem;
+	padding: 10px 0;
+ }
+
+ .divider{
+	 border-left: 1px solid #089047;
+ }
+ .footer h4{
+	font-size: 1.25rem;
+ }
+

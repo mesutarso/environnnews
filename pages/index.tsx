@@ -33,6 +33,7 @@ export interface IOpportunities {
 	}[];
 }
 
+
 export default function Home() {
 	const [breakingNews, setBreakingNews] = useState<IState['breakingNews']>([
 		{
@@ -108,6 +109,8 @@ export default function Home() {
 		},
 	]);
 
+	
+
 	return (
 		<div>
 			<Head>
@@ -144,6 +147,20 @@ export default function Home() {
 				<Categories articles={articles} title='conservation' />
 				<Categories articles={articles} title='environement' />
 				<Categories articles={articles} title='biodiversite' />
+			</div>
+			<div className={heroStyles.newsLetter}>
+				<h3>NEWSLETTER</h3>
+				<input type='email' placeholder='Adresse Email' />
+				<p>
+					Inscrivez-vous à notre newsletter pour vous tenir au courant de nos
+					activités.
+				</p>
+				<button>S'INSCRIRE</button>
+			</div>
+			<div className={heroStyles.partners}>
+				<h3 className='border-start px-3 border-success border-5'>
+					ILS NOUS FONT CONFIANCE
+				</h3>
 			</div>
 		</div>
 	);
