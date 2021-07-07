@@ -6,6 +6,19 @@
 	font-weight: bold;
 }
 
+.topNews h4 {
+	font-size: 1.75rem;
+	font-weight: bold;
+	padding: 10px 0;
+}
+
+.topNews span {
+	color: #a09b9b;
+	font-size: small;
+	font-weight: 300;
+	padding-bottom: 20px;
+}
+
 .breaking_news {
 	padding: 5px;
 	border-bottom: 1px black dashed;
@@ -35,6 +48,6 @@
 }
 
 .pub {
-	height: 400px;
+	height: 512px;
 	background-color: #089047;
 }
