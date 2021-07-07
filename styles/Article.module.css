@@ -1,6 +1,10 @@
 .card {
 	padding: 5px;
 }
+.card a {
+	text-decoration: none;
+	color: inherit;
+}
 .title {
 	text-transform: uppercase;
 	font-weight: 600;
