@@ -1,0 +1,14 @@
+.title {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+.description {
+	font-size: 0.9rem;
+	font-weight: bold;
+}
+.author {
+	color: #a09b9b;
+	font-size: small;
+	font-weight: 300;
+}

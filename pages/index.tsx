@@ -54,23 +54,26 @@ export default function Home() {
 		{
 			id: '1',
 			image: '/assets/bird.jpg',
-			category: 'conservation',
-			description: 'blablabla',
-			author: 'Marcos',
+			category: 'climat',
+			description:
+				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
+			author: 'Emmanuella Mulanga',
 		},
 		{
 			id: '2',
 			image: '/assets/bird.jpg',
-			category: 'conservation',
-			description: 'blablabla',
-			author: 'Marcos',
+			category: 'biodiversite',
+			description:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consequuntur perferendis tenetur vero laborum quia sequi ',
+			author: 'Beni Map',
 		},
 		{
 			id: '3',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
-			description: 'blablabla',
-			author: 'Marcos',
+			description:
+				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
+			author: 'Marcos Musafiri',
 		},
 	]);
 
@@ -96,10 +99,10 @@ export default function Home() {
 			</Head>
 
 			<div className={`row ${heroStyles.hero}`}>
-				<div className='col-md-8 col-sm-12'>
+				<div className='col-md-9 col-sm-12'>
 					<Articles articles={articles} />
 				</div>
-				<div className='col-md-4 col-sm-12'>
+				<div className='col-md-3 col-sm-12'>
 					<h5
 						className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
 						BREAKING NEWS
