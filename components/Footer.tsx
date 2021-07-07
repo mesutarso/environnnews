@@ -139,8 +139,8 @@ const Footer: React.FC = () => (
 							</div>
 						</div>
 					</div>
-					<hr className='bg-white mt-5' style={{ padding: '1px' }} />
-					<p className={footerStyles.footertextsilver}>
+					<hr className={` mt-5 bg-white ${footerStyles.footer_line}`} />
+					<p className={` mt-3 text-white text-center`}>
 						copyright &copy; Environews-rdc 2021
 					</p>
 				</div>
