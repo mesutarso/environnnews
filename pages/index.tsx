@@ -33,7 +33,6 @@ export interface IOpportunities {
 	}[];
 }
 
-
 export default function Home() {
 	const [breakingNews, setBreakingNews] = useState<IState['breakingNews']>([
 		{
@@ -108,8 +107,6 @@ export default function Home() {
 			description: "Bourse d'Etude aux USA",
 		},
 	]);
-
-	
 
 	return (
 		<div>
