@@ -12,9 +12,7 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 				width={imageWidth}
 				height={imageHeight}
 			/>
-			<h5 className={`text-success ${articleStyles.title}`}>
-				{article.category}
-			</h5>
+			<h5 className={` ${articleStyles.title}`}>{article.category}</h5>
 			<span className={articleStyles.description}>{article.description}</span>
 			<br />
 			<span className={articleStyles.author}>{article.author}</span>
