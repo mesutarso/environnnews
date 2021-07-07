@@ -1,11 +1,40 @@
-.mt_container {
-	margin-top: 10%;
-	margin-bottom: 5%;
+.mt_banner {
+	padding-top: 200px;
+	padding-bottom: 50px;
 }
 
-@media (max-width: 768px) {
-	.mt_container {
-		margin-top: 25%;
-		margin-bottom: 10%;
-	}
+.banner_title {
+	font-family: Roboto, sans-serif;
+	font-weight: bold;
+	font-size: 48px;
+	color: #fff;
+	border-width: 10px !important;
+}
+
+.banner_description {
+	font-family: Roboto, sans-serif;
+	font-size: 22px;
+	width: 70%;
+	color: #fff;
+}
+.position_relative {
+	position: relative;
+}
+.img_dark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 10%;
+	right: 0;
+	background-color: rgba(14, 13, 13, 0.5);
+	z-index: 3;
+}
+
+.img_position_absolute {
+	position: absolute;
+	top: 60%;
+	left: 3%;
+	bottom: 0;
+	right: 0;
+	z-index: 4;
 }

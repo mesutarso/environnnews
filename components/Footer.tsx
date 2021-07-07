@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import footerStyles from '../styles/Footer.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
+import Logo from '../public/assets/environews_logo.png';
 import {
 	FaFacebookSquare,
 	FaInstagramSquare,

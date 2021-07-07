@@ -2,11 +2,12 @@ import Banner from '../../../components/Banner';
 
 const Categorie: React.FC = () => {
 	return (
-		<>
-			<h1 className=''>Categorie</h1>
-			<Banner />
-		</>
+		<div>
+			<Banner
+				titre='CONSERVATION'
+				description='Félix Lilakako, "Eruption volcanique de Nyiragongo, au-delà de la réaction gouvernementale…une planification d’intervention urgente s’impose"'
+			/>
+		</div>
 	);
 };
-
 export default Categorie;

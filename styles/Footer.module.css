@@ -13,6 +13,15 @@
 	list-style: none;
 	padding-left: 0;
 }
+.footerlinkstyle:hover {
+	color: #fff !important;
+}
+
+.footer_line {
+	padding: 1px;
+	width: 70%;
+	margin: auto;
+}
 .img_top {
-	margin-top: -2.5rem;
+	margin-top: -1.7rem !important;
 }
