@@ -1,8 +1,8 @@
 .container {
 	position: fixed;
 	width: 100%;
-	background: #ffffff;
-	z-index: 1000000;
+	z-index: 19;
+	background-color: #fff;
 }
 .header {
 	display: flex;
