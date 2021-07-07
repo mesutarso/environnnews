@@ -1,10 +1,12 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import heroStyles from '../styles/Hero.module.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import BreakingNews from '../components/BreakingNews';
-import Articles from '../components/Articles';
+import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
 
@@ -120,16 +122,25 @@ export default function Home() {
 				<div className={`row ${heroStyles.hero}`}>
 					<div className='col-md-8 col-sm-12'>
 						<div className={heroStyles.topNews}>
-							<h5
-								className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
-								CORONAVIRUS
-							</h5>
-							<Image src='/assets/bird.jpg' height={350} width={800} />
-							<h4>
-								Tshisekedi et les mesures draconiennes, et si la solution à la
-								3ème vague était congolaise ?
-							</h4>
-							<span>Christopher Buhendwa</span>{' '}
+							<Link href='/articles/[id]' as='/articles/1'>
+								<a>
+									<h5
+										className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
+										CORONAVIRUS
+									</h5>
+									<Image
+										src='/assets/bird.jpg'
+										alt='feature image'
+										height={350}
+										width={800}
+									/>
+									<h4>
+										Tshisekedi et les mesures draconiennes, et si la solution à
+										la 3ème vague était congolaise ?
+									</h4>
+									<span>Christopher Buhendwa</span>
+								</a>
+							</Link>
 						</div>
 						<Articles articles={articles} />
 					</div>
@@ -144,6 +155,39 @@ export default function Home() {
 				<Categories articles={articles} title='conservation' />
 				<Categories articles={articles} title='environement' />
 				<Categories articles={articles} title='biodiversite' />
+				<div className='row'>
+					<div className='col-md-7 col-sm-12'>
+						<h5 className='border-start px-3 border-success border-5'>
+							CHOIX DE L’EDITEUR
+						</h5>
+					</div>
+					<div className='col-md-5 col-sm-12'>
+						<h5 className='border-start px-3 border-success border-5'>
+							TOP ARTICLES
+						</h5>
+						<div>
+							{articles.map((article, index) => (
+								<TopArticle key={article.id} article={article} index={index} />
+							))}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className={heroStyles.newsLetter}>
+				<h3>NEWSLETTER</h3>
+				<form>
+					<input type='email' placeholder='Adresse Email' />
+					<p>
+						Inscrivez-vous à notre newsletter pour vous tenir au courant de nos
+						activités.
+					</p>
+					<button>S'INSCRIRE</button>
+				</form>
+			</div>
+			<div className={heroStyles.partners}>
+				<h3 className='border-start px-3 border-success border-5'>
+					ILS NOUS FONT CONFIANCE
+				</h3>
 			</div>
 		</div>
 	);
