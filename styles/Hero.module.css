@@ -55,3 +55,48 @@
 	height: 512px;
 	background-color: #089047;
 }
+
+.newsLetter {
+	background-color: #089047;
+	color: white;
+	text-align: center;
+	padding: 50px;
+}
+
+.newsLetter h3 {
+	padding-bottom: 20px;
+	font-weight: 800;
+	font-size: 1.75rem;
+}
+
+.newsLetter input {
+	height: 50px;
+	width: 45%;
+	padding: 10px;
+}
+
+.newsLetter p {
+	font-size: medium;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.newsLetter button {
+	background: white;
+	border: none;
+	padding: 10px;
+	color: #089047;
+	font-weight: bold;
+}
+
+.partners {
+	text-align: center;
+	padding: 50px;
+}
+
+.partners h3 {
+	text-align: center;
+	padding-bottom: 20px;
+	font-weight: 800;
+	font-size: 1.75rem;
+}

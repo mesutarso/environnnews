@@ -93,8 +93,8 @@ const NavBar: React.FC = () => {
 	return (
 		<div className={headerStyles.nav}>
 			<Link href='/' passHref>
-				<a className={`${headerStyles.link}`}>
-					<BsHouseFill fontSize={25} />
+				<a className={`${headerStyles.link} ${headerStyles.linkIcon}`}>
+					<BsHouseFill fontSize={19} />
 				</a>
 			</Link>
 			{categories.map((categorie) => (
@@ -103,9 +103,7 @@ const NavBar: React.FC = () => {
 					href='/categories/[name]'
 					as={`/categories/${categorie.categorie_name}`}
 					passHref>
-					<a className={`${headerStyles.link} border-start px-2 border-1`}>
-						{categorie.categorie_name}
-					</a>
+					<a className={`${headerStyles.link}`}>{categorie.categorie_name}</a>
 				</Link>
 			))}
 		</div>
