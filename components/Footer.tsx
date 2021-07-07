@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import footerStyles from '../styles/Footer.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -12,15 +13,15 @@ import {
 
 const Footer: React.FC = () => (
 	<div className={footerStyles.footer}>
-		<div className='container-fluid bg-dark p-5'>
-			<div className='row justify-content-center'>
+		<div className='container-fluid bg-dark pt-5 '>
+			<div className='row justify-content-center py-4'>
 				<div className='col-12'>
 					<div className='row justify-content-center'>
-						<div className={`col-md-2 `}>
-							<Image
-								src={Logo}
-								alt={`logo d'environ news`}
-								className={`p-4 ${footerStyles.img_top}`}
+						<div className='col-md-2 '>
+							<img
+								src='/assets/environews_logo.png'
+								alt="logo d'environ news"
+								className={`img-fluid p-4  ${footerStyles.img_top}`}
 							/>
 						</div>
 						<div className='col-md-2'>
@@ -87,7 +88,7 @@ const Footer: React.FC = () => (
 						</div>
 						<div className=' text-white col-md-2'>
 							<h5 className='border-start px-3 border-success border-5'>
-								ENVIRONEWS TV
+								ENVIRONEWSTV
 							</h5>
 							<div></div>
 						</div>
@@ -138,11 +139,8 @@ const Footer: React.FC = () => (
 							</div>
 						</div>
 					</div>
-					<hr
-						className={`bg-white mt-5 ${footerStyles.footer_line}`}
-						style={{ padding: '1px' }}
-					/>
-					<p className={`mt-3 ${footerStyles.footertextsilver}`}>
+					<hr className={` mt-5 bg-white ${footerStyles.footer_line}`} />
+					<p className={` mt-3 text-white text-center`}>
 						copyright &copy; Environews-rdc 2021
 					</p>
 				</div>

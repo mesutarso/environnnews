@@ -9,8 +9,10 @@ const BreakingNews: React.FC<IProps> = ({ breakingNews }) => {
 			return (
 				<div key={news.id}>
 					<div className={heroStyles.breaking_news}>
-						<h6 className='text-success'>{news.title}</h6>
-						<p>{news.description}</p>
+						<h6 className={heroStyles.breaking_news__title}>{news.title}</h6>
+						<p className={heroStyles.breaking_news__description}>
+							{news.description}
+						</p>
 					</div>
 				</div>
 			);

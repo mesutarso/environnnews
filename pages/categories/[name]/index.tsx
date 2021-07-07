@@ -1,8 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.css';
-export default function Categorie() {
+import Banner from '../../../components/Banner';
+
+const Categorie: React.FC = () => {
 	return (
 		<div>
-			<h1>Categorie</h1>
+			<Banner
+				titre='CONSERVATION'
+				description='Félix Lilakako, "Eruption volcanique de Nyiragongo, au-delà de la réaction gouvernementale…une planification d’intervention urgente s’impose"'
+			/>
 		</div>
 	);
-}
+};
+export default Categorie;

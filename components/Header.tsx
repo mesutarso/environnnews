@@ -44,7 +44,7 @@ const Appbar: React.FC = () => {
 };
 
 const NavBar: React.FC = () => {
-	const [categories, setCategories] = useState<NavProps['nav']>([
+	const [categories, setCategories] = useState([
 		{
 			id: 1,
 			categorie_name: 'conservation',

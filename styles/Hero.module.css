@@ -32,6 +32,10 @@
 .breaking_news p {
 	font-weight: 600;
 }
+.breaking_news__title {
+	font-size: 0.9rem;
+	color: #089047;
+}
 
 .opportunities {
 	padding-top: 10px;
