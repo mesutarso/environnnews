@@ -55,20 +55,30 @@
 .nav {
 	background: #089047;
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
 	align-items: center;
 	flex-wrap: wrap;
 	padding: 0 7vw;
 }
 
 .link {
+	display: inline-block;
+	position: relative;
 	text-decoration: none;
-	padding: 10px 20px;
+	padding: 15px 20px;
 	font-weight: bold;
-	font-size: 0.75rem;
+	font-size: 0.8rem;
 	color: white;
 	text-transform: uppercase;
+	text-align: center;
 }
-.link:hover {
+.link:not(:first-child) {
+	border-left: 1px solid #34a468;
+}
+
+.link:hover,
+.link:visited,
+.link:active {
 	color: #fff;
+	background-color: #34a468;
 }

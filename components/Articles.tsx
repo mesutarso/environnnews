@@ -6,7 +6,7 @@ import articleStyles from '../styles/Article.module.css';
 
 export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 	return (
-		<div className={`col-md-${size} col-12 ${articleStyles.card}`}>
+		<div className={`col-md-${size} mb-4 col-12 ${articleStyles.card}`}>
 			<Link href='/articles/[id]' as={`articles/${article.id}`}>
 				<a>
 					<Image
