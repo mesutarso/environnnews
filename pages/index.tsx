@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import heroStyles from '../styles/Hero.module.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import BreakingNews from '../components/BreakingNews';
@@ -120,16 +121,20 @@ export default function Home() {
 				<div className={`row ${heroStyles.hero}`}>
 					<div className='col-md-8 col-sm-12'>
 						<div className={heroStyles.topNews}>
-							<h5
-								className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
-								CORONAVIRUS
-							</h5>
-							<Image src='/assets/bird.jpg' height={350} width={800} />
-							<h4>
-								Tshisekedi et les mesures draconiennes, et si la solution à la
-								3ème vague était congolaise ?
-							</h4>
-							<span>Christopher Buhendwa</span>{' '}
+							<Link href='/articles/[id]' as='/articles/1'>
+								<a>
+									<h5
+										className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
+										CORONAVIRUS
+									</h5>
+									<Image src='/assets/bird.jpg' height={350} width={800} />
+									<h4>
+										Tshisekedi et les mesures draconiennes, et si la solution à
+										la 3ème vague était congolaise ?
+									</h4>
+									<span>Christopher Buhendwa</span>
+								</a>
+							</Link>
 						</div>
 						<Articles articles={articles} />
 					</div>
