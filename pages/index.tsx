@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -8,6 +9,7 @@ import BreakingNews from '../components/BreakingNews';
 import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
+import { getPostsByCategory } from '../lib/api';
 
 export interface IState {
 	breakingNews: {
@@ -127,7 +129,12 @@ export default function Home() {
 										className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
 										CORONAVIRUS
 									</h5>
-									<Image src='/assets/bird.jpg' height={350} width={800} />
+									<Image
+										src='/assets/bird.jpg'
+										alt='feature image'
+										height={350}
+										width={800}
+									/>
 									<h4>
 										Tshisekedi et les mesures draconiennes, et si la solution à
 										la 3ème vague était congolaise ?
