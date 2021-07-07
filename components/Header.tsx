@@ -44,7 +44,7 @@ const Appbar: React.FC = () => {
 };
 
 const NavBar: React.FC = () => {
-	const [categories, setCategories] = useState<NavProps['nav']>([
+	const [categories, setCategories] = useState([
 		{
 			id: 1,
 			categorie_name: 'conservation',
@@ -99,6 +99,7 @@ const NavBar: React.FC = () => {
 			</Link>
 			{categories.map((categorie) => (
 				<Link
+					key={categorie.id}
 					href='/categories/[name]'
 					as={`/categories/${categorie.categorie_name}`}
 					passHref>

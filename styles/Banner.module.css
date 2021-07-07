@@ -1,0 +1,11 @@
+.mt_container {
+	margin-top: 10%;
+	margin-bottom: 5%;
+}
+
+@media (max-width: 768px) {
+	.mt_container {
+		margin-top: 25%;
+		margin-bottom: 10%;
+	}
+}

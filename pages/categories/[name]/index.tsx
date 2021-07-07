@@ -1,8 +1,11 @@
-const Categorie = () => {
+import Banner from '../../../components/Banner';
+
+const Categorie: React.FC = () => {
 	return (
-		<div>
-			<h1>Categorie</h1>
-		</div>
+		<>
+			<h1 className=''>Categorie</h1>
+			<Banner />
+		</>
 	);
 };
 
