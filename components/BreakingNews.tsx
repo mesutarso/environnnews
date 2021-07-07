@@ -17,7 +17,15 @@ const BreakingNews: React.FC<IProps> = ({ breakingNews }) => {
 		});
 	};
 
-	return <div>{renderBreakingNews()}</div>;
+	return (
+		<div>
+			<h5
+				className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
+				BREAKING NEWS
+			</h5>
+			{renderBreakingNews()}
+		</div>
+	);
 };
 
 export default BreakingNews;

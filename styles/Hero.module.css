@@ -19,3 +19,22 @@
 .breaking_news p {
 	font-weight: 600;
 }
+
+.opportunities {
+	padding-top: 10px;
+	background-color: #f4f2f2;
+}
+
+.opportunities_body {
+	padding: 5px;
+	border-bottom: 1px black dashed;
+}
+
+.opportunities p {
+	font-weight: 600;
+}
+
+.pub {
+	height: 400px;
+	background-color: #089047;
+}

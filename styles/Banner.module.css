@@ -27,7 +27,7 @@
 	bottom: 10%;
 	right: 0;
 	background-color: rgba(14, 13, 13, 0.5);
-	z-index: 3;
+	z-index: 1;
 }
 
 .img_position_absolute {
@@ -36,5 +36,5 @@
 	left: 3%;
 	bottom: 0;
 	right: 0;
-	z-index: 4;
+	z-index: 2;
 }

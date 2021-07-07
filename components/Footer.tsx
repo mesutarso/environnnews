@@ -53,7 +53,7 @@ const Footer: React.FC = () => (
 						</div>
 						<div className='col-md-2'>
 							<h5 className='text-white border-start px-3 border-success border-5'>
-								SERVICE
+								SERVICES
 							</h5>
 							<ul className={footerStyles.footerlinkstyle}>
 								<Link href='/'>

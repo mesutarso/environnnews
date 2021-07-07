@@ -1,0 +1,41 @@
+.card {
+	padding: 5px;
+}
+.card a {
+	text-decoration: none;
+	color: inherit;
+}
+.title {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 0.9rem;
+	color: #089047;
+}
+.description {
+	font-size: 0.9rem;
+	font-weight: bold;
+}
+.author {
+	color: #a09b9b;
+	font-size: small;
+	font-weight: 300;
+}
+
+.category {
+	padding: 20px 50px;
+}
+
+.sectionTitle {
+	padding: 0 50px;
+	display: flex;
+	justify-content: space-between;
+}
+.sectionTitle h5 {
+	text-transform: uppercase;
+}
+
+.sectionTitle a {
+	text-decoration: none;
+	color: #089047;
+	font-weight: bold;
+}
