@@ -10,6 +10,8 @@ import {
 	FaYoutubeSquare,
 } from 'react-icons/fa';
 import Link from 'next/link';
+import { IArticles } from '../..';
+import { TopArticle } from '../../../components/Articles';
 
 export interface IComments {
 	comments: {
@@ -21,6 +23,41 @@ export interface IComments {
 }
 
 const Article = () => {
+	const [articles, setArticles] = useState<IArticles['articles']>([
+		{
+			id: '1',
+			image: '/assets/bird.jpg',
+			category: 'climat',
+			description:
+				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
+			author: 'Emmanuella Mulanga',
+		},
+		{
+			id: '2',
+			image: '/assets/bird.jpg',
+			category: 'biodiversite',
+			description:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consequuntur perferendis tenetur vero laborum quia sequi ',
+			author: 'Beni Map',
+		},
+		{
+			id: '3',
+			image: '/assets/bird.jpg',
+			category: 'conservation',
+			description:
+				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
+			author: 'Marcos Musafiri',
+		},
+		{
+			id: '4',
+			image: '/assets/bird.jpg',
+			category: 'conservation',
+			description:
+				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
+			author: 'Marcos Musafiri',
+		},
+	]);
+
 	const [comments, setComments] = useState<IComments['comments']>([
 		{
 			id: '34',
@@ -125,9 +162,80 @@ const Article = () => {
 							Tenetur magni molestias exercitationem alias, dignissimos quos
 							earum recusandae?
 						</p>
+						<p>
+							Corrupti explicabo voluptates soluta asperiores? Tenetur magni
+							molestias exercitationem alias, dignissimos quos earum
+							recusandae?Corrupti explicabo voluptates soluta asperiores?
+							Tenetur magni molestias exercitationem alias, dignissimos quos
+							earum recusandae?Corrupti explicabo voluptates soluta asperiores?
+							Tenetur magni molestias exercitationem alias, dignissimos quos
+							earum recusandae?Corrupti explicabo voluptates soluta asperiores?
+							Tenetur magni molestias exercitationem alias, dignissimos quos
+							earum recusandae?
+						</p>
+						<p>
+							Corrupti explicabo voluptates soluta asperiores? Tenetur magni
+							molestias exercitationem alias, dignissimos quos earum
+							recusandae?Corrupti explicabo voluptates soluta asperiores?
+							Tenetur magni molestias exercitationem alias, dignissimos quos
+							earum recusandae?Corrupti explicabo voluptates soluta asperiores?
+							Tenetur magni molestias exercitationem alias, dignissimos quos
+							earum recusandae?Corrupti explicabo voluptates soluta asperiores?
+							Tenetur magni molestias exercitationem alias, dignissimos quos
+							earum recusandae?
+						</p>
 					</div>
 				</div>
-				<div className='col-md-4 col-sm-12'>cool</div>
+				<div className='col-md-4 col-sm-12'>
+					<div className={articleStyles.pub}></div>
+					<div style={{ paddingTop: '20px' }}>
+						<h6 className='border-start px-2 border-success border-5'>
+							A LIRE AUSSI
+						</h6>
+						<div className={articleStyles.similar}>
+							{articles.map((article) => {
+								return (
+									<Link
+										href='/articles/[id]'
+										as={`/articles/${article.id}`}
+										passHref>
+										<a>
+											<div className='row'>
+												<div className='col-md-4'>
+													<Image
+														src={article.image}
+														alt={article.description}
+														width={150}
+														height={100}
+													/>
+												</div>
+												<div className='col-md-8'>
+													<h5>{article.category}</h5>
+													<span>{article.description}</span>
+													<br />
+													<span className={articleStyles.author_}>
+														{article.author}
+													</span>
+												</div>
+											</div>
+										</a>
+									</Link>
+								);
+							})}
+						</div>
+					</div>
+					<div className={articleStyles.newsLetter}>
+						<h3>NEWSLETTER</h3>
+						<form>
+							<input type='email' placeholder='Adresse Email' />
+							<p>
+								Inscrivez-vous à notre newsletter pour vous tenir au courant de
+								nos activités.
+							</p>
+							<button>S'INSCRIRE</button>
+						</form>
+					</div>
+				</div>
 			</div>
 			<div className={`row ${articleStyles.footer}`}>
 				<div className='col-md-5 col-sm-12'>

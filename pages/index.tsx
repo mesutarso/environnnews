@@ -150,7 +150,11 @@ export default function Home() {
 				<Categories articles={articles} title='environement' />
 				<Categories articles={articles} title='biodiversite' />
 				<div className='row'>
-					<div className='col-md-7 col-sm-12'>cool</div>
+					<div className='col-md-7 col-sm-12'>
+						<h5 className='border-start px-3 border-success border-5'>
+							CHOIX DE L’EDITEUR
+						</h5>
+					</div>
 					<div className='col-md-5 col-sm-12'>
 						<h5 className='border-start px-3 border-success border-5'>
 							TOP ARTICLES

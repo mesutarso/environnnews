@@ -116,3 +116,65 @@
 	font-size: small;
 	font-weight: 300;
 }
+
+.pub {
+	height: 400px;
+	background: #089047;
+}
+
+.newsLetter {
+	background-color: #089047;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	margin: 20px 0px;
+}
+
+.newsLetter h3 {
+	padding-bottom: 20px;
+	padding-top: 20px;
+	font-weight: 800;
+	font-size: 1.25rem;
+}
+
+.newsLetter input {
+	height: 35px;
+	width: 100%;
+	padding: 5px;
+}
+
+.newsLetter p {
+	font-size: 1rem;
+	font-weight: 400;
+	padding: 10px;
+}
+
+.newsLetter button {
+	background: white;
+	border: none;
+	padding: 5px;
+	color: #089047;
+	font-weight: bold;
+}
+.similar {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.similar h5 {
+	font-size: 1rem;
+	color: #089047;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+.similar span {
+	font-size: 0.75rem;
+	text-overflow: ellipsis;
+}
+
+.author_ {
+	color: #a09b9b;
+	font-size: small;
+	font-weight: 500;
+}

@@ -56,7 +56,7 @@ const Footer: React.FC = () => (
 								SERVICE
 							</h6>
 							<ul className={footerStyles.footerlinkstyle}>
-								<Link href='/'>
+								<Link href='/services' passHref>
 									<a>
 										<li>Redaction</li>
 									</a>
