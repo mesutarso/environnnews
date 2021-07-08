@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AboutStyle from '../styles/About.module.css';
 import TeamCard from '../components/TeamCard';
 
-const apropos = () => {
+//import Logo from '../public/assets/afd1.png';
+
+const Apropos = () => {
 	return (
 		<>
 			<div className={`container ${AboutStyle.mt_container}`}>
@@ -88,4 +90,4 @@ const apropos = () => {
 	);
 };
 
-export default apropos;
+export default Apropos;
