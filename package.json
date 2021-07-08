@@ -30,7 +30,7 @@
 		"check-lint": "eslint . --ext .ts,.js",
 		"format": "prettier --write .",
 		"cypress": "cypress open",
-		"test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build"
+		"test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run jest && npm run build"
 	},
 	"dependencies": {
 		"bootstrap": "^5.0.0-beta3",
@@ -43,6 +43,7 @@
 	"devDependencies": {
 		"@babel/preset-env": "^7.14.7",
 		"@babel/preset-react": "^7.14.5",
+		"@testing-library/jest-dom": "^5.14.1",
 		"@testing-library/react": "^12.0.0",
 		"@types/jest": "^26.0.24",
 		"@types/node": "^16.0.0",
@@ -52,6 +53,7 @@
 		"@typescript-eslint/parser": "^4.28.2",
 		"@typescript-eslint/typescript-estree": "^4.28.2",
 		"axe-core": "^4.2.3",
+		"babel-jest": "^27.0.6",
 		"cypress": "^7.6.0",
 		"eslint": "^7.30.0",
 		"eslint-config-airbnb": "^18.2.1",
