@@ -155,6 +155,14 @@ const Services = () => {
 					<div className={`col-md-2 col-sm-12`}></div>
 				</div>
 				<h6 className='text-center text-success'>REALISATIONS</h6>
+				<h6 className='text-success' style={{ paddingTop: '20px' }}>
+					<Link href='/' passHref>
+						<a>
+							Lire les articles
+							<FaCaretRight />
+						</a>
+					</Link>
+				</h6>
 			</section>
 			<section id='documentaire'>
 				<h5
@@ -169,7 +177,7 @@ const Services = () => {
 						paddingBottom: '20px',
 					}}>
 					<div className={`col-md-5 col-sm-12 ${serviceStyles.divider}`}>
-						<Image src='/assets/info.png' height={350} width={500} />
+						<Image src='/assets/documentaire.jpg' height={350} width={500} />
 					</div>
 					<div className={`col-md-5 col-sm-12`}>
 						<h6 className='text-success'>SERVICES PROPOSES</h6>
@@ -193,18 +201,192 @@ const Services = () => {
 					<div className={`col-md-2 col-sm-12`}></div>
 				</div>
 				<h6 className='text-center text-success'>REALISATIONS</h6>
+				<h6 className='text-success' style={{ paddingTop: '20px' }}>
+					<Link href='/' passHref>
+						<a>
+							Lire les articles
+							<FaCaretRight />
+						</a>
+					</Link>
+				</h6>
+				<div className='row'>
+					<div className='col-md-3'>
+						<Image src='/assets/documentaire.jpg' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/documentaire.jpg' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/documentaire.jpg' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/documentaire.jpg' width={300} height={175} />
+					</div>
+				</div>
+
+				<div className='row'>
+					<div className='col-md-3'>
+						<Image src='/assets/documentaire.jpg' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/documentaire.jpg' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/documentaire.jpg' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/documentaire.jpg' width={300} height={175} />
+					</div>
+				</div>
 			</section>
 			<section id='motion_design'>
 				<h5
 					className={`border-start px-3 border-success border-5 ${serviceStyles.sub_title}`}>
 					MOTION DESIGN
 				</h5>
+				<div
+					className='row'
+					style={{
+						marginLeft: '2px',
+						paddingTop: '20px',
+						paddingBottom: '20px',
+					}}>
+					<div className={`col-md-5 col-sm-12 ${serviceStyles.divider}`}>
+						<Image src='/assets/motion.png' height={350} width={500} />
+					</div>
+					<div className={`col-md-5 col-sm-12`}>
+						<h6 className='text-success'>SERVICES PROPOSES</h6>
+						<ul>
+							<li>Étude de votre projet</li>
+							<li> Brief & Scénario</li>
+							<li>Storyboard</li>
+							<li>Maquettage</li>
+							<li>Animation</li>
+							<li> Sound Design</li>
+							<li>Livraison du produit</li>
+						</ul>
+						<h6 className='text-success'>LIRE ET FAIRE LIRE NOS ARTICLES</h6>
+						<p>
+							Le motion design, aussi appelé animation graphique, graphisme
+							animé, conception du mouvement ou conception graphique animée est
+							une forme d'art visuel consistant à créer des œuvres animées ; il
+							implique d'utiliser le mouvement comme principal outil graphique
+							et artistique.
+						</p>
+					</div>
+					<div className={`col-md-2 col-sm-12`}></div>
+				</div>
+				<h6 className='text-center text-success'>REALISATIONS</h6>
+				<div className='row'>
+					<div className='col-md-3'>
+						<Image src='/assets/motion.png' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/motion.png' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/motion.png' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/motion.png' width={300} height={175} />
+					</div>
+				</div>
+
+				<div className='row'>
+					<div className='col-md-3'>
+						<Image src='/assets/motion.png' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/motion.png' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/motion.png' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/motion.png' width={300} height={175} />
+					</div>
+				</div>
+				<h6 className='text-success' style={{ paddingTop: '20px' }}>
+					<Link href='/' passHref>
+						<a>
+							Lire les articles
+							<FaCaretRight />
+						</a>
+					</Link>
+				</h6>
 			</section>
 			<section id='spot_pub'>
 				<h5
 					className={`border-start px-3 border-success border-5 ${serviceStyles.sub_title}`}>
 					SPOT PUBLICITAIRE
 				</h5>
+				<div
+					className='row'
+					style={{
+						marginLeft: '2px',
+						paddingTop: '20px',
+						paddingBottom: '20px',
+					}}>
+					<div className={`col-md-5 col-sm-12 ${serviceStyles.divider}`}>
+						<Image src='/assets/spot.jpg' height={350} width={500} />
+					</div>
+					<div className={`col-md-5 col-sm-12`}>
+						<h6 className='text-success'>SERVICES PROPOSES</h6>
+						<ul>
+							<li>Étude de votre projet</li>
+							<li>Rédaction du Cahier des Charges</li>
+							<li>Création d'un spot sur-mesure</li>
+							<li>Intégration des ameliorations</li>
+							<li>Livraison du produit</li>
+						</ul>
+						<h6 className='text-success'>LIRE ET FAIRE LIRE NOS ARTICLES</h6>
+						<p>
+							Le motion design, aussi appelé animation graphique, graphisme
+							animé, conception du mouvement ou conception graphique animée est
+							une forme d'art visuel consistant à créer des œuvres animées ; il
+							implique d'utiliser le mouvement comme principal outil graphique
+							et artistique.
+						</p>
+					</div>
+					<div className={`col-md-2 col-sm-12`}></div>
+				</div>
+				<h6 className='text-center text-success'>REALISATIONS</h6>
+				<div className='row'>
+					<div className='col-md-3'>
+						<Image src='/assets/spot.jpg' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/spot.jpg' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/spot.jpg' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/spot.jpg' width={300} height={175} />
+					</div>
+				</div>
+				<div className='row'>
+					<div className='col-md-3'>
+						<Image src='/assets/spot.jpg' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/spot.jpg' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/spot.jpg' width={300} height={175} />
+					</div>
+					<div className='col-md-3'>
+						<Image src='/assets/spot.jpg' width={300} height={175} />
+					</div>
+				</div>
+				<h6 className='text-success' style={{ paddingTop: '20px' }}>
+					<Link href='/' passHref>
+						<a>
+							Lire les articles
+							<FaCaretRight />
+						</a>
+					</Link>
+				</h6>
 			</section>
 		</div>
 	);
