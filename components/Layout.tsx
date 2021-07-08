@@ -5,7 +5,8 @@ export default function Layout({ children }) {
 	return (
 		<div>
 			<Header />
-			{children}
+			{/*add style to the main layout container */}
+			<div>{children}</div>
 			<Footer />
 		</div>
 	);
