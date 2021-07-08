@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import articleStyles from '../../../styles/Article.module.css';
 import Image from 'next/image';
@@ -81,7 +82,12 @@ const Article = () => {
 			</h5>
 			<div className='row'>
 				<div className='col-md-9 col-sm-12'>
-					<Image src='/assets/bird.jpg' height={500} width={1000} />
+					<Image
+						src='/assets/bird.jpg'
+						height={500}
+						width={1000}
+						alt='image article'
+					/>
 					<div>
 						<Link href='/'>
 							<a>
@@ -221,6 +227,7 @@ const Article = () => {
 							{articles.map((article) => {
 								return (
 									<Link
+										key={article.id}
 										href='/articles/[id]'
 										as={`/articles/${article.id}`}
 										passHref>
