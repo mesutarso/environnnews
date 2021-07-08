@@ -13,6 +13,9 @@
 	font-size: 1.75rem;
 	width: 200px;
 }
+.sub_title {
+	margin: 30px 0px;
+}
 .menu {
 	display: flex;
 	flex-wrap: wrap;
@@ -33,4 +36,12 @@
 	font-size: 0.75rem;
 	font-weight: 600;
 	color: gray;
+}
+
+.divider {
+	border-left: 1px solid #089047;
+}
+
+.pub {
+	background: #089047;
 }
