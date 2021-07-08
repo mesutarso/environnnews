@@ -5,12 +5,17 @@ import Footer from '../components/Footer';
 
 describe('Footer', () => {
 	test('should render the heading', () => {
-		const { getByRole } = render(
-			<Footer>
-				<div id='footer'></div>
-			</Footer>
-		);
-		const heading = getByRole('heading', { level: 5 });
-		expect(heading).toBeInTheDocument();
+		render(<Footer />);
+		const titles = screen.getAllByRole('heading', { level: 6 });
+		for (const title of titles) {
+			expect(title).toBeInTheDocument();
+		}
 	});
+	// test('should render the link',()=> {
+	// 	render(<Footer/>);
+	// 	const links = screen.getAllByRole('link',{ expanded: false });
+	// 	for (const link of links) {
+	// 		expect(link).toBeInTheDocument();
+	// 	}
+	// })
 });
