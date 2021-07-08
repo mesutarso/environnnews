@@ -15,7 +15,8 @@ const Apropos = () => {
 								A PROPOS DE NOUS
 							</span>
 						</h1>
-						<div className={`p-5 col-9 mx-auto ${AboutStyle.about_us}`}>
+						<div
+							className={`p-md-5 p-3 col-md-9 mx-auto ${AboutStyle.about_us}`}>
 							<p className='text-justify'>
 								Créée en 2013,
 								<span className='text-success'>ENVIRONEWS RDC</span> est avant
