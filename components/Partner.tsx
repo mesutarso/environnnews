@@ -14,7 +14,7 @@ export interface PartnerProps {
 export const Partner = ({ image, alt }) => {
 	return (
 		<>
-			<div className='col-md-2 text-center'>
+			<div className='col-sm-2 mt-5 mt-sm-0 text-center'>
 				<img src={image} alt={alt} className='img-fluid' />
 			</div>
 		</>

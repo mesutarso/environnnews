@@ -69,6 +69,24 @@ const EnvironewsTV = () => {
 					</div>
 				</div>
 			</div>
+			<div className='container'>
+				<div className='row'>
+					<div className='col-md-10 border border-danger'>
+						<h5 className='border-success border-start px-2 border-5'>
+							INVITE DU WEEK-END
+						</h5>
+						<div className='col-md-8 border-success border-1 border-start px-2'>
+							<p>
+								C’est un programme de 45 minutes qui décrypte l’actualité
+								environnementale, et propose des solutions idoines. Diffusé
+								chaque samedi et dimanche, le programme reçoit des experts, et
+								hommes politiques évoluant dans le domaine de l’environnement.
+							</p>
+							<p>Tél : +243818148485</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</>
 	);
 };
