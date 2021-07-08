@@ -11,11 +11,9 @@ describe('Footer', () => {
 			expect(title).toBeInTheDocument();
 		}
 	});
-	// test('should render the link',()=> {
-	// 	render(<Footer/>);
-	// 	const links = screen.getAllByRole('link',{ expanded: false });
-	// 	for (const link of links) {
-	// 		expect(link).toBeInTheDocument();
-	// 	}
-	// })
+	// test('should render the link', () => {
+	// 	render(<Footer />);
+	// 	const links = screen.getAllByText(/\//i);
+	// 	expect(links).toContain();
+	// });
 });
