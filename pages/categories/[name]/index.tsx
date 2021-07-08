@@ -2,6 +2,7 @@ import Banner from '../../../components/Banner';
 import LayoutArticle from '../../../components/LayoutArticle';
 import { useState } from 'react';
 import { ArticleCard } from '../../../components/Articles';
+import { useRouter } from 'next/router';
 
 export interface IArticles {
 	articles: {
@@ -82,11 +83,13 @@ const Categorie: React.FC = () => {
 
 	const articlesTwoLines = articles.filter((article) => +article.id <= 6);
 	const articlesOneLine = articles.filter((article) => +article.id <= 4);
+	const router = useRouter();
+	const { name } = router.query;
 
 	return (
 		<div>
 			<Banner
-				titre='CONSERVATION'
+				titre={`${name}`}
 				description='Félix Lilakako, "Eruption volcanique de Nyiragongo, au-delà de la réaction gouvernementale…une planification d’intervention urgente s’impose"'
 			/>
 			<LayoutArticle
