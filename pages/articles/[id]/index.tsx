@@ -191,9 +191,15 @@ const Article = () => {
 								LAISSER UN COMMENTAIRE
 							</h4>
 							<div className={articleStyles.form}>
-								<input type='text' placeholder='Pseudo' />
-								<textarea placeholder='Comment'></textarea>
-								<button>Envoyer</button>
+								<input
+									className='form-control form-control-lg'
+									type='text'
+									placeholder='Pseudo'
+								/>
+								<textarea
+									className='form-control'
+									placeholder='Commentaire'></textarea>
+								<button className='btn btn-success'>Envoyer</button>
 							</div>
 						</div>
 						<div className='col-md-1 col-sm-12'></div>
@@ -246,12 +252,15 @@ const Article = () => {
 					<div className={articleStyles.newsLetter}>
 						<h3>NEWSLETTER</h3>
 						<form>
-							<input type='email' placeholder='Adresse Email' />
+							<input
+								className='form-control form-control-lg'
+								type='email'
+								placeholder='Email Address'></input>
 							<p>
 								Inscrivez-vous à notre newsletter pour vous tenir au courant de
 								nos activités.
 							</p>
-							<button>S'INSCRIRE</button>
+							<button className='btn btn-success'>S'INSCRIRE</button>
 						</form>
 					</div>
 				</div>

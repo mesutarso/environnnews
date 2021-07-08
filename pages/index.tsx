@@ -187,11 +187,6 @@ export default function Home() {
 					<button className='btn btn-success'>S'INSCRIRE</button>
 				</form>
 			</div>
-			<div className={heroStyles.partners}>
-				<h3 className='border-start px-3 border-success border-5'>
-					ILS NOUS FONT CONFIANCE
-				</h3>
-			</div>
 		</div>
 	);
 }
