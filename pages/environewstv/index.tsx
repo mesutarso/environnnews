@@ -1,11 +1,49 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react';
+import React, { useState } from 'react';
 import AboutStyle from '../../styles/About.module.css';
 import EnvironewsStyle from '../../styles/Environews.module.css';
+import TvInfo from '../../components/TvInfo';
+
+interface EmissionProps {
+	emission: {
+		id: number;
+		title: string;
+		description: string;
+		phoneNumber: string;
+	}[];
+}
 
 const EnvironewsTV = () => {
+	const [emission, setEmission] = useState<EmissionProps['emission']>([
+		{
+			id: 1,
+			title: 'INVITE DU WEEK-END',
+			description: `C’est un programme de 45 minutes qui décrypte l’actualité
+							environnementale, et propose des solutions idoines. Diffusé chaque
+							samedi et dimanche, le programme reçoit des experts, et hommes
+							politiques évoluant dans le domaine de l’environnement.`,
+			phoneNumber: '+243818148485',
+		},
+		{
+			id: 2,
+			title: 'METIER VERT',
+			description: `Métiers verts est une émissions produit par Environews TV qui a pour objectif principal Assurer la promotion de l'entrepreunariat vert Congolais.
+             Quelques métiers verts : Assainissement et traitement des dechets,
+			 production et distribution de l'énergie et de l'eau, Protection de la nature...`,
+			phoneNumber: '+243818148485',
+		},
+		{
+			id: 3,
+			title: 'ISO AUTOCHTONES',
+			description: `C’est un programme d’une heure, consacré à la promotion de
+			    la culture des peuples autochtones pygmées de la république démocratique du Congo.
+               Elvie Maliya, recoit les pygmées vivant à Kinshasa pour des entretiens ciblés,
+			   et réflexions sur le mode de vie de ce peuple longtemps marginalisé..`,
+			phoneNumber: '+243818148485',
+		},
+	]);
 	return (
 		<>
 			<div className={`container ${AboutStyle.mt_container}`}>
@@ -17,14 +55,15 @@ const EnvironewsTV = () => {
 							</span>
 						</h1>
 					</div>
-					<div className='col-md-3'>
+					<div className='col-md-3 col-12 my-3 my-md-0 text-center'>
 						<img
 							src='/assets/environews_logo.png'
-							className='img-fluid'
+							className='img-fluid text-center'
 							alt='logo environews'
 						/>
 					</div>
-					<div className={`p-5 col-8 mx-auto ${AboutStyle.about_us}`}>
+					<div
+						className={`p-md-5 col-11 mt-2 col-md-8 mx-auto ${AboutStyle.about_us}`}>
 						<p className={`text-justify ${EnvironewsStyle.font_bold}`}>
 							<strong>
 								Environews TV est une chaine de télévision thématique axée sur l
@@ -69,24 +108,24 @@ const EnvironewsTV = () => {
 					</div>
 				</div>
 			</div>
-			<div className='container'>
+			<div className='container  mt-5 mt-md-3'>
 				<div className='row'>
-					<div className='col-md-10 border border-danger'>
-						<h5 className='border-success border-start px-2 border-5'>
-							INVITE DU WEEK-END
-						</h5>
-						<div className='col-md-8 border-success border-1 border-start px-2'>
-							<p>
-								C’est un programme de 45 minutes qui décrypte l’actualité
-								environnementale, et propose des solutions idoines. Diffusé
-								chaque samedi et dimanche, le programme reçoit des experts, et
-								hommes politiques évoluant dans le domaine de l’environnement.
-							</p>
-							<p>Tél : +243818148485</p>
-						</div>
+					<div className='col-md-12'>
+						<h2 className={`text-center text-success ${AboutStyle.title}`}>
+							NOS EMISSIONS
+						</h2>
 					</div>
 				</div>
 			</div>
+
+			{emission.map(({ id, title, description, phoneNumber }) => (
+				<TvInfo
+					key={id}
+					title={title}
+					description={description}
+					phoneNumber={phoneNumber}
+				/>
+			))}
 		</>
 	);
 };
