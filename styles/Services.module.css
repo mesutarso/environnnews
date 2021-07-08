@@ -1,0 +1,36 @@
+.content {
+	padding-top: 180px;
+	padding-bottom: 50px;
+}
+
+.content p {
+	text-align: center;
+	padding: 10px;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 1.75rem;
+	width: 200px;
+}
+.menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.menu_item {
+	width: calc(20% - 20px);
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid black;
+	text-align: center;
+}
+
+.menu_item h5 {
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: gray;
+}

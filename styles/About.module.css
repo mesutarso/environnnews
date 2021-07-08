@@ -1,0 +1,26 @@
+.mt_container {
+	padding-top: 205px;
+	padding-bottom: 15px;
+}
+.title {
+	font-weight: bold;
+}
+
+.about_us {
+	font-family: Roboto, sans-serif;
+	text-align: justify;
+}
+
+.card_row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+	padding: 3%;
+}
+
+.col_3 {
+	width: 24%;
+	margin-top: 1.5%;
+	box-shadow: 1px 3px 6px rgba(75, 187, 75, 0.4);
+}

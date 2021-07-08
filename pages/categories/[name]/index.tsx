@@ -1,7 +1,6 @@
 import Banner from '../../../components/Banner';
-import { ArticleCard } from '../../../components/Articles';
+import LayoutArticle from '../../../components/LayoutArticle';
 import { useState } from 'react';
-import PubliciteStyle from '../../../styles/Publicite.module.css';
 
 export interface IArticles {
 	articles: {
@@ -90,63 +89,20 @@ const Categorie: React.FC = () => {
 				description='Félix Lilakako, "Eruption volcanique de Nyiragongo, au-delà de la réaction gouvernementale…une planification d’intervention urgente s’impose"'
 			/>
 
-			<div className='container'>
-				<div className='row'>
-					<div className='col-md-9'>
-						<div className='row'>
-							{articlesTwoLines.map((article) => (
-								<ArticleCard
-									key={article.id}
-									article={article}
-									size={4}
-									imageHeight={250}
-									imageWidth={380}
-								/>
-							))}
-						</div>
-					</div>
-					<div className='col-md-3 mt-1'>
-						<div className={PubliciteStyle.squeleton}></div>
-					</div>
-				</div>
-			</div>
-			<div className='container'>
-				<div className='row'>
-					<div className='col-md-12'>
-						<div className='row mb-3'>
-							{articlesOneLine.map((article) => (
-								<ArticleCard
-									key={article.id}
-									article={article}
-									size={3}
-									imageHeight={250}
-									imageWidth={380}
-								/>
-							))}
-						</div>
-					</div>
-					<div className='col-md-12'>
-						<div className={PubliciteStyle.squeleton_hr}></div>
-					</div>
-				</div>
-			</div>
-			<div className='container'>
-				<div className='row'>
-					<div className='col-md-12'>
-						<div className='row justify-content-center mb-3'>
-							{articles.map((article) => (
-								<ArticleCard
-									key={article.id}
-									article={article}
-									size={3}
-									imageHeight={250}
-									imageWidth={380}
-								/>
-							))}
-						</div>
-					</div>
-				</div>
-			</div>
+			<LayoutArticle
+				col1={9}
+				col2={3}
+				articleCardSize={4}
+				articles={articlesTwoLines}
+			/>
+
+			<LayoutArticle
+				col1={12}
+				col2={12}
+				articleCardSize={3}
+				articles={articlesOneLine}
+			/>
+			<LayoutArticle col1={12} articleCardSize={3} articles={articles} />
 		</div>
 	);
 };
