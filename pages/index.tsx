@@ -176,12 +176,15 @@ export default function Home() {
 			<div className={heroStyles.newsLetter}>
 				<h3>NEWSLETTER</h3>
 				<form>
-					<input type='email' placeholder='Adresse Email' />
+					<input
+						className='form-control form-control-lg'
+						type='email'
+						placeholder='Email Address'></input>
 					<p>
 						Inscrivez-vous à notre newsletter pour vous tenir au courant de nos
 						activités.
 					</p>
-					<button>S'INSCRIRE</button>
+					<button className='btn btn-success'>S'INSCRIRE</button>
 				</form>
 			</div>
 		</div>

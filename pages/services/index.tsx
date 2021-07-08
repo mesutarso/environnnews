@@ -3,7 +3,7 @@ import serviceStyles from '../../styles/Services.module.css';
 import { FaEdit } from 'react-icons/fa';
 import Link from 'next/link';
 
-const services = () => {
+const Services = () => {
 	return (
 		<div className={`container ${serviceStyles.content}`}>
 			<h5
@@ -93,4 +93,4 @@ const services = () => {
 	);
 };
 
-export default services;
+export default Services;

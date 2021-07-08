@@ -57,13 +57,17 @@
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	padding: 0 7vw;
+	overflow-x: scroll;
+}
+
+.nav::-webkit-scrollbar {
+	display: none;
 }
 
 .link {
 	display: inline-block;
-	position: relative;
 	text-decoration: none;
 	padding: 15px 20px;
 	font-weight: bold;
