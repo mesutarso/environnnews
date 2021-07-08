@@ -66,6 +66,47 @@ const Services = () => {
 					className={`border-start px-3 border-success border-5 ${serviceStyles.sub_title}`}>
 					REDACTION
 				</h5>
+				<div
+					className='row'
+					style={{
+						marginLeft: '2px',
+						paddingTop: '20px',
+						paddingBottom: '20px',
+					}}>
+					<div className={`col-md-9 col-sm-12 ${serviceStyles.divider}`}>
+						<h5
+							className='text-success py-3'
+							style={{ fontSize: '0.9rem', fontWeight: 'bold' }}>
+							UNE EQUIPE COMPETANTE
+						</h5>
+						<span>
+							Nous disponsons d'une equipe competante passionné par
+							l'environnement. Disposant d’une expertise avérée dans la
+							conception et implémentation des campagnes médiatiques.
+						</span>
+						<h5
+							className='text-success py-3'
+							style={{ fontSize: '0.9rem', fontWeight: 'bold' }}>
+							UNE EQUIPE COMPETANTE
+						</h5>
+						<span>
+							Nous disponsons d'une equipe competante passionné par
+							l'environnement. Disposant d’une expertise avérée dans la
+							conception et implémentation des campagnes médiatiques.
+						</span>
+						<h5
+							className='text-success py-3'
+							style={{ fontSize: '0.9rem', fontWeight: 'bold' }}>
+							UNE EQUIPE COMPETANTE
+						</h5>
+						<span>
+							Nous disponsons d'une equipe competante passionné par
+							l'environnement. Disposant d’une expertise avérée dans la
+							conception et implémentation des campagnes médiatiques.
+						</span>
+					</div>
+					<div className={`col-md-3 col-sm-12 ${serviceStyles.pub}`}></div>
+				</div>
 			</section>
 			<section id='infographie'>
 				<h5

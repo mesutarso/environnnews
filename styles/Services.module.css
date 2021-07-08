@@ -34,3 +34,11 @@
 	font-weight: 600;
 	color: gray;
 }
+
+.divider {
+	border-left: 1px solid #089047;
+}
+
+.pub {
+	background: #089047;
+}
