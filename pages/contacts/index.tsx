@@ -74,12 +74,17 @@ const Contact = () => {
 								<span>Retrouvez-nous</span>
 								<br />
 								<address>
-									<span style={{
-										fontSize: '1.25rem',
-										color: '#089047',
-										fontWeight: 'bold',
-									}}> N°265 Avenue du marché C/Gombre - Kinshasa </span>
-									Réferences: croisement des avenues kasai et du marché, non loin de l'université William Booth
+									<span
+										style={{
+											fontSize: '1.25rem',
+											color: '#089047',
+											fontWeight: 'bold',
+										}}>
+										{' '}
+										N°265 Avenue du marché C/Gombre - Kinshasa{' '}
+									</span>
+									Réferences: croisement des avenues kasai et du marché, non
+									loin de l'université William Booth
 								</address>
 							</div>
 						</div>
