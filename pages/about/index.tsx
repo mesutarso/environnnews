@@ -1,6 +1,6 @@
 import React from 'react';
-import AboutStyle from '../styles/About.module.css';
-import TeamCard from '../components/TeamCard';
+import AboutStyle from '../../styles/About.module.css';
+import TeamCard from '../../components/TeamCard';
 
 const apropos = () => {
 	return (

@@ -59,20 +59,18 @@
 .newsLetter {
 	background-color: #089047;
 	color: white;
-	text-align: center;
 	padding: 50px;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .newsLetter h3 {
 	padding-bottom: 20px;
 	font-weight: 800;
 	font-size: 1.75rem;
-}
-
-.newsLetter input {
-	height: 50px;
-	width: 45%;
-	padding: 10px;
 }
 
 .newsLetter p {

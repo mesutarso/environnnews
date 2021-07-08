@@ -29,14 +29,14 @@ const Footer: React.FC = () => (
 								ENVIRONEWS
 							</h6>
 							<ul className={footerStyles.footerlinkstyle}>
-								<Link href='/'>
+								<Link href='/about'>
 									<a>
 										<li>A propos</li>
 									</a>
 								</Link>
-								<Link href='/'>
+								<Link href='/contacts'>
 									<a>
-										<li>Contact</li>
+										<li>Contacts</li>
 									</a>
 								</Link>
 								<Link href='/'>
@@ -56,30 +56,27 @@ const Footer: React.FC = () => (
 								SERVICE
 							</h6>
 							<ul className={footerStyles.footerlinkstyle}>
-								<Link href='/services' passHref>
+								<Link href='/services#redaction' passHref>
 									<a>
 										<li>Redaction</li>
 									</a>
 								</Link>
-								<Link href='/'>
+								<Link href='/services#infographie'>
 									<a>
 										<li>Inforgraphie</li>
 									</a>
 								</Link>
-								<Link href='/'>
+								<Link href='/services#documentaire'>
 									<a>
 										<li>Documentation</li>
 									</a>
 								</Link>
-								<Link href='/'>
+								<Link href='/services#motion_design'>
 									<a>
 										<li>Motion Design</li>
 									</a>
 								</Link>
-								<Link href='/'>
-									<a></a>
-								</Link>
-								<Link href='/'>
+								<Link href='/services#spot_pub'>
 									<a>
 										<li>Spot publicitaire</li>
 									</a>
@@ -88,7 +85,7 @@ const Footer: React.FC = () => (
 						</div>
 						<div className=' text-white col-md-2'>
 							<h6 className='border-start px-2 border-success border-5'>
-								ENVIRONEWSTV
+								ENVIRONEWS TV
 							</h6>
 							<div></div>
 						</div>
@@ -142,7 +139,7 @@ const Footer: React.FC = () => (
 					<hr className={` mt-4 bg-white ${footerStyles.footer_line}`} />
 					<p
 						className={` mt-3 text-white text-center ${footerStyles.copyright} `}>
-						copyright &copy; Environews-rdc 2021
+						Copyright &copy; Environews-rdc 2021
 					</p>
 				</div>
 			</div>

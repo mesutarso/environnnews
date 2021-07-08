@@ -1,6 +1,7 @@
 import Banner from '../../../components/Banner';
 import LayoutArticle from '../../../components/LayoutArticle';
 import { useState } from 'react';
+import { ArticleCard } from '../../../components/Articles';
 
 export interface IArticles {
 	articles: {
@@ -88,7 +89,6 @@ const Categorie: React.FC = () => {
 				titre='CONSERVATION'
 				description='Félix Lilakako, "Eruption volcanique de Nyiragongo, au-delà de la réaction gouvernementale…une planification d’intervention urgente s’impose"'
 			/>
-
 			<LayoutArticle
 				col1={9}
 				col2={3}
