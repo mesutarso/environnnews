@@ -1,15 +1,17 @@
 import React from 'react';
 import serviceStyles from '../../styles/Services.module.css';
+import AboutStyle from '../../styles/About.module.css';
 import { FaEdit } from 'react-icons/fa';
 import Link from 'next/link';
 
 const Services = () => {
 	return (
 		<div className={`container ${serviceStyles.content}`}>
-			<h5
-				className={`border-start px-3 border-success border-5 ${serviceStyles.title}`}>
-				SERVICES
-			</h5>
+			<h3 className={`text-center ${AboutStyle.title}`}>
+				<span className='border-start border-success border-5 px-2'>
+					SERVICES
+				</span>
+			</h3>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo, et amet
 				tristique in nunc tempor. Dignissim orci in vitae sodales iaculis tempor
