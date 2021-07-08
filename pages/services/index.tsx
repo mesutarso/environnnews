@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import serviceStyles from '../../styles/Services.module.css';
 import AboutStyle from '../../styles/About.module.css';
@@ -133,7 +134,12 @@ const Services = () => {
 						paddingBottom: '20px',
 					}}>
 					<div className={`col-md-5 col-sm-12 ${serviceStyles.divider}`}>
-						<Image src='/assets/info.png' height={350} width={500} />
+						<Image
+							src='/assets/info.png'
+							height={350}
+							width={500}
+							alt='image info'
+						/>
 					</div>
 					<div className={`col-md-5 col-sm-12`}>
 						<h6 className='text-success'>SERVICES PROPOSES</h6>
@@ -169,7 +175,12 @@ const Services = () => {
 						paddingBottom: '20px',
 					}}>
 					<div className={`col-md-5 col-sm-12 ${serviceStyles.divider}`}>
-						<Image src='/assets/info.png' height={350} width={500} />
+						<Image
+							src='/assets/info.png'
+							height={350}
+							width={500}
+							alt='image info'
+						/>
 					</div>
 					<div className={`col-md-5 col-sm-12`}>
 						<h6 className='text-success'>SERVICES PROPOSES</h6>
