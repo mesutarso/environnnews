@@ -3,10 +3,8 @@ import Image from 'next/image';
 import { BsSearch, BsList, BsX, BsHouseFill } from 'react-icons/bs';
 import { WiSleet } from 'react-icons/wi';
 import Link from 'next/link';
-
 import headerStyles from '../styles/Header.module.css';
 import Logo from '../public/assets/environews_logo.png';
-import footerStyles from '../styles/Footer.module.css';
 
 import {
 	FaFacebookSquare,
@@ -88,7 +86,6 @@ const categoriesList = [
 
 const Appbar: React.FC = () => {
 	const { toggleMenu, setToggleMenu } = useContext(toggleMenuContext);
-
 	return (
 		<div className={`${headerStyles.header}`}>
 			<Image src={Logo} alt='Environews Logo' width={142} height={81} />
@@ -173,32 +170,37 @@ const HiddenMenu: React.FC = () => {
 						SERVICES
 					</h6>
 					<ul className={`${headerStyles.submenu_link_list}`}>
-						<Link href='/services'>
+						<Link href='/services#redaction'>
 							<a
+								onClick={() => setToggleMenu(false)}
 								className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
 								<li>Rédaction</li>
 							</a>
 						</Link>
-						<Link href='/services'>
+						<Link href='/services#infographie'>
 							<a
+								onClick={() => setToggleMenu(false)}
 								className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
 								<li>Infographie</li>
 							</a>
 						</Link>
-						<Link href='/services'>
+						<Link href='/services#documentaire'>
 							<a
+								onClick={() => setToggleMenu(false)}
 								className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
 								<li>Documentaire</li>
 							</a>
 						</Link>
-						<Link href='/services'>
+						<Link href='/services#motion_design'>
 							<a
+								onClick={() => setToggleMenu(false)}
 								className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
 								<li>Motion Design</li>
 							</a>
 						</Link>
-						<Link href='/services'>
+						<Link href='/services#spot_pub'>
 							<a
+								onClick={() => setToggleMenu(false)}
 								className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
 								<li>Spot publicitaire</li>
 							</a>
@@ -212,18 +214,21 @@ const HiddenMenu: React.FC = () => {
 					<ul className={`${headerStyles.submenu_link_list}`}>
 						<Link href='/'>
 							<a
+								onClick={() => setToggleMenu(false)}
 								className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
 								<li>La TV</li>
 							</a>
 						</Link>
 						<Link href='/'>
 							<a
+								onClick={() => setToggleMenu(false)}
 								className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
 								<li>Programme de diffusion</li>
 							</a>
 						</Link>
 						<Link href='/'>
 							<a
+								onClick={() => setToggleMenu(false)}
 								className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
 								<li>Emissions</li>
 							</a>
