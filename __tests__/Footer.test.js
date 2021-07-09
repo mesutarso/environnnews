@@ -24,7 +24,9 @@ describe('Footer', () => {
 	it('should show a logo', () => {
 		const logoEl = getByTestId('logo-environews');
 		expect(logoEl.className).not.toBeNull();
+		expect(logoEl.src).not.toBeNull();
+		expect(logoEl.alt).not.toBeNull();
 		expect(logoEl.src).toContain('/assets/environews_logo.png');
-		expect(logoEl.alt).toContain('logo d\'environ news');
+		expect(logoEl.alt).toContain("logo d'environ news");
 	});
 });

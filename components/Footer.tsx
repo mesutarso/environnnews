@@ -19,7 +19,7 @@ const Footer: React.FC = () => (
 					<div className='row justify-content-center'>
 						<div className='col-md-2 col-10 '>
 							<img
-								data-testid = "logo-environews"
+								data-testid='logo-environews'
 								src='/assets/environews_logo.png'
 								alt="logo d'environ news"
 								className={`img-fluid  ${footerStyles.img_top}`}
