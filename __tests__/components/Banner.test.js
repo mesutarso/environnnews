@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/extend-expect';
 import '@testing-library/jest-dom';
-import { render, screen, fireEvent, cleanup } from '../test-utils';
-import Banner from '../components/Banner';
+import { render, screen, fireEvent, cleanup } from '../../test-utils';
+import Banner from '../../components/Banner';
 
 let getByTestId;
 
