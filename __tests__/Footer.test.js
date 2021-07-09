@@ -11,9 +11,11 @@ describe('Footer', () => {
 			expect(title).toBeInTheDocument();
 		}
 	});
-	// test('should render the link', () => {
-	// 	render(<Footer />);
-	// 	const links = screen.getAllByText(/\//i);
-	// 	expect(links).toContain();
-	// });
+	test('should render the link', () => {
+		render(<Footer />);
+		const links = screen.getAllByText(/[a-z]*/g);
+		for (const link of links) {
+			expect(link).toBeInTheDocument();
+		}
+	});
 });
