@@ -61,7 +61,9 @@ const PartnerSection = () => {
 				<div className='row justify-content-center'>
 					<div className='col-12 mb-5'>
 						<h3 className={`text-center ${AboutStyle.title}`}>
-							<span className='border-start border-success border-5 px-2'>
+							<span
+								data-testid='section-partner-title'
+								className='border-start border-success border-5 px-2'>
 								ILS NOUS FONT CONFIANCE
 							</span>
 						</h3>
