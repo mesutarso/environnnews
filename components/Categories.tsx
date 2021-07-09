@@ -9,11 +9,12 @@ const Categories = ({ articles, title }) => {
 		<div>
 			<div className={articleStyles.sectionTitle}>
 				<h5
+					data-testid='categorie-title'
 					className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
 					{title}
 				</h5>
 				<Link href='/categories/[name]' as={`/categories/${title}`} passHref>
-					<a>Voir Plus</a>
+					<a data-testid='link-categorie'>Voir Plus</a>
 				</Link>
 			</div>
 			<div
