@@ -26,7 +26,9 @@ const Footer: React.FC = () => (
 							/>
 						</div>
 						<div className='col-md-2 col-10 mt-md-0 mt-4 '>
-							<h6 className='text-white border-start px-2 border-success border-5'>
+							<h6
+								data-testid='title-environews'
+								className='text-white border-start px-2 border-success border-5'>
 								ENVIRONEWS
 							</h6>
 							<ul className={footerStyles.footerlinkstyle}>
@@ -53,7 +55,9 @@ const Footer: React.FC = () => (
 							</ul>
 						</div>
 						<div className='col-md-2 col-10 mt-md-0 mt-4 '>
-							<h6 className='text-white border-start px-2 border-success border-5'>
+							<h6
+								data-testid='title-environews'
+								className='text-white border-start px-2 border-success border-5'>
 								SERVICE
 							</h6>
 							<ul className={footerStyles.footerlinkstyle}>
@@ -85,7 +89,9 @@ const Footer: React.FC = () => (
 							</ul>
 						</div>
 						<div className=' text-white col-md-2 col-10 mt-md-0 mt-4 '>
-							<h6 className='border-start px-2 border-success border-5'>
+							<h6
+								data-testid='title-environews'
+								className='border-start px-2 border-success border-5'>
 								ENVIRONEWS TV
 							</h6>
 						</div>
@@ -94,7 +100,7 @@ const Footer: React.FC = () => (
 							<span className='px-1'>Suivez-nous sur</span>
 							<div>
 								<Link href='https://web.facebook.com/EnvironewsRDC/?_rdc=1&_rdr'>
-									<a>
+									<a data-testid='link-facebook'>
 										<FaFacebookSquare
 											className='mx-1 mt-3'
 											style={{ fontSize: '1.5rem' }}
@@ -102,7 +108,7 @@ const Footer: React.FC = () => (
 									</a>
 								</Link>
 								<Link href='https://twitter.com/environews_rdc?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'>
-									<a>
+									<a data-testid='link-twiter'>
 										<FaTwitter
 											className='mx-1 mt-3'
 											style={{ fontSize: '1.5rem' }}
@@ -111,7 +117,7 @@ const Footer: React.FC = () => (
 								</Link>
 								<br />
 								<Link href='https://www.linkedin.com/company/environews-rdc/'>
-									<a>
+									<a data-testid='link-linkedinIn'>
 										<FaLinkedinIn
 											className='mx-1 mt-3'
 											style={{ fontSize: '1.5rem' }}
@@ -119,7 +125,7 @@ const Footer: React.FC = () => (
 									</a>
 								</Link>
 								<Link href='https://www.instagram.com/environewsrdc1/'>
-									<a>
+									<a data-testid='link-Instagram'>
 										<FaInstagramSquare
 											className='mx-1 mt-3'
 											style={{ fontSize: '1.5rem' }}
@@ -127,7 +133,7 @@ const Footer: React.FC = () => (
 									</a>
 								</Link>
 								<Link href='https://www.youtube.com/c/environnementrdc/featured'>
-									<a>
+									<a data-testid='link-youtube'>
 										<FaYoutubeSquare
 											className='mx-1 mt-3'
 											style={{ fontSize: '1.5rem' }}
@@ -139,6 +145,7 @@ const Footer: React.FC = () => (
 					</div>
 					<hr className={` mt-4 bg-white ${footerStyles.footer_line}`} />
 					<p
+						data-testid='copyrigth'
 						className={` mt-3 text-white text-center ${footerStyles.copyright} `}>
 						Copyright &copy; Environews-rdc 2021
 					</p>
