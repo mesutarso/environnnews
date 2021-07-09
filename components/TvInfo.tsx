@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaPlay } from 'react-icons/fa';
 import EnvironewsStyle from '../styles/Environews.module.css';
 
 const TvInfo = ({ title, description, phoneNumber }) => {
@@ -27,6 +28,18 @@ const TvInfo = ({ title, description, phoneNumber }) => {
 								<div className={`${EnvironewsStyle.video}`}></div>
 							</div>
 						</div>
+					</div>
+					<div className='col-12 mt-5'>
+						<a className='text-success '>
+							<p className='d-flex '>
+								<span className=' d-block'>VOIR PLUS</span>
+								<i className={` d-block ${EnvironewsStyle.margin_lt}`}>
+									<FaPlay />
+								</i>
+							</p>
+						</a>
+
+						<hr />
 					</div>
 				</div>
 			</div>
