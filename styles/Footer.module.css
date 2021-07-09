@@ -39,7 +39,6 @@
 
 .icons a:hover {
 	display: inline-block !important;
-
 	transform: scale(1.2) !important;
 	transition: 0.2s ease;
 	color: #089047 !important;

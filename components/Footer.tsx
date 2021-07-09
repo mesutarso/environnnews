@@ -87,7 +87,6 @@ const Footer: React.FC = () => (
 							<h6 className='border-start px-2 border-success border-5'>
 								ENVIRONEWS TV
 							</h6>
-							<div></div>
 						</div>
 						<div className={`text-white col-md-2 ${footerStyles.icons}`}>
 							<span className='px-1'>Suivez-nous sur</span>
