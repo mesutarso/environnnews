@@ -56,7 +56,7 @@ const PartnerSection = () => {
 		},
 	]);
 	return (
-		<div className={`mt-3 mb-0`}>
+		<div className={`mb-0`}>
 			<div className='container-fluid bg-light p-5'>
 				<div className='row justify-content-center'>
 					<div className='col-12 mb-5'>
