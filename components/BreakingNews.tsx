@@ -22,6 +22,7 @@ const BreakingNews: React.FC<IProps> = ({ breakingNews }) => {
 	return (
 		<div>
 			<h5
+				data-testid='title-breaking-news'
 				className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
 				BREAKING NEWS
 			</h5>
