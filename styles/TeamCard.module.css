@@ -1,0 +1,9 @@
+.name {
+	font-weight: bold;
+}
+
+@media (max-width: 768px) {
+	.text {
+		font-size: 13px !important;
+	}
+}

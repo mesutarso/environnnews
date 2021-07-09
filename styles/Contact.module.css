@@ -2,3 +2,24 @@
 	padding-top: 180px;
 	padding-bottom: 50px;
 }
+
+.icon {
+	font-size: 5rem !important;
+	color: #089047 !important;
+}
+
+.linkinfo {
+	font-size: 1.25rem !important;
+	color: #089047 !important;
+	font-weight: bold !important;
+}
+
+@media (max-width: 768px) {
+	.icon {
+		font-size: 4.5rem !important;
+	}
+
+	.linkinfo {
+		font-size: 1rem !important;
+	}
+}

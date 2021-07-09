@@ -23,66 +23,49 @@ const Contact = () => {
 				<div className='row'>
 					<div className='col-md-6 col-sm-12'>
 						<div className='row d-flex align-items-center justify-content-center'>
-							<div className='col-md-2 col-sm-2'>
-								<FaMobileAlt
-									className='mx-1 mt-3'
-									style={{ fontSize: '5rem', color: '#089047' }}
-								/>
+							<div className='col-4 col-md-3 col-sm-2'>
+								<FaMobileAlt className={` mx-1 mt-3 ${contactStyles.icon}`} />
 							</div>
-							<div className='col-md-9 col-sm-9'>
+							<div className='col-8  col-md-7 col-sm-9'>
 								<span>Appelez-nous</span>
 								<br />
 								<a
 									href='tel:+243 81 814 84 85'
-									style={{
-										fontSize: '1.25rem',
-										color: '#089047',
-										fontWeight: 'bold',
-									}}>
+									className={`${contactStyles.linkinfo}`}>
 									+243 81 814 84 85
 								</a>
 							</div>
 						</div>
 						<div className='row d-flex align-items-center justify-content-center'>
-							<div className='col-md-2 col-sm-2'>
+							<div className='col-4 col-md-3 col-sm-2'>
 								<FaEnvelopeSquare
-									className='mx-1 mt-3'
-									style={{ fontSize: '5rem', color: '#089047' }}
+									className={` mx-1 mt-3 ${contactStyles.icon}`}
 								/>
 							</div>
-							<div className='col-md-9 col-sm-9'>
+							<div className='col-8 col-md-7 col-sm-9'>
 								<span>Ecrivez-nous</span>
 								<br />
 								<a
 									href='mailto:infos@environews-rdc.org'
-									style={{
-										fontSize: '1.25rem',
-										color: '#089047',
-										fontWeight: 'bold',
-									}}>
+									className={`${contactStyles.linkinfo}`}>
 									infos@environews-rdc.org
 								</a>
 							</div>
 						</div>
 						<div className='row d-flex align-items-center justify-content-center'>
-							<div className='col-md-2 col-sm-2'>
+							<div className='col-4 col-md-3 col-sm-2'>
 								<FaMapMarkerAlt
-									className='mx-1 mt-3'
-									style={{ fontSize: '5rem', color: '#089047' }}
+									className={` mx-1 mt-3 ${contactStyles.icon}`}
 								/>
 							</div>
-							<div className='col-md-9 col-sm-9'>
+							<div className='col-8 col-md-7 col-sm-9'>
 								<span>Retrouvez-nous</span>
 								<br />
 								<address>
-									<span
-										style={{
-											fontSize: '1.25rem',
-											color: '#089047',
-											fontWeight: 'bold',
-										}}>
+									<span className={`${contactStyles.linkinfo}`}>
 										N°265 Avenue du marché C/Gombre - Kinshasa
-									</span>
+									</span>{' '}
+									<br />
 									Réferences: croisement des avenues kasai et du marché, non
 									loin de l'université William Booth
 								</address>

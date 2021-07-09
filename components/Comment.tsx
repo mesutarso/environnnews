@@ -5,9 +5,9 @@ const Comments: React.FC<IComments> = ({ comments }) => {
 	const renderComment = (): JSX.Element[] => {
 		return comments.map((comment) => (
 			<div key={comment.id} className={articleStyles.comment}>
-				<h6>{comment.pseudo}</h6>
-				<p>{comment.description}</p>
-				<span>{comment.date}</span>
+				<h6 data-testid='pseudo'>{comment.pseudo}</h6>
+				<p data-testid='description'>{comment.description}</p>
+				<span data-testid='comment-date'>{comment.date}</span>
 			</div>
 		));
 	};
