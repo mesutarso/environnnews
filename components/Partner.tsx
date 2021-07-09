@@ -15,12 +15,7 @@ export const Partner = ({ image, alt }) => {
 	return (
 		<>
 			<div className='col-6 col-md-2 mt-5 mt-sm-0 text-center'>
-				<img
-					data-testid='image-partner'
-					src={image}
-					alt={alt}
-					className='img-fluid'
-				/>
+				<img src={image} alt={alt} className='img-fluid' />
 			</div>
 		</>
 	);
