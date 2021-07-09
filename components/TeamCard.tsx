@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import TeamProfile from '../public/assets/benie.jpg';
+import TeamCardStyle from './../styles/TeamCard.module.css';
 
 const TeamCard = () => {
 	return (
@@ -14,10 +15,15 @@ const TeamCard = () => {
 					height={150}
 				/>
 				<div className='mt-2'>
-					<h5 style={{ fontWeight: 'bold' }}>Annie TOWELA</h5>
-					<h6 className='text-success'>Reporter en Chef</h6>
-					<h6>Présentatrice de l&apos;emission</h6>
-					<h6>Informatique verte</h6>
+					<h5 className={`${TeamCardStyle.text} ${TeamCardStyle.name}`}>
+						Annie TOWELA
+					</h5>
+					<h6 className={`text-success ${TeamCardStyle.text}`}>
+						Reporter en Chef
+					</h6>
+					<p className={`${TeamCardStyle.text}`}>
+						Présentatrice de l&apos;emission Informatique verte
+					</p>
 				</div>
 			</div>
 		</>
