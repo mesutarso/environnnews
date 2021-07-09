@@ -14,15 +14,18 @@
 .card_row {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	width: 100%;
 	padding: 3%;
 }
 
-.col_3 {
-	width: 24%;
-	margin-top: 1.5%;
+.col_3:hover {
 	box-shadow: 1px 3px 6px rgba(75, 187, 75, 0.4);
+}
+
+.col_3 {
+	width: 20%;
+	margin: 1%;
 }
 
 @media (max-width: 768px) {
@@ -35,8 +38,7 @@
 	}
 	.col_3 {
 		margin-bottom: 3%;
-		width: 90%;
-		margin-top: 1.5%;
-		box-shadow: 1px 3px 6px rgba(75, 187, 75, 0.4);
+		width: 40%;
+		margin: 1%;
 	}
 }
