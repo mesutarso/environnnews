@@ -7,14 +7,15 @@
 	font-family: Roboto, sans-serif;
 	font-weight: bold;
 	font-size: 48px;
+	text-transform: uppercase;
 	color: #fff;
 	border-width: 10px !important;
 }
 
 .banner_description {
 	font-family: Roboto, sans-serif;
-	font-size: 22px;
-	width: 70%;
+	font-size: 25px;
+	width: 60%;
 	color: #fff;
 }
 .position_relative {
@@ -24,7 +25,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	bottom: 1.5%;
+	bottom: 1%;
 	right: 0;
 	background-color: rgba(14, 13, 13, 0.5);
 	z-index: 1;
@@ -32,9 +33,72 @@
 
 .img_position_absolute {
 	position: absolute;
-	top: 60%;
+	top: 55%;
 	left: 3%;
 	bottom: 0;
 	right: 0;
 	z-index: 2;
+}
+@media (max-width: 767.9px) {
+	.mt_banner {
+		padding-top: 170px;
+		padding-bottom: 20px;
+		padding-left: 4%;
+		padding-right: 4%;
+	}
+	.banner_title {
+		font-family: Roboto, sans-serif;
+		font-weight: bold;
+		font-size: 28px;
+		text-transform: uppercase;
+		color: #fff;
+		border-width: 10px !important;
+	}
+
+	.banner_description {
+		font-family: Roboto, sans-serif;
+		font-size: 18px;
+		width: 100%;
+		color: #fff;
+	}
+	.img_position_absolute {
+		position: absolute;
+		top: 30%;
+		left: 3%;
+		bottom: 0;
+		right: 0;
+		z-index: 2;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991.9px) {
+	.mt_banner {
+		padding-top: 170px;
+		padding-bottom: 20px;
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+	.img_position_absolute {
+		position: absolute;
+		top: 40%;
+		left: 3%;
+		bottom: 0;
+		right: 0;
+		z-index: 2;
+	}
+	.banner_title {
+		font-family: Roboto, sans-serif;
+		font-weight: bold;
+		font-size: 48px;
+		text-transform: uppercase;
+		color: #fff;
+		border-width: 10px !important;
+	}
+
+	.banner_description {
+		font-family: Roboto, sans-serif;
+		font-size: 22px;
+		width: 80%;
+		color: #fff;
+	}
 }

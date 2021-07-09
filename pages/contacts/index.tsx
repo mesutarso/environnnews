@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { FaEnvelopeSquare, FaMobileAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 import contactStyles from '../../styles/Contact.module.css';
@@ -80,8 +81,7 @@ const Contact = () => {
 											color: '#089047',
 											fontWeight: 'bold',
 										}}>
-										{' '}
-										N°265 Avenue du marché C/Gombre - Kinshasa{' '}
+										N°265 Avenue du marché C/Gombre - Kinshasa
 									</span>
 									Réferences: croisement des avenues kasai et du marché, non
 									loin de l'université William Booth

@@ -1,6 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import Image from 'next/image';
-import img from '../public/assets/Plus_Récent.png';
 import BannerStyle from '../styles/Banner.module.css';
 
 interface BannerProps {
@@ -13,13 +12,12 @@ const Banner: React.FC<BannerProps> = ({ titre, description }) => {
 		<>
 			<div className={`container  ${BannerStyle.mt_banner}`}>
 				<div className='row justify-content-center'>
-					<div className={`col-12 p-0 ${BannerStyle.position_relative}`}>
+					<div className={`col-md-12 p-0 ${BannerStyle.position_relative}`}>
 						<div className={BannerStyle.img_dark}></div>
-						<Image
-							src={img}
+						<img
+							src='/assets/Plus_Récent.png'
 							alt='image a la une'
-							width={1400}
-							className={`w-100 p-0 m-0 ${BannerStyle.height}`}
+							className={`w-100`}
 						/>
 						<div className={BannerStyle.img_position_absolute}>
 							<h1
