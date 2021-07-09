@@ -63,5 +63,12 @@ describe('Footer', () => {
 			'https://www.youtube.com/c/environnementrdc/featured'
 		);
 		expect(copyrigthEl.textContent).not.toBeNull();
+		test('should render the link', () => {
+			render(<Footer />);
+			const links = screen.getAllByText(/[a-z]*/g);
+			for (const link of links) {
+				expect(link).toBeInTheDocument();
+			}
+		});
 	});
 });
