@@ -29,6 +29,21 @@ const toggleMenuContext = createContext<toggleMenuState>(
 	toggleMenuDefaultValue
 );
 
+//togle search context
+type toggleSearchState = {
+	toggleSearch: boolean;
+	setToggleSearch: (dispatch: any) => void;
+};
+
+const toggleSearchDefaultValue: toggleSearchState = {
+	toggleSearch: false,
+	setToggleSearch: () => {},
+};
+
+const toggleSearchContext = createContext<toggleSearchState>(
+	toggleSearchDefaultValue
+);
+
 interface NavProps {
 	nav: {
 		id: number;
@@ -86,8 +101,9 @@ const categoriesList = [
 
 const Appbar: React.FC = () => {
 	const { toggleMenu, setToggleMenu } = useContext(toggleMenuContext);
+	const { toggleSearch, setToggleSearch } = useContext(toggleSearchContext);
 	return (
-		<div className={`${headerStyles.header}`}>
+		<div className={`container ${headerStyles.header}`}>
 			<Image src={Logo} alt='Environews Logo' width={142} height={81} />
 			<div className={headerStyles.weather}>
 				<WiSleet
@@ -98,9 +114,19 @@ const Appbar: React.FC = () => {
 					<span> Tuesday, 24th July 2021</span>
 					<span> 22 C</span>
 				</div>
-				<BsSearch fontSize={25} className={headerStyles.icons} />
+				<BsSearch
+					onClick={() => {
+						setToggleSearch(!toggleSearch);
+						setToggleMenu(false);
+					}}
+					fontSize={25}
+					className={`${headerStyles.icons}`}
+				/>
 				<button
-					onClick={() => setToggleMenu(!toggleMenu)}
+					onClick={() => {
+						setToggleMenu(!toggleMenu);
+						setToggleSearch(false);
+					}}
 					className={`${headerStyles.menu}`}>
 					{toggleMenu ? (
 						<BsX fontSize={30} className={headerStyles.icons} />
@@ -116,21 +142,23 @@ const Appbar: React.FC = () => {
 const NavBar: React.FC = () => {
 	const [categories, setCategories] = useState(categoriesList);
 	return (
-		<div className={headerStyles.nav}>
-			<Link href='/' passHref>
-				<a className={`${headerStyles.link} ${headerStyles.linkIcon}`}>
-					<BsHouseFill fontSize={19} />
-				</a>
-			</Link>
-			{categories.map((categorie) => (
-				<Link
-					key={categorie.id}
-					href='/categories/[name]'
-					as={`/categories/${categorie.categorie_name}`}
-					passHref>
-					<a className={`${headerStyles.link}`}>{categorie.categorie_name}</a>
+		<div className={headerStyles.nav_container}>
+			<div className={`container ${headerStyles.nav}`}>
+				<Link href='/' passHref>
+					<a className={`${headerStyles.link} ${headerStyles.linkIcon}`}>
+						<BsHouseFill fontSize={19} />
+					</a>
 				</Link>
-			))}
+				{categories.map((categorie) => (
+					<Link
+						key={categorie.id}
+						href='/categories/[name]'
+						as={`/categories/${categorie.categorie_name}`}
+						passHref>
+						<a className={`${headerStyles.link}`}>{categorie.categorie_name}</a>
+					</Link>
+				))}
+			</div>
 		</div>
 	);
 };
@@ -141,7 +169,7 @@ const HiddenMenu: React.FC = () => {
 	return (
 		<div
 			className={`${headerStyles.submenu} ${
-				toggleMenu ? headerStyles.toggle_submenu : headerStyles.submenu
+				toggleMenu ? headerStyles.toggle_submenu : ''
 			}`}>
 			<div className='row justify-content-md-center pt-5'>
 				<div className='col-2 '>
@@ -286,18 +314,43 @@ const HiddenMenu: React.FC = () => {
 	);
 };
 
+const SearchBar: React.FC = () => {
+	const { toggleSearch, setToggleSearch } = useContext(toggleSearchContext);
+	return (
+		<div
+			className={`${headerStyles.search_bar_container} ${
+				!toggleSearch ? headerStyles.hidden : ''
+			}`}>
+			<input
+				type='search'
+				placeholder='Rechercher un article'
+				className={`${headerStyles.search_bar}`}
+			/>
+			<button className={`${headerStyles.search_button}`}>
+				<BsSearch fontSize={25} className={headerStyles.icons} />
+			</button>
+		</div>
+	);
+};
+
 const Header: React.FC = () => {
 	const [toggleMenu, setToggleMenu] = useState<boolean>(
 		toggleMenuDefaultValue.toggleMenu
 	);
+	const [toggleSearch, setToggleSearch] = useState<boolean>(
+		toggleSearchDefaultValue.toggleSearch
+	);
 
 	return (
 		<toggleMenuContext.Provider value={{ toggleMenu, setToggleMenu }}>
-			<div className={headerStyles.container}>
-				<Appbar />
-				<HiddenMenu />
-				<NavBar />
-			</div>
+			<toggleSearchContext.Provider value={{ toggleSearch, setToggleSearch }}>
+				<div className={headerStyles.container}>
+					<Appbar />
+					<HiddenMenu />
+					<SearchBar />
+					<NavBar />
+				</div>
+			</toggleSearchContext.Provider>
 		</toggleMenuContext.Provider>
 	);
 };
