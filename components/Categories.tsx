@@ -3,6 +3,7 @@ import { IArticles } from '../pages';
 import { ArticleCard } from './Articles';
 import articleStyles from '../styles/Article.module.css';
 import heroStyles from '../styles/Hero.module.css';
+import { FaCaretRight } from 'react-icons/fa';
 
 const Categories = ({ articles, title }) => {
 	return (
@@ -14,18 +15,19 @@ const Categories = ({ articles, title }) => {
 					{title}
 				</h5>
 				<Link href='/categories/[name]' as={`/categories/${title}`} passHref>
-					<a data-testid='link-categorie'>Voir Plus</a>
+					<a data-testid='link-categorie'>
+						Voir Plus <FaCaretRight />
+					</a>
 				</Link>
 			</div>
-			<div
-				className={`row d-flex justify-content-center ${articleStyles.category}`}>
+			<div className={`row  ${articleStyles.category}`}>
 				{articles.map((article) => (
 					<ArticleCard
 						key={article.id}
 						article={article}
 						size={3}
-						imageHeight={220}
-						imageWidth={320}
+						imageHeight={200}
+						imageWidth={300}
 					/>
 				))}
 			</div>

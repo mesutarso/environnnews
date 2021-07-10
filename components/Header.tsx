@@ -104,7 +104,11 @@ const Appbar: React.FC = () => {
 	const { toggleSearch, setToggleSearch } = useContext(toggleSearchContext);
 	return (
 		<div className={`container ${headerStyles.header}`}>
-			<Image src={Logo} alt='Environews Logo' width={142} height={81} />
+			<Link href='/' passHref>
+				<a>
+					<Image src={Logo} alt='Environews Logo' width={142} height={81} />
+				</a>
+			</Link>
 			<div className={headerStyles.weather}>
 				<WiSleet
 					fontSize={30}
