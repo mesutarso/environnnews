@@ -7,7 +7,7 @@ const BreakingNews: React.FC<IProps> = ({ breakingNews }) => {
 	const renderBreakingNews = (): JSX.Element[] => {
 		return breakingNews.map((news) => {
 			return (
-				<div key={news.id}>
+				<div key={news.id} className={heroStyles.dashed_border_breaking}>
 					<div className={heroStyles.breaking_news}>
 						<h6 data-testid='title' className={heroStyles.breaking_news__title}>
 							{news.title}
