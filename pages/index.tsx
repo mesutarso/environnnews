@@ -97,19 +97,22 @@ export default function Home({ allPosts }) {
 	>([
 		{
 			id: '23',
-			description: "Bourse d'Etude aux USA",
+			description: 'Bourse de Recherche master (écologie des Tourbieres)',
 		},
 		{
 			id: '24',
-			description: "Bourse d'Etude aux USA",
+			description:
+				'Rainforest Foundation Norway recherche un(e) coordinateur/trice du programme gouvernance & climat en RDC',
 		},
 		{
 			id: '25',
-			description: "Bourse d'Etude aux USA",
+			description:
+				'FFEM lance un nouvel appel à projets petites subventions PPI 5',
 		},
 		{
 			id: '26',
-			description: "Bourse d'Etude aux USA",
+			description:
+				'APPEL A PROJETS , soutien à la société civile en République démocratique du Congo',
 		},
 	]);
 
