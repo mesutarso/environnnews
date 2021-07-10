@@ -1,5 +1,10 @@
 .card {
 	padding: 5px;
+	width: 100%;
+}
+
+.contentwrapper {
+	width: 100%;
 }
 .card a {
 	text-decoration: none;
@@ -180,4 +185,22 @@
 	color: #a09b9b;
 	font-size: small;
 	font-weight: 500;
+}
+
+@media (max-width: 568px) {
+	.title {
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 0.9rem;
+		color: #089047;
+	}
+	.description {
+		font-size: 0.9rem;
+		font-weight: 500;
+	}
+}
+@media (min-width: 569px) and (max-width: 767.9px) {
+}
+
+@media (min-width: 768px) and (max-width: 991.9px) {
 }
