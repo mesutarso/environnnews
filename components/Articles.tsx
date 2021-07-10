@@ -66,7 +66,7 @@ export const TopArticle = ({ article, index }) => {
 								style={{
 									color: '#a09b9b',
 									fontSize: 'small',
-									fontWeight: 300,
+									fontWeight: 'lighter',
 								}}>
 								{article.author}
 							</span>
