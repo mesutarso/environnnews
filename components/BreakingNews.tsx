@@ -7,7 +7,7 @@ const BreakingNews: React.FC<IProps> = ({ breakingNews }) => {
 	const renderBreakingNews = (): JSX.Element[] => {
 		return breakingNews.map((news) => {
 			return (
-				<div key={news.id}>
+				<div key={news.id} className={heroStyles.dashed_border_breaking}>
 					<div className={heroStyles.breaking_news}>
 						<h6 data-testid='title' className={heroStyles.breaking_news__title}>
 							{news.title}
@@ -30,7 +30,9 @@ const BreakingNews: React.FC<IProps> = ({ breakingNews }) => {
 				className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
 				BREAKING NEWS
 			</h5>
-			{renderBreakingNews()}
+			<div className={`border-start px-3 border-success border-2 `}>
+				{renderBreakingNews()}
+			</div>
 		</div>
 	);
 };

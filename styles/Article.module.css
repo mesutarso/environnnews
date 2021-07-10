@@ -23,11 +23,11 @@
 }
 
 .category {
-	padding: 20px 50px;
+	padding: 10px 0px;
 }
 
 .sectionTitle {
-	padding: 0 50px;
+	padding: 10px 0px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -44,7 +44,7 @@
 /* TOP ARTICLES */
 
 .topArticle {
-	padding: 20px 0px;
+	padding: 5px 0px;
 }
 
 /* SINGLE ARTICLE PAGE STYLES */

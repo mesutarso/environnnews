@@ -104,12 +104,21 @@ const Appbar: React.FC = () => {
 	const { toggleSearch, setToggleSearch } = useContext(toggleSearchContext);
 	return (
 		<div className={`container ${headerStyles.header}`}>
-			<Image src={Logo} alt='Environews Logo' width={142} height={81} />
+			<Link href='/' passHref>
+				<a>
+					<Image src={Logo} alt='Environews Logo' width={142} height={81} />
+				</a>
+			</Link>
 			<div className={headerStyles.weather}>
-				<WiSleet
-					fontSize={30}
-					className={`${headerStyles.icons} ${headerStyles.colored_icon}`}
-				/>
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					width='40'
+					height='40'
+					fill='currentColor'
+					className={`bi bi-cloud-drizzle-fill ${headerStyles.icons} ${headerStyles.colored_icon}`}
+					viewBox='0 0 20 20'>
+					<path d='M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm-3.5 1.5a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm.747-8.498a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973z' />
+				</svg>
 				<div className={headerStyles.weather_date}>
 					<span> Tuesday, 24th July 2021</span>
 					<span> 22 C</span>
@@ -185,7 +194,7 @@ const HiddenMenu: React.FC = () => {
 									passHref>
 									<a
 										onClick={() => setToggleMenu(false)}
-										className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
+										className={`${headerStyles.submenu_link} ${headerStyles.submenu_link} ${headerStyles.hidden_link}`}>
 										{categorie.categorie_name}
 									</a>
 								</Link>

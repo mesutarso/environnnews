@@ -9,6 +9,12 @@ import BreakingNews from '../components/BreakingNews';
 import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
+import { getPostsByCategory } from '../lib/api';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+// import 'react-slideshow-image/dist/styles.css';
+// import { Slide } from 'react-slideshow-image';
+import BannerStyle from '../styles/Banner.module.css';
 
 export interface IState {
 	breakingNews: {
@@ -35,22 +41,26 @@ export interface IOpportunities {
 	}[];
 }
 
-export default function Home() {
+export default function Home({ allPosts }) {
+	console.log(allPosts);
 	const [breakingNews, setBreakingNews] = useState<IState['breakingNews']>([
 		{
 			id: '334',
 			title: 'Covid en Rdc',
-			description: 'Corona virus is a virus, okay!',
+			description:
+				'Corona virus is a virus, okay then you have to stay home in order to protect yourself!',
 		},
 		{
 			id: '45',
-			title: 'Covid en Rdc',
-			description: 'Corona virus is a virus, okay!',
+			title: "Covid dans le monde, Trop c'est trop",
+			description:
+				'Corona virus is a virus, okay then you have to stay home in order to protect yourself!',
 		},
 		{
 			id: '88',
-			title: 'Covid en Rdc',
-			description: 'Corona virus is a virus, okay!',
+			title: 'Covid en Rdc, le nouveau Virus',
+			description:
+				'Corona virus is a virus, okay then you have to stay home in order to protect yourself!',
 		},
 	]);
 
@@ -94,21 +104,63 @@ export default function Home() {
 	>([
 		{
 			id: '23',
-			description: "Bourse d'Etude aux USA",
+			description:
+				"Orange recrute des full stack developer, Intressed? L'offre expire le 22 july",
 		},
 		{
 			id: '24',
-			description: "Bourse d'Etude aux USA",
+			description: "Bourse d'Etude en Republique democratique du Congo",
 		},
 		{
 			id: '25',
-			description: "Bourse d'Etude aux USA",
+			description:
+				'Visite du parc national des Virunga, src Presse Presidentielle',
 		},
 		{
 			id: '26',
-			description: "Bourse d'Etude aux USA",
+			description:
+				'APPEL A PROJETS , soutien à la société civile en République démocratique du Congo',
+		},
+		{
+			id: '27',
+			description:
+				"Orange recrute des full stack developer, Intressed? L'offre expire le 22 july",
+		},
+		{
+			id: '28',
+			description:
+				"Bourse d'Etude en Republique democratique du Congo/Equateur",
 		},
 	]);
+
+	const handleDragStart = (e) => e.preventDefault();
+
+	const items = [
+		<Image
+			key={1}
+			src='/assets/image.webp'
+			width={800}
+			height={150}
+			onDragStart={handleDragStart}
+			alt='ad'
+		/>,
+		<Image
+			key={2}
+			src='/assets/image2.webp'
+			width={800}
+			height={150}
+			onDragStart={handleDragStart}
+			alt='ad'
+		/>,
+		<Image
+			key={3}
+			src='/assets/image3.webp'
+			width={800}
+			height={150}
+			onDragStart={handleDragStart}
+			alt='ad'
+		/>,
+	];
 
 	return (
 		<div>
@@ -122,6 +174,16 @@ export default function Home() {
 				<div className={`row ${heroStyles.hero}`}>
 					<div className='col-md-8 col-sm-12'>
 						<div className={heroStyles.topNews}>
+							<AliceCarousel
+								mouseTracking
+								items={items}
+								infinite
+								disableDotsControls
+								disableButtonsControls
+								autoPlay
+								animationDuration={10000}
+							/>
+							<br />
 							<Link href='/articles/[id]' as='/articles/1'>
 								<a>
 									<h5
@@ -141,6 +203,28 @@ export default function Home() {
 									<span>Christopher Buhendwa</span>
 								</a>
 							</Link>
+							{/* <Slide
+								easing='ease'
+								arrows={false}
+								autoPlay
+								pauseOnHover={false}
+								duration={10000}>
+								{articles.map((article, index) => {
+									return (
+										<div
+											key={index}
+											className='each-slide'
+											style={{
+												background: `url("/assets/bird.jpg")`,
+											}}>
+											<div>
+												<h2>{article.category}</h2>
+												<h3>{article.description}</h3>
+											</div>
+										</div>
+									);
+								})}
+							</Slide> */}
 						</div>
 						<Articles articles={articles} />
 					</div>
@@ -155,7 +239,118 @@ export default function Home() {
 				<Categories articles={articles} title='conservation' />
 				<Categories articles={articles} title='environement' />
 				<Categories articles={articles} title='biodiversite' />
-				<div className='row'>
+
+				<div className={`col-md-12 p-0 ${heroStyles.position_relative}`}>
+					<div className={heroStyles.img_dark}>
+						<h5
+							className={`border-start px-3 border-success border-5 ${heroStyles.tv_title}`}>
+							ENVIRONEWS TV
+						</h5>
+						<div className='row'>
+							<div className='col-md-1 col-sm-1'></div>
+							<div className='col-md-7 col-sm-12'>
+								<div className={heroStyles.video_responsive}>
+									<iframe
+										width='853'
+										height='480'
+										src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+										frameBorder='1'
+										allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+										allowFullScreen
+										title='Embedded youtube'
+									/>
+								</div>
+							</div>
+							<div className='col-md-4 col-sm-12'>
+								<div className='row'>
+									<div className='col-md-4'>
+										<iframe
+											width='120'
+											height='90'
+											src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+											frameBorder='1'
+											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+											allowFullScreen
+											title='Embedded youtube'
+										/>
+									</div>
+									<div className='col-md-8'>
+										<p>
+											Le Parc national de Kahuzi-Biega détient désormais 60% de
+											la population mondiale des gorilles de Grauer
+										</p>
+									</div>
+								</div>
+								<div className='row'>
+									<div className='col-md-4'>
+										<iframe
+											width='120'
+											height='90'
+											src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+											frameBorder='1'
+											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+											allowFullScreen
+											title='Embedded youtube'
+										/>
+									</div>
+									<div className='col-md-8'>
+										<p>
+											Le Parc national de Kahuzi-Biega détient désormais 60% de
+											la population mondiale des gorilles de Grauer
+										</p>
+									</div>
+								</div>
+								<div className='row'>
+									<div className='col-md-4'>
+										<iframe
+											width='120'
+											height='90'
+											src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+											frameBorder='1'
+											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+											allowFullScreen
+											title='Embedded youtube'
+										/>
+									</div>
+									<div className='col-md-8'>
+										<p>
+											Le Parc national de Kahuzi-Biega détient désormais 60% de
+											la population mondiale des gorilles de Grauer
+										</p>
+									</div>
+								</div>
+								<div className='row'>
+									<div className='col-md-4'>
+										<iframe
+											width='120'
+											height='90'
+											src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+											frameBorder='1'
+											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+											allowFullScreen
+											title='Embedded youtube'
+										/>
+									</div>
+									<div className='col-md-8'>
+										<p>
+											Le Parc national de Kahuzi-Biega détient désormais 60% de
+											la population mondiale des gorilles de Grauer
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<img
+						data-testid='img-banner'
+						src='/assets/tvbg.jpg'
+						alt='image a la une'
+						className={`w-100`}
+						style={{ height: '70vh', objectFit: 'cover' }}
+					/>
+				</div>
+
+				<div className='row py-5'>
 					<div className='col-md-7 col-sm-12'>
 						<h5 className='border-start px-3 border-success border-5'>
 							CHOIX DE L’EDITEUR
@@ -190,3 +385,10 @@ export default function Home() {
 		</div>
 	);
 }
+
+export const getStaticProps = async () => {
+	const allPosts = await getPostsByCategory(1, 4);
+	return {
+		props: { allPosts },
+	};
+};
