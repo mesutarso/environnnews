@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -120,22 +121,28 @@ export default function Home({ allPosts }) {
 
 	const items = [
 		<Image
+			key={1}
 			src='/assets/image.webp'
 			width={800}
 			height={150}
 			onDragStart={handleDragStart}
+			alt='ad'
 		/>,
 		<Image
+			key={2}
 			src='/assets/image2.webp'
 			width={800}
 			height={150}
 			onDragStart={handleDragStart}
+			alt='ad'
 		/>,
 		<Image
+			key={3}
 			src='/assets/image3.webp'
 			width={800}
 			height={150}
 			onDragStart={handleDragStart}
+			alt='ad'
 		/>,
 	];
 
