@@ -21,7 +21,6 @@
 
 .breaking_news {
 	padding: 5px;
-	border-bottom: 1px black dashed;
 }
 
 .breaking_news h6 {
@@ -44,9 +43,13 @@
 
 .opportunities_body {
 	padding: 5px;
-	border-bottom: 1px black dashed;
 }
-
+.dashed_border:nth-child(n + 3) {
+	border-top: 1px black dashed;
+}
+.dashed_border_breaking:nth-child(n + 2) {
+	border-top: 1px black dashed;
+}
 .opportunities p {
 	font-weight: 600;
 }
