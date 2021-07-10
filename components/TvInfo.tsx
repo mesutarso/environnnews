@@ -9,12 +9,12 @@ const TvInfo = ({ title, description, phoneNumber }) => {
 				<div className='row p-4 p-md-0'>
 					<div className='border-success border-start px-2 border-5 col-md-10 '>
 						<h5 className='px-2'>
-							<strong>{title}</strong>
+							<strong data-testid='title'>{title}</strong>
 						</h5>
 					</div>
 					<div className='col-md-8 mt-2  border-success border-1 border-start px-md-4'>
-						<p>{description}</p>
-						<p>Tél : {phoneNumber}</p>
+						<p data-testid='description'>{description}</p>
+						<p data-testid='phone-number'>Tél : {phoneNumber}</p>
 					</div>
 					<div className='col-md-12 border-success border-1 border-start px-md-4'>
 						<div className='row'>

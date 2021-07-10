@@ -7,7 +7,7 @@ import articleStyles from '../styles/Article.module.css';
 export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 	return (
 		<div className={`col-md-${size} mb-4 col-12 ${articleStyles.card}`}>
-			<Link href='/articles/[id]/' as={`articles/${article.id}`}>
+			<Link href={`../articles/${article.id} ` || `articles/${article.id} `}>
 				<a>
 					<Image
 						src={article.image}
@@ -36,21 +36,40 @@ export const TopArticle = ({ article, index }) => {
 						<div className='col-md-1'>
 							<h1>{index + 1}</h1>
 						</div>
-						<div className='col-md-4'>
+						<div className='col-md-3'>
 							<Image
 								src={article.image}
 								alt={article.description}
-								width={150}
-								height={100}
+								width={130}
+								height={75}
 							/>
 						</div>
 						<div className='col-md-7'>
-							<h5 className={` ${articleStyles.title}`}>{article.category}</h5>
-							<span className={articleStyles.description}>
+							<h5
+								style={{
+									fontSize: '0.75rem',
+									color: '#089047',
+									textTransform: 'uppercase',
+								}}>
+								{article.category}
+							</h5>
+							<div
+								style={{
+									fontSize: '0.70rem',
+									overflow: 'hidden',
+									whiteSpace: 'nowrap',
+									textOverflow: 'ellipsis',
+								}}>
 								{article.description}
+							</div>
+							<span
+								style={{
+									color: '#a09b9b',
+									fontSize: 'small',
+									fontWeight: 'lighter',
+								}}>
+								{article.author}
 							</span>
-							<br />
-							<span className={articleStyles.author}>{article.author}</span>
 						</div>
 					</div>
 				</a>

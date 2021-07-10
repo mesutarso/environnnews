@@ -9,8 +9,12 @@ const BreakingNews: React.FC<IProps> = ({ breakingNews }) => {
 			return (
 				<div key={news.id}>
 					<div className={heroStyles.breaking_news}>
-						<h6 className={heroStyles.breaking_news__title}>{news.title}</h6>
-						<p className={heroStyles.breaking_news__description}>
+						<h6 data-testid='title' className={heroStyles.breaking_news__title}>
+							{news.title}
+						</h6>
+						<p
+							data-testid='description'
+							className={heroStyles.breaking_news__description}>
 							{news.description}
 						</p>
 					</div>
@@ -26,7 +30,9 @@ const BreakingNews: React.FC<IProps> = ({ breakingNews }) => {
 				className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
 				BREAKING NEWS
 			</h5>
-			{renderBreakingNews()}
+			<div className={`border-start px-3 border-success border-2 `}>
+				{renderBreakingNews()}
+			</div>
 		</div>
 	);
 };

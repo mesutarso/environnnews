@@ -15,6 +15,7 @@ const Banner: React.FC<BannerProps> = ({ titre, description }) => {
 					<div className={`col-md-12 p-0 ${BannerStyle.position_relative}`}>
 						<div className={BannerStyle.img_dark}></div>
 						<img
+							data-testid='img-banner'
 							src='/assets/Plus_Récent.png'
 							alt='image a la une'
 							className={`w-100`}
@@ -24,7 +25,11 @@ const Banner: React.FC<BannerProps> = ({ titre, description }) => {
 								className={`border-start border-success px-3 ${BannerStyle.banner_title}`}>
 								{titre}
 							</h1>
-							<p className={BannerStyle.banner_description}>{description}</p>
+							<p
+								data-testid='banner-description'
+								className={BannerStyle.banner_description}>
+								{description}
+							</p>
 						</div>
 					</div>
 				</div>

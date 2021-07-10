@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -9,6 +8,9 @@ import BreakingNews from '../components/BreakingNews';
 import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
+import { getPostsByCategory } from '../lib/api';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 export interface IState {
 	breakingNews: {
@@ -35,7 +37,8 @@ export interface IOpportunities {
 	}[];
 }
 
-export default function Home() {
+export default function Home({ allPosts }) {
+	console.log(allPosts);
 	const [breakingNews, setBreakingNews] = useState<IState['breakingNews']>([
 		{
 			id: '334',
@@ -110,6 +113,29 @@ export default function Home() {
 		},
 	]);
 
+	const handleDragStart = (e) => e.preventDefault();
+
+	const items = [
+		<Image
+			src='/assets/image.webp'
+			width={800}
+			height={150}
+			onDragStart={handleDragStart}
+		/>,
+		<Image
+			src='/assets/image2.webp'
+			width={800}
+			height={150}
+			onDragStart={handleDragStart}
+		/>,
+		<Image
+			src='/assets/image3.webp'
+			width={800}
+			height={150}
+			onDragStart={handleDragStart}
+		/>,
+	];
+
 	return (
 		<div>
 			<Head>
@@ -122,6 +148,16 @@ export default function Home() {
 				<div className={`row ${heroStyles.hero}`}>
 					<div className='col-md-8 col-sm-12'>
 						<div className={heroStyles.topNews}>
+							<AliceCarousel
+								mouseTracking
+								items={items}
+								infinite
+								disableDotsControls
+								disableButtonsControls
+								autoPlay
+								animationDuration={10000}
+							/>
+							<br />
 							<Link href='/articles/[id]' as='/articles/1'>
 								<a>
 									<h5
@@ -190,3 +226,10 @@ export default function Home() {
 		</div>
 	);
 }
+
+export const getStaticProps = async () => {
+	const allPosts = await getPostsByCategory(1, 4);
+	return {
+		props: { allPosts },
+	};
+};

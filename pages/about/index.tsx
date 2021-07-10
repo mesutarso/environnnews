@@ -2,8 +2,6 @@ import React from 'react';
 import AboutStyle from '../../styles/About.module.css';
 import TeamCard from '../../components/TeamCard';
 
-//import Logo from '../public/assets/afd1.png';
-
 const Apropos = () => {
 	return (
 		<>
