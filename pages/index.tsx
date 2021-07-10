@@ -9,6 +9,8 @@ import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
 import { getPostsByCategory } from '../lib/api';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 export interface IState {
 	breakingNews: {
@@ -111,6 +113,29 @@ export default function Home({ allPosts }) {
 		},
 	]);
 
+	const handleDragStart = (e) => e.preventDefault();
+
+	const items = [
+		<Image
+			src='/assets/image.webp'
+			width={800}
+			height={150}
+			onDragStart={handleDragStart}
+		/>,
+		<Image
+			src='/assets/image2.webp'
+			width={800}
+			height={150}
+			onDragStart={handleDragStart}
+		/>,
+		<Image
+			src='/assets/image3.webp'
+			width={800}
+			height={150}
+			onDragStart={handleDragStart}
+		/>,
+	];
+
 	return (
 		<div>
 			<Head>
@@ -123,6 +148,16 @@ export default function Home({ allPosts }) {
 				<div className={`row ${heroStyles.hero}`}>
 					<div className='col-md-8 col-sm-12'>
 						<div className={heroStyles.topNews}>
+							<AliceCarousel
+								mouseTracking
+								items={items}
+								infinite
+								disableDotsControls
+								disableButtonsControls
+								autoPlay
+								animationDuration={10000}
+							/>
+							<br />
 							<Link href='/articles/[id]' as='/articles/1'>
 								<a>
 									<h5
