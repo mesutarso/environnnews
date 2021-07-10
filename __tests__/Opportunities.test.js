@@ -24,7 +24,6 @@ describe('Opportunities test', () => {
 		const title = getByTestId('title');
 		const description = getByTestId('description');
 		expect(title).not.toBeNull();
-		expect(title.textContent).toBe('OPPORTUNITES');
 		expect(description).not.toBeNull();
 		expect(description.textContent).toBe(oportunities[0].description);
 	});
