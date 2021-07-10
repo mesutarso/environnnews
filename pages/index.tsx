@@ -9,12 +9,8 @@ import BreakingNews from '../components/BreakingNews';
 import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
-import { getPostsByCategory } from '../lib/api';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-// import 'react-slideshow-image/dist/styles.css';
-// import { Slide } from 'react-slideshow-image';
-import BannerStyle from '../styles/Banner.module.css';
 
 export interface IState {
 	breakingNews: {
@@ -41,8 +37,7 @@ export interface IOpportunities {
 	}[];
 }
 
-export default function Home({ allPosts }) {
-	console.log(allPosts);
+export default function Home() {
 	const [breakingNews, setBreakingNews] = useState<IState['breakingNews']>([
 		{
 			id: '334',
@@ -203,28 +198,6 @@ export default function Home({ allPosts }) {
 									<span>Christopher Buhendwa</span>
 								</a>
 							</Link>
-							{/* <Slide
-								easing='ease'
-								arrows={false}
-								autoPlay
-								pauseOnHover={false}
-								duration={10000}>
-								{articles.map((article, index) => {
-									return (
-										<div
-											key={index}
-											className='each-slide'
-											style={{
-												background: `url("/assets/bird.jpg")`,
-											}}>
-											<div>
-												<h2>{article.category}</h2>
-												<h3>{article.description}</h3>
-											</div>
-										</div>
-									);
-								})}
-							</Slide> */}
 						</div>
 						<Articles articles={articles} />
 					</div>
@@ -346,7 +319,7 @@ export default function Home({ allPosts }) {
 						src='/assets/tvbg.jpg'
 						alt='image a la une'
 						className={`w-100`}
-						style={{ height: '70vh', objectFit: 'cover' }}
+						style={{ height: '100%', objectFit: 'cover' }}
 					/>
 				</div>
 
@@ -385,10 +358,3 @@ export default function Home({ allPosts }) {
 		</div>
 	);
 }
-
-export const getStaticProps = async () => {
-	const allPosts = await getPostsByCategory(1, 4);
-	return {
-		props: { allPosts },
-	};
-};

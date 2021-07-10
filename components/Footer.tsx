@@ -92,7 +92,9 @@ const Footer: React.FC = () => (
 							<h6
 								data-testid='title-environews'
 								className='border-start px-2 border-success border-5'>
-								ENVIRONEWS TV
+								<Link href='/environewstv'>
+									<a>ENVIRONEWS TV</a>
+								</Link>
 							</h6>
 						</div>
 						<div

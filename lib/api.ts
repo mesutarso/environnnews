@@ -1,4 +1,6 @@
-const API_URL = 'https://a1-environews.kinshasadigital.academy/graphql';
+import axios from 'axios';
+
+const API_URL = process.env.API_URL;
 
 async function fetchAPI(query: string, { variables }: any = {}) {
 	const headers = { 'Content-Type': 'application/json' };
@@ -20,7 +22,7 @@ async function fetchAPI(query: string, { variables }: any = {}) {
 	return json.data;
 }
 
-export async function getPostsByCategory(categoryID: number, limit: number) {
+export const getPostsByCategory = async (categoryID: number, limit: number) => {
 	const data = await fetchAPI(`
     {
   posts(first: 100, where: {orderby: {field: DATE, order: ASC}, categoryId: 5}) {
@@ -46,4 +48,30 @@ export async function getPostsByCategory(categoryID: number, limit: number) {
 
   `);
 	return data?.posts;
+};
+
+export async function getMenuCategories(): Promise<any> {
+	let data = JSON.stringify({
+		query: `query MENU_ITEMS {
+		  menuItems(first: 100, where: {location: PRIMARY}) {
+		    nodes {
+		      title: label
+		    }
+		  }
+		}`,
+		variables: {},
+	});
+
+	let config: object = {
+		method: 'post',
+		url: 'https://a1-environews.kinshasadigital.academy/index.php?graphql',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		data: data,
+	};
+
+	const response = await axios(config);
+	const dataFetch: any = await response.data;
+	return dataFetch.data.menuItems;
 }
