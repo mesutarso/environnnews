@@ -57,15 +57,19 @@ export const TopArticle = ({ article, index }) => {
 								style={{
 									fontSize: '0.70rem',
 									overflow: 'hidden',
-									whiteSpace:'nowrap',
+									whiteSpace: 'nowrap',
 									textOverflow: 'ellipsis',
-									
 								}}>
 								{article.description}
 							</div>
-							<span style={{color: '#a09b9b',
-	fontSize: 'small',
-	fontWeight: '300'}}>{article.author}</span>
+							<span
+								style={{
+									color: '#a09b9b',
+									fontSize: 'small',
+									fontWeight: 300,
+								}}>
+								{article.author}
+							</span>
 						</div>
 					</div>
 				</a>

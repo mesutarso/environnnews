@@ -30,7 +30,9 @@ const BreakingNews: React.FC<IProps> = ({ breakingNews }) => {
 				className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
 				BREAKING NEWS
 			</h5>
-			{renderBreakingNews()}
+			<div className={`border-start px-3 border-success border-2 `}>
+				{renderBreakingNews()}
+			</div>
 		</div>
 	);
 };
