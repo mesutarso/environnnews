@@ -31,6 +31,7 @@
 .icons {
 	font-weight: bold;
 	margin: 0 10px;
+	cursor: pointer;
 }
 
 .colored_icon {
