@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -9,6 +8,7 @@ import BreakingNews from '../components/BreakingNews';
 import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
+import { getPostsByCategory } from '../lib/api';
 
 export interface IState {
 	breakingNews: {
@@ -35,7 +35,8 @@ export interface IOpportunities {
 	}[];
 }
 
-export default function Home() {
+export default function Home({ allPosts }) {
+	console.log(allPosts);
 	const [breakingNews, setBreakingNews] = useState<IState['breakingNews']>([
 		{
 			id: '334',
@@ -190,3 +191,10 @@ export default function Home() {
 		</div>
 	);
 }
+
+export const getStaticProps = async () => {
+	const allPosts = await getPostsByCategory(1, 4);
+	return {
+		props: { allPosts },
+	};
+};

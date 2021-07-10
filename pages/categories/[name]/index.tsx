@@ -109,4 +109,5 @@ const Categorie: React.FC = () => {
 		</div>
 	);
 };
+
 export default Categorie;
