@@ -194,7 +194,7 @@ const HiddenMenu: React.FC = () => {
 									passHref>
 									<a
 										onClick={() => setToggleMenu(false)}
-										className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
+										className={`${headerStyles.submenu_link} ${headerStyles.submenu_link} ${headerStyles.hidden_link}`}>
 										{categorie.categorie_name}
 									</a>
 								</Link>
