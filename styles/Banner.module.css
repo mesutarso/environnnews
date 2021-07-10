@@ -39,7 +39,7 @@
 	right: 0;
 	z-index: 2;
 }
-@media (max-width: 767.9px) {
+@media (max-width: 568px) {
 	.mt_banner {
 		padding-top: 170px;
 		padding-bottom: 20px;
@@ -49,7 +49,7 @@
 	.banner_title {
 		font-family: Roboto, sans-serif;
 		font-weight: bold;
-		font-size: 28px;
+		font-size: 18px;
 		text-transform: uppercase;
 		color: #fff;
 		border-width: 10px !important;
@@ -57,13 +57,44 @@
 
 	.banner_description {
 		font-family: Roboto, sans-serif;
-		font-size: 18px;
+		font-size: 14px;
 		width: 100%;
 		color: #fff;
 	}
 	.img_position_absolute {
 		position: absolute;
-		top: 30%;
+		top: 40%;
+		left: 3%;
+		bottom: 0;
+		right: 0;
+		z-index: 2;
+	}
+}
+@media (min-width: 569px) and (max-width: 767.9px) {
+	.mt_banner {
+		padding-top: 170px;
+		padding-bottom: 20px;
+		padding-left: 4%;
+		padding-right: 4%;
+	}
+	.banner_title {
+		font-family: Roboto, sans-serif;
+		font-weight: bold;
+		font-size: 18px;
+		text-transform: uppercase;
+		color: #fff;
+		border-width: 10px !important;
+	}
+
+	.banner_description {
+		font-family: Roboto, sans-serif;
+		font-size: 14px;
+		width: 100%;
+		color: #fff;
+	}
+	.img_position_absolute {
+		position: absolute;
+		top: 40%;
 		left: 3%;
 		bottom: 0;
 		right: 0;
