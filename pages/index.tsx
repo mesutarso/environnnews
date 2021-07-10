@@ -11,6 +11,9 @@ import Categories from '../components/Categories';
 import { getPostsByCategory } from '../lib/api';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+// import 'react-slideshow-image/dist/styles.css';
+// import { Slide } from 'react-slideshow-image';
+import BannerStyle from '../styles/Banner.module.css';
 
 export interface IState {
 	breakingNews: {
@@ -43,17 +46,20 @@ export default function Home({ allPosts }) {
 		{
 			id: '334',
 			title: 'Covid en Rdc',
-			description: 'Corona virus is a virus, okay!',
+			description:
+				'Corona virus is a virus, okay then you have to stay home in order to protect yourself!',
 		},
 		{
 			id: '45',
-			title: 'Covid en Rdc',
-			description: 'Corona virus is a virus, okay!',
+			title: "Covid dans le monde, Trop c'est trop",
+			description:
+				'Corona virus is a virus, okay then you have to stay home in order to protect yourself!',
 		},
 		{
 			id: '88',
-			title: 'Covid en Rdc',
-			description: 'Corona virus is a virus, okay!',
+			title: 'Covid en Rdc, le nouveau Virus',
+			description:
+				'Corona virus is a virus, okay then you have to stay home in order to protect yourself!',
 		},
 	]);
 
@@ -97,19 +103,31 @@ export default function Home({ allPosts }) {
 	>([
 		{
 			id: '23',
-			description: "Bourse d'Etude aux USA",
+			description:
+				"Orange recrute des full stack developer, Intressed? L'offre expire le 22 july",
 		},
 		{
 			id: '24',
-			description: "Bourse d'Etude aux USA",
+			description: "Bourse d'Etude en Republique democratique du Congo",
 		},
 		{
 			id: '25',
-			description: "Bourse d'Etude aux USA",
+			description:
+				'Visite du parc national des Virunga, src Presse Presidentielle',
 		},
 		{
 			id: '26',
 			description: "Bourse d'Etude aux USA",
+		},
+		{
+			id: '27',
+			description:
+				"Orange recrute des full stack developer, Intressed? L'offre expire le 22 july",
+		},
+		{
+			id: '28',
+			description:
+				"Bourse d'Etude en Republique democratique du Congo/Equateur",
 		},
 	]);
 
@@ -177,6 +195,28 @@ export default function Home({ allPosts }) {
 									<span>Christopher Buhendwa</span>
 								</a>
 							</Link>
+							{/* <Slide
+								easing='ease'
+								arrows={false}
+								autoPlay
+								pauseOnHover={false}
+								duration={10000}>
+								{articles.map((article, index) => {
+									return (
+										<div
+											key={index}
+											className='each-slide'
+											style={{
+												background: `url("/assets/bird.jpg")`,
+											}}>
+											<div>
+												<h2>{article.category}</h2>
+												<h3>{article.description}</h3>
+											</div>
+										</div>
+									);
+								})}
+							</Slide> */}
 						</div>
 						<Articles articles={articles} />
 					</div>
@@ -191,7 +231,118 @@ export default function Home({ allPosts }) {
 				<Categories articles={articles} title='conservation' />
 				<Categories articles={articles} title='environement' />
 				<Categories articles={articles} title='biodiversite' />
-				<div className='row'>
+
+				<div className={`col-md-12 p-0 ${heroStyles.position_relative}`}>
+					<div className={heroStyles.img_dark}>
+						<h5
+							className={`border-start px-3 border-success border-5 ${heroStyles.tv_title}`}>
+							ENVIRONEWS TV
+						</h5>
+						<div className='row'>
+							<div className='col-md-1 col-sm-1'></div>
+							<div className='col-md-7 col-sm-12'>
+								<div className={heroStyles.video_responsive}>
+									<iframe
+										width='853'
+										height='480'
+										src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+										frameBorder='1'
+										allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+										allowFullScreen
+										title='Embedded youtube'
+									/>
+								</div>
+							</div>
+							<div className='col-md-4 col-sm-12'>
+								<div className='row'>
+									<div className='col-md-4'>
+										<iframe
+											width='120'
+											height='90'
+											src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+											frameBorder='1'
+											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+											allowFullScreen
+											title='Embedded youtube'
+										/>
+									</div>
+									<div className='col-md-8'>
+										<p>
+											Le Parc national de Kahuzi-Biega détient désormais 60% de
+											la population mondiale des gorilles de Grauer
+										</p>
+									</div>
+								</div>
+								<div className='row'>
+									<div className='col-md-4'>
+										<iframe
+											width='120'
+											height='90'
+											src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+											frameBorder='1'
+											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+											allowFullScreen
+											title='Embedded youtube'
+										/>
+									</div>
+									<div className='col-md-8'>
+										<p>
+											Le Parc national de Kahuzi-Biega détient désormais 60% de
+											la population mondiale des gorilles de Grauer
+										</p>
+									</div>
+								</div>
+								<div className='row'>
+									<div className='col-md-4'>
+										<iframe
+											width='120'
+											height='90'
+											src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+											frameBorder='1'
+											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+											allowFullScreen
+											title='Embedded youtube'
+										/>
+									</div>
+									<div className='col-md-8'>
+										<p>
+											Le Parc national de Kahuzi-Biega détient désormais 60% de
+											la population mondiale des gorilles de Grauer
+										</p>
+									</div>
+								</div>
+								<div className='row'>
+									<div className='col-md-4'>
+										<iframe
+											width='120'
+											height='90'
+											src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+											frameBorder='1'
+											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+											allowFullScreen
+											title='Embedded youtube'
+										/>
+									</div>
+									<div className='col-md-8'>
+										<p>
+											Le Parc national de Kahuzi-Biega détient désormais 60% de
+											la population mondiale des gorilles de Grauer
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<img
+						data-testid='img-banner'
+						src='/assets/tvbg.jpg'
+						alt='image a la une'
+						className={`w-100`}
+						style={{ height: '70vh', objectFit: 'cover' }}
+					/>
+				</div>
+
+				<div className='row py-5'>
 					<div className='col-md-7 col-sm-12'>
 						<h5 className='border-start px-3 border-success border-5'>
 							CHOIX DE L’EDITEUR
