@@ -59,6 +59,50 @@
 	background-color: #089047;
 }
 
+/* Environews TV */
+.position_relative {
+	position: relative;
+}
+.img_dark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 1%;
+	right: 0;
+	background-color: rgba(93, 91, 91, 0.5);
+	z-index: 1;
+	padding: 20px;
+}
+
+.img_dark p {
+	color: white;
+	font-weight: 500;
+	font-size: 0.9rem;
+}
+
+.tv_title {
+	margin: 20px 10px;
+	color: white;
+	font-size: 1.25rem;
+}
+
+.video_responsive {
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+	height: 0;
+}
+
+.video_responsive iframe {
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+/* ----------------------------- */
+
 .newsLetter {
 	position: relative;
 	background-color: rgba(8, 144, 71, 0.8);

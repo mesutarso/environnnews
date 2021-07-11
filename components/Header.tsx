@@ -1,7 +1,6 @@
 import React, { useState, createContext, useContext } from 'react';
 import Image from 'next/image';
 import { BsSearch, BsList, BsX, BsHouseFill } from 'react-icons/bs';
-import { WiSleet } from 'react-icons/wi';
 import Link from 'next/link';
 import headerStyles from '../styles/Header.module.css';
 import Logo from '../public/assets/environews_logo.png';
@@ -13,6 +12,7 @@ import {
 	FaTwitter,
 	FaYoutubeSquare,
 } from 'react-icons/fa';
+import { spawn } from 'node:child_process';
 
 //toogle menu context
 type toggleMenuState = {
@@ -153,7 +153,7 @@ const NavBar: React.FC = () => {
 	return (
 		<div className={headerStyles.nav_container}>
 			<div className={`container ${headerStyles.nav}`}>
-				<Link href='/' passHref>
+				<Link href='/' as='/' passHref>
 					<a className={`${headerStyles.link} ${headerStyles.linkIcon}`}>
 						<BsHouseFill fontSize={19} />
 					</a>
@@ -194,7 +194,7 @@ const HiddenMenu: React.FC = () => {
 									passHref>
 									<a
 										onClick={() => setToggleMenu(false)}
-										className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
+										className={`${headerStyles.submenu_link} ${headerStyles.submenu_link} ${headerStyles.hidden_link}`}>
 										{categorie.categorie_name}
 									</a>
 								</Link>
