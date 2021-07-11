@@ -13,7 +13,7 @@ export interface IArticles {
 		author?: string;
 	}[];
 }
-const Categorie: React.FC = () => {
+const Categorie = ({ data }) => {
 	const [articles, setArticles] = useState<IArticles['articles']>([
 		{
 			id: '1',
