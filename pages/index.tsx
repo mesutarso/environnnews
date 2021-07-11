@@ -219,7 +219,7 @@ export default function Home({ allPosts }) {
 					</div>
 				</div>
 			</div>
-			<div className={heroStyles.newsLetter}>
+			<div className={`mt-4 ${heroStyles.newsLetter}`}>
 				<h3>NEWSLETTER</h3>
 				<form>
 					<input
