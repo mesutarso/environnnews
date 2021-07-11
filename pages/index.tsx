@@ -137,7 +137,7 @@ export default function Home({ data }) {
 									/>
 									<h4>
 										Tshisekedi et les mesures draconiennes, et si la solution à
-										la 3ème vague était congolaise ? {data}
+										la 3ème vague était congolaise ?
 									</h4>
 									<span>Christopher Buhendwa</span>
 								</a>
@@ -193,11 +193,6 @@ export default function Home({ data }) {
 }
 
 export const getStaticProps: GetStaticProps = () => {
-	//const fetchData = await fetch(
-	//'https://jsonplaceholder.typicode.com/users?_limit=4'
-	//);
-	//const data = fetchData.json();
-	//console.log(data);
 	const data = 100;
 	return {
 		props: {

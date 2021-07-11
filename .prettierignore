@@ -1,6 +1,7 @@
 build
 coverage
 .next
+ /out/
 node_modules
 *.html
 *.yml

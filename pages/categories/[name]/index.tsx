@@ -109,4 +109,5 @@ const Categorie = ({ data }) => {
 		</div>
 	);
 };
+
 export default Categorie;

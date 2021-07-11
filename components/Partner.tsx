@@ -15,7 +15,12 @@ export const Partner = ({ image, alt }) => {
 	return (
 		<>
 			<div className='col-6 col-md-2 mt-5 mt-sm-0 text-center'>
-				<img src={image} alt={alt} className='img-fluid' />
+				<img
+					src={image}
+					alt={alt}
+					className='img-fluid'
+					style={{ width: '100px', height: '60px', objectFit: 'contain' }}
+				/>
 			</div>
 		</>
 	);
@@ -61,7 +66,9 @@ const PartnerSection = () => {
 				<div className='row justify-content-center'>
 					<div className='col-12 mb-5'>
 						<h3 className={`text-center ${AboutStyle.title}`}>
-							<span className='border-start border-success border-5 px-2'>
+							<span
+								data-testid='section-partner-title'
+								className='border-start border-success border-5 px-2'>
 								ILS NOUS FONT CONFIANCE
 							</span>
 						</h3>
