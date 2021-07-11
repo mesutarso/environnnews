@@ -314,6 +314,7 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
+					{/*eslint-disable-next-line @next/next/no-img-element*/}
 					<img
 						data-testid='img-banner'
 						src='/assets/tvbg.jpg'
