@@ -212,20 +212,33 @@ export default function Home() {
 				<Categories articles={articles} title='conservation' />
 				<Categories articles={articles} title='environement' />
 				<Categories articles={articles} title='biodiversite' />
-
-				<div className={`col-md-12 p-0 ${heroStyles.position_relative}`}>
-					<div className={heroStyles.img_dark}>
-						<h5
-							className={`border-start px-3 border-success border-5 ${heroStyles.tv_title}`}>
-							ENVIRONEWS TV
-						</h5>
-						<div className='row'>
-							<div className='col-md-1 col-sm-1'></div>
-							<div className='col-md-7 col-sm-12'>
-								<div className={heroStyles.video_responsive}>
+			</div>
+			<div className={`col-md-12 p-5 ${heroStyles.environews_tv}`}>
+				<div className='container'>
+					<h5
+						className={`border-start px-2 mb-5 border-success border-5 ${heroStyles.tv_title}`}>
+						ENVIRONEWS TV
+					</h5>
+					<div className='row'>
+						<div className='col-md-7 col-sm-12'>
+							<div className={heroStyles.video_responsive}>
+								<iframe
+									width='853'
+									height='480'
+									src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+									frameBorder='1'
+									allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+									allowFullScreen
+									title='Embedded youtube'
+								/>
+							</div>
+						</div>
+						<div className='col-md-4 col-sm-12'>
+							<div className='row'>
+								<div className='col-md-4'>
 									<iframe
-										width='853'
-										height='480'
+										width='120'
+										height='90'
 										src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
 										frameBorder='1'
 										allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -233,105 +246,83 @@ export default function Home() {
 										title='Embedded youtube'
 									/>
 								</div>
+								<div className='col-md-8'>
+									<p>
+										Le Parc national de Kahuzi-Biega détient désormais 60% de la
+										population mondiale des gorilles de Grauer
+									</p>
+								</div>
 							</div>
-							<div className='col-md-4 col-sm-12'>
-								<div className='row'>
-									<div className='col-md-4'>
-										<iframe
-											width='120'
-											height='90'
-											src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
-											frameBorder='1'
-											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-											allowFullScreen
-											title='Embedded youtube'
-										/>
-									</div>
-									<div className='col-md-8'>
-										<p>
-											Le Parc national de Kahuzi-Biega détient désormais 60% de
-											la population mondiale des gorilles de Grauer
-										</p>
-									</div>
+							<div className='row'>
+								<div className='col-md-4'>
+									<iframe
+										width='120'
+										height='90'
+										src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+										frameBorder='1'
+										allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+										allowFullScreen
+										title='Embedded youtube'
+									/>
 								</div>
-								<div className='row'>
-									<div className='col-md-4'>
-										<iframe
-											width='120'
-											height='90'
-											src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
-											frameBorder='1'
-											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-											allowFullScreen
-											title='Embedded youtube'
-										/>
-									</div>
-									<div className='col-md-8'>
-										<p>
-											Le Parc national de Kahuzi-Biega détient désormais 60% de
-											la population mondiale des gorilles de Grauer
-										</p>
-									</div>
+								<div className='col-md-8'>
+									<p>
+										Le Parc national de Kahuzi-Biega détient désormais 60% de la
+										population mondiale des gorilles de Grauer
+									</p>
 								</div>
-								<div className='row'>
-									<div className='col-md-4'>
-										<iframe
-											width='120'
-											height='90'
-											src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
-											frameBorder='1'
-											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-											allowFullScreen
-											title='Embedded youtube'
-										/>
-									</div>
-									<div className='col-md-8'>
-										<p>
-											Le Parc national de Kahuzi-Biega détient désormais 60% de
-											la population mondiale des gorilles de Grauer
-										</p>
-									</div>
+							</div>
+							<div className='row'>
+								<div className='col-md-4'>
+									<iframe
+										width='120'
+										height='90'
+										src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+										frameBorder='1'
+										allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+										allowFullScreen
+										title='Embedded youtube'
+									/>
 								</div>
-								<div className='row'>
-									<div className='col-md-4'>
-										<iframe
-											width='120'
-											height='90'
-											src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
-											frameBorder='1'
-											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-											allowFullScreen
-											title='Embedded youtube'
-										/>
-									</div>
-									<div className='col-md-8'>
-										<p>
-											Le Parc national de Kahuzi-Biega détient désormais 60% de
-											la population mondiale des gorilles de Grauer
-										</p>
-									</div>
+								<div className='col-md-8'>
+									<p>
+										Le Parc national de Kahuzi-Biega détient désormais 60% de la
+										population mondiale des gorilles de Grauer
+									</p>
+								</div>
+							</div>
+							<div className='row'>
+								<div className='col-md-4'>
+									<iframe
+										width='120'
+										height='90'
+										src={`https://www.youtube.com/embed/YkmSQZP7bn8`}
+										frameBorder='1'
+										allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+										allowFullScreen
+										title='Embedded youtube'
+									/>
+								</div>
+								<div className='col-md-8'>
+									<p>
+										Le Parc national de Kahuzi-Biega détient désormais 60% de la
+										population mondiale des gorilles de Grauer
+									</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					{/*eslint-disable-next-line @next/next/no-img-element*/}
-					<img
-						data-testid='img-banner'
-						src='/assets/tvbg.jpg'
-						alt='image a la une'
-						className={`w-100`}
-						style={{ height: '100%', objectFit: 'cover' }}
-					/>
 				</div>
-
+			</div>
+			<div className='container'>
 				<div className='row py-5'>
 					<div className='col-md-7 col-sm-12'>
-						<h5 className='border-start px-3 border-success border-5'>
+						<h5 className='border-start px-2 border-success border-5'>
 							CHOIX DE L’EDITEUR
 						</h5>
 					</div>
 					<div className='col-md-5 col-sm-12'>
-						<h5 className='border-start px-3 border-success border-5'>
+						<h5 className='border-start px-2 border-success border-5'>
 							TOP ARTICLES
 						</h5>
 						<div>
@@ -342,6 +333,7 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
+
 			<div className={`mt-4 ${heroStyles.newsLetter}`}>
 				<h3>NEWSLETTER</h3>
 				<form>

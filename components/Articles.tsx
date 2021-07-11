@@ -34,7 +34,7 @@ export const TopArticle = ({ article, index }) => {
 				<a>
 					<div className='row'>
 						<div className='col-md-1'>
-							<h1>{index + 1}</h1>
+							<h1 className='fw-bold'>{index + 1}</h1>
 						</div>
 						<div className='col-md-3'>
 							<Image
