@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import Head from 'next/head';
@@ -258,7 +259,6 @@ export default function Home({ data }) {
 							</div>
 						</div>
 					</div>
-					{/*eslint-disable-next-line @next/next/no-img-element*/}
 					<img
 						data-testid='img-banner'
 						src='/assets/tvbg.jpg'
