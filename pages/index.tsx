@@ -43,12 +43,7 @@ export interface IOpportunities {
 	}[];
 }
 
-export default function Home({
-	opportunities,
-	news,
-	pubs,
-	breakingNews,
-}) {
+export default function Home({ opportunities, news, pubs, breakingNews }) {
 	console.log('Opportunities:', opportunities);
 	console.log('News:', news);
 	console.log('Pubs:', pubs);
@@ -210,7 +205,6 @@ export default function Home({
 }
 
 export async function getServerSideProps() {
-
 	const opportunities = await client.query({ query: GET_OPPORTUNITIES });
 	const news = await client.query({ query: GET_NEWS });
 	const pubs = await client.query({ query: GET_PUBS });
