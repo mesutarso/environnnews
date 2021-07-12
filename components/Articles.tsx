@@ -15,7 +15,6 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 						width={imageWidth}
 						height={imageHeight}
 					/>
-
 					<h5 className={` ${articleStyles.title}`}>{article.category}</h5>
 					<span className={articleStyles.description}>
 						{article.description}
