@@ -3,6 +3,8 @@ import LayoutArticle from '../../../components/LayoutArticle';
 import { useState } from 'react';
 import { ArticleCard } from '../../../components/Articles';
 import { useRouter } from 'next/router';
+import client from '../../../graphql/uri';
+import { GET_POSTS } from '../../../graphql/queries';
 
 export interface IArticles {
 	articles: {
@@ -13,7 +15,8 @@ export interface IArticles {
 		author?: string;
 	}[];
 }
-const Categorie = ({ data }) => {
+const Categorie = ({ posts }) => {
+	console.log('Posts:', posts);
 	const [articles, setArticles] = useState<IArticles['articles']>([
 		{
 			id: '1',
@@ -111,3 +114,14 @@ const Categorie = ({ data }) => {
 };
 
 export default Categorie;
+
+export async function getServerSideProps(context) {
+	const name: string = context.params.name;
+	const posts = await client.query({ query: GET_POSTS(name) });
+
+	return {
+		props: {
+			posts: posts.data.posts.edges,
+		},
+	};
+}
