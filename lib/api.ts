@@ -50,15 +50,17 @@ export const getPostsByCategory = async (categoryID: number, limit: number) => {
 	return data?.posts;
 };
 
-export async function getMenuCategories(): Promise<any> {
+export async function getMenu(): Promise<any> {
 	let data = JSON.stringify({
-		query: `query MENU_ITEMS {
-		  menuItems(first: 100, where: {location: PRIMARY}) {
-		    nodes {
-		      title: label
-		    }
-		  }
-		}`,
+		query: `query getcategoriesforNav {
+				menuItems(where: {location: PRIMARY}) {
+					edges {
+					node {
+						label
+					}
+					}
+				}
+				}`,
 		variables: {},
 	});
 
