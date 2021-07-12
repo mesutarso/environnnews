@@ -3,6 +3,7 @@ import footerStyles from '../styles/Footer.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../public/assets/environews_logo.png';
+
 import {
 	FaFacebookSquare,
 	FaInstagramSquare,
@@ -11,7 +12,7 @@ import {
 	FaYoutubeSquare,
 } from 'react-icons/fa';
 
-const Footer: React.FC = () => (
+const Footer = () => (
 	<div className={`${footerStyles.footer}`}>
 		<div className='container-fluid bg-dark pt-5 '>
 			<div className='row justify-content-center py-4'>
