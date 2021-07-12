@@ -10,6 +10,7 @@ export interface IArticles {
 		image: string;
 		category: string;
 		description: string;
+		slug: string;
 		author?: string;
 	}[];
 }
@@ -17,6 +18,7 @@ const Categorie = ({ data }) => {
 	const [articles, setArticles] = useState<IArticles['articles']>([
 		{
 			id: '1',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'climat',
 			description:
@@ -25,6 +27,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '2',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'biodiversite',
 			description:
@@ -33,6 +36,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '3',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
 			description:
@@ -41,6 +45,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '4',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
 			description:
@@ -49,6 +54,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '5',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
 			description:
@@ -57,6 +63,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '6',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
 			description:
@@ -65,6 +72,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '7',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
 			description:
@@ -73,6 +81,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '8',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
 			description:
@@ -111,3 +120,5 @@ const Categorie = ({ data }) => {
 };
 
 export default Categorie;
+
+//export const getServerSideProps = async () => {};
