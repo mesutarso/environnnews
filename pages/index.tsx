@@ -9,8 +9,15 @@ import BreakingNews from '../components/BreakingNews';
 import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
+import client from '../graphql/uri';
+
+import {
+	GET_OPPORTUNITIES,
+	GET_NEWS,
+	GET_PUBS,
+	GET_BREAKING_NEWS,
+} from '../graphql/queries';
 import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
 
 export interface IState {
 	breakingNews: {
@@ -37,8 +44,8 @@ export interface IOpportunities {
 	}[];
 }
 
-export default function Home() {
-	const [breakingNews, setBreakingNews] = useState<IState['breakingNews']>([
+export default function Home({ opportunities, news, pubs, breakingNews }) {
+	const [breakingNews_, setBreakingNews] = useState<IState['breakingNews']>([
 		{
 			id: '334',
 			title: 'Covid en Rdc',
@@ -94,7 +101,7 @@ export default function Home() {
 		},
 	]);
 
-	const [opportunities, setOpportunities] = useState<
+	const [opportunities_, setOpportunities] = useState<
 		IOpportunities['opportunities']
 	>([
 		{
@@ -202,9 +209,9 @@ export default function Home() {
 						<Articles articles={articles} />
 					</div>
 					<div className='col-md-4 col-sm-12'>
-						<BreakingNews breakingNews={breakingNews} />
+						<BreakingNews breakingNews={breakingNews_} />
 						<br />
-						<Opportunities opportunities={opportunities} />
+						<Opportunities opportunities={opportunities_} />
 						<br />
 						<div className={heroStyles.pub}></div>
 					</div>
@@ -350,4 +357,20 @@ export default function Home() {
 			</div>
 		</div>
 	);
+}
+
+export async function getServerSideProps() {
+	const opportunities = await client.query({ query: GET_OPPORTUNITIES });
+	const news = await client.query({ query: GET_NEWS });
+	const pubs = await client.query({ query: GET_PUBS });
+	const breakingNews = await client.query({ query: GET_BREAKING_NEWS });
+
+	return {
+		props: {
+			news: news.data.posts.edges,
+			pubs: pubs.data.publicites.edges,
+			opportunities: opportunities.data.posts.edges,
+			breakingNews: breakingNews.data.breakingNews.edges,
+		},
+	};
 }
