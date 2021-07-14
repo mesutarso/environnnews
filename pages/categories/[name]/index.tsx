@@ -3,6 +3,8 @@ import LayoutArticle from '../../../components/LayoutArticle';
 import { useState } from 'react';
 import { ArticleCard } from '../../../components/Articles';
 import { useRouter } from 'next/router';
+import client from '../../../graphql/uri';
+import { GET_POSTS } from '../../../graphql/queries';
 
 export interface IArticles {
 	articles: {
@@ -10,13 +12,16 @@ export interface IArticles {
 		image: string;
 		category: string;
 		description: string;
+		slug: string;
 		author?: string;
 	}[];
 }
-const Categorie = ({ data }) => {
+const Categorie = ({ posts }) => {
+	console.log('Posts:', posts);
 	const [articles, setArticles] = useState<IArticles['articles']>([
 		{
 			id: '1',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'climat',
 			description:
@@ -25,6 +30,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '2',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'biodiversite',
 			description:
@@ -33,6 +39,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '3',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
 			description:
@@ -41,6 +48,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '4',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
 			description:
@@ -49,6 +57,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '5',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
 			description:
@@ -57,6 +66,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '6',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
 			description:
@@ -65,6 +75,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '7',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
 			description:
@@ -73,6 +84,7 @@ const Categorie = ({ data }) => {
 		},
 		{
 			id: '8',
+			slug: 'tire',
 			image: '/assets/bird.jpg',
 			category: 'conservation',
 			description:
@@ -111,3 +123,14 @@ const Categorie = ({ data }) => {
 };
 
 export default Categorie;
+
+export async function getServerSideProps(context) {
+	const name: string = context.params.name;
+	const posts = await client.query({ query: GET_POSTS(name) });
+
+	return {
+		props: {
+			posts: posts.data.posts.edges,
+		},
+	};
+}

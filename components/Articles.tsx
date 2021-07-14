@@ -7,8 +7,9 @@ import articleStyles from '../styles/Article.module.css';
 export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 	return (
 		<div className={`col-md-${size} mb-4 col-12 ${articleStyles.card}`}>
-			<Link href={`../articles/${article.id} ` || `articles/${article.id} `}>
-				<a data-testid='article-link'>
+			<Link
+				href={`../articles/${article.slug} ` || `articles/${article.slug} `}>
+				<a>
 					<Image
 						data-testid='article-image'
 						src={article.image}
@@ -39,7 +40,7 @@ export const TopArticle = ({ article, index }) => {
 				<a>
 					<div className='row'>
 						<div className='col-md-1'>
-							<h1 className='fw-bold'>{index + 1}</h1>
+							<h1>{index + 1}</h1>
 						</div>
 						<div className='col-md-3'>
 							<Image
