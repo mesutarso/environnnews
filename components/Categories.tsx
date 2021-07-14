@@ -6,6 +6,7 @@ import heroStyles from '../styles/Hero.module.css';
 import { FaCaretRight } from 'react-icons/fa';
 
 const Categories = ({ articles, title }) => {
+	const filteredArticles = articles.filter((item, key) => key < 4);
 	return (
 		<div>
 			<div className={articleStyles.sectionTitle}>
@@ -21,10 +22,10 @@ const Categories = ({ articles, title }) => {
 				</Link>
 			</div>
 			<div className={`row  ${articleStyles.category}`}>
-				{articles.map((article) => (
+				{filteredArticles.map((articleItems) => (
 					<ArticleCard
-						key={article.id}
-						article={article}
+						key={articleItems.node.id}
+						article={articleItems}
 						size={3}
 						imageHeight={200}
 						imageWidth={300}

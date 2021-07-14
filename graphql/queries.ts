@@ -7,6 +7,7 @@ export const GET_OPPORTUNITIES = gql`
 				node {
 					title
 					uri
+					content
 					seo {
 						metaDesc
 						metaKeywords
@@ -71,11 +72,13 @@ export const GET_BREAKING_NEWS = gql`
 export const GET_POSTS = (name: string) => {
 	return gql`
 	{
-		posts(where: { categoryName: "${name}" }) {
+		posts(where: { categoryName: "${name}" }, first: 20) {
 			edges {
 				node {
 					date
 					title
+					uri
+					content
 					featuredImage {
 						node {
 							mediaItemUrl

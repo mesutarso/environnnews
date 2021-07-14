@@ -14,87 +14,20 @@ export interface IArticles {
 		description: string;
 		slug: string;
 		author?: string;
+		node?: any;
 	}[];
 }
 const Categorie = ({ posts }) => {
 	console.log('Posts:', posts);
-	const [articles, setArticles] = useState<IArticles['articles']>([
-		{
-			id: '1',
-			slug: 'tire',
-			image: '/assets/bird.jpg',
-			category: 'climat',
-			description:
-				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
-			author: 'Emmanuella Mulanga',
-		},
-		{
-			id: '2',
-			slug: 'tire',
-			image: '/assets/bird.jpg',
-			category: 'biodiversite',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consequuntur perferendis tenetur vero laborum quia sequi ',
-			author: 'Beni Map',
-		},
-		{
-			id: '3',
-			slug: 'tire',
-			image: '/assets/bird.jpg',
-			category: 'conservation',
-			description:
-				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
-			author: 'Marcos Musafiri',
-		},
-		{
-			id: '4',
-			slug: 'tire',
-			image: '/assets/bird.jpg',
-			category: 'conservation',
-			description:
-				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
-			author: 'Marcos Musafiri',
-		},
-		{
-			id: '5',
-			slug: 'tire',
-			image: '/assets/bird.jpg',
-			category: 'conservation',
-			description:
-				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
-			author: 'Marcos Musafiri',
-		},
-		{
-			id: '6',
-			slug: 'tire',
-			image: '/assets/bird.jpg',
-			category: 'conservation',
-			description:
-				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
-			author: 'Marcos Musafiri',
-		},
-		{
-			id: '7',
-			slug: 'tire',
-			image: '/assets/bird.jpg',
-			category: 'conservation',
-			description:
-				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
-			author: 'Marcos Musafiri',
-		},
-		{
-			id: '8',
-			slug: 'tire',
-			image: '/assets/bird.jpg',
-			category: 'conservation',
-			description:
-				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
-			author: 'Marcos Musafiri',
-		},
-	]);
+	const [articles, setArticles] = useState<IArticles['articles']>(posts);
 
-	const articlesTwoLines = articles.filter((article) => +article.id <= 6);
-	const articlesOneLine = articles.filter((article) => +article.id <= 4);
+	const articlesTwoLines = articles.filter((article, key) => key < 6);
+	const articlesOneLine = articles.filter(
+		(article, key) => key >= 6 && key < 10
+	);
+	const articlesBottom = articles.filter(
+		(article, key) => key >= 10 && key < 18
+	);
 	const router = useRouter();
 	const { name } = router.query;
 
@@ -117,7 +50,7 @@ const Categorie = ({ posts }) => {
 				articleCardSize={3}
 				articles={articlesOneLine}
 			/>
-			<LayoutArticle col1={12} articleCardSize={3} articles={articles} />
+			<LayoutArticle col1={12} articleCardSize={3} articles={articlesBottom} />
 		</div>
 	);
 };
