@@ -24,6 +24,7 @@ const LayoutArticle: React.FC<LayoutProps> = ({
 							<div className='row'>
 								{articles.map((article) => (
 									<ArticleCard
+										data-testid='layout-article'
 										key={article.id}
 										article={article}
 										size={articleCardSize}

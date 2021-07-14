@@ -329,7 +329,7 @@ const HiddenMenu: React.FC = () => {
 	);
 };
 
-const SearchBar: React.FC = () => {
+export const SearchBar: React.FC = () => {
 	const { toggleSearch, setToggleSearch } = useContext(toggleSearchContext);
 	return (
 		<div

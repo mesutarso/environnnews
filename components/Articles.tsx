@@ -8,15 +8,20 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 	return (
 		<div className={`col-md-${size} mb-4 col-12 ${articleStyles.card}`}>
 			<Link href={`../articles/${article.id} ` || `articles/${article.id} `}>
-				<a>
+				<a data-testid='article-link'>
 					<Image
+						data-testid='article-image'
 						src={article.image}
 						alt={article.description}
 						width={imageWidth}
 						height={imageHeight}
 					/>
-					<h5 className={` ${articleStyles.title}`}>{article.category}</h5>
-					<span className={articleStyles.description}>
+					<h5 className={` ${articleStyles.title}`} data-testid='article-title'>
+						{article.category}
+					</h5>
+					<span
+						className={articleStyles.description}
+						data-testid='article-description'>
 						{article.description}
 					</span>
 					<br />
