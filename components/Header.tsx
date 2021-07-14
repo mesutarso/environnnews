@@ -35,7 +35,7 @@ const toggleMenuContext = createContext<toggleMenuState>(
 	toggleMenuDefaultValue
 );
 
-//togle search context
+//toggle search context
 type toggleSearchState = {
 	toggleSearch: boolean;
 	setToggleSearch: (dispatch: any) => void;
@@ -329,7 +329,7 @@ const HiddenMenu: React.FC = () => {
 	);
 };
 
-const SearchBar: React.FC = () => {
+export const SearchBar: React.FC = () => {
 	const { toggleSearch, setToggleSearch } = useContext(toggleSearchContext);
 	return (
 		<div
@@ -371,12 +371,12 @@ const Header = ({ data }) => {
 };
 
 export default Header;
-export const getStaticProps: GetStaticProps = () => {
-	//const fetchId = await fetch(
-	//'https://jsonplaceholder.typicode.com/users?_limit=4'
-	//);
-	//const data = fetchId.json();
-	//console.log(data);
+export const getStaticProps: GetStaticProps = async () => {
+	// const fetchId = await fetch(
+	// 	'https://jsonplaceholder.typicode.com/users?_limit=4'
+	// );
+	// const data = fetchId.json();
+	// console.log('data', data);
 	const data = 100;
 	return {
 		props: {

@@ -6,11 +6,11 @@ import Footer from './Footer';
 const Layout = ({ children, data }) => {
 	return (
 		<div>
-			<Header data={data} />
+			<Header data-testid='layout-header' data={data} />
 			{children}
 
-			<PartnerSection />
-			<Footer />
+			<PartnerSection data-testid='layout-partnersection' />
+			<Footer data-testid='layout-footer' />
 		</div>
 	);
 };
