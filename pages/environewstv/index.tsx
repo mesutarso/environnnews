@@ -44,6 +44,7 @@ const EnvironewsTV = () => {
 			phoneNumber: '+243818148485',
 		},
 	]);
+
 	return (
 		<>
 			<div className={`container ${AboutStyle.mt_container}`}>
@@ -108,7 +109,70 @@ const EnvironewsTV = () => {
 					</div>
 				</div>
 			</div>
-			<div className='container  mt-5 mt-md-3'>
+
+			<div className='container mt-5  p-5 bg-light'>
+				<div className='row'>
+					<div className={`col-md-4 offset-sm-8 `}>
+						<h2 className={` ${AboutStyle.title} `}>ANNONCES</h2>
+					</div>
+					<div className='col-8 mt-3'>
+						<div className={`${EnvironewsStyle.annonceTrend}`}></div>
+					</div>
+					<div className='col-4 '>
+						<div className='row mt-3'>
+							<div className='col-md-4'>
+								<div className={`${EnvironewsStyle.annonce}`}></div>
+							</div>
+							<div className='col-md-8'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+							</div>
+						</div>
+
+						<div className='row mt-3'>
+							<div className='col-md-4'>
+								<div className={`${EnvironewsStyle.annonce}`}></div>
+							</div>
+							<div className='col-md-8'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+							</div>
+						</div>
+
+						<div className='row mt-3'>
+							<div className='col-md-4'>
+								<div className={`${EnvironewsStyle.annonce}`}></div>
+							</div>
+							<div className='col-md-8'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+							</div>
+						</div>
+
+						<div className='row mt-3'>
+							<div className='col-md-4'>
+								<div className={`${EnvironewsStyle.annonce}`}></div>
+							</div>
+							<div className='col-md-8'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+							</div>
+						</div>
+
+						<div className='row mt-3'>
+							<div className='col-md-4'>
+								<div className={`${EnvironewsStyle.annonce}`}></div>
+							</div>
+							<div className='col-md-8'>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div className='container mt-5' id='emission'>
 				<div className='row'>
 					<div className='col-md-12'>
 						<h2 className={`text-center text-success ${AboutStyle.title}`}>
@@ -117,7 +181,6 @@ const EnvironewsTV = () => {
 					</div>
 				</div>
 			</div>
-
 			{emission.map(({ id, title, description, phoneNumber }) => (
 				<TvInfo
 					key={id}

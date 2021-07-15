@@ -1,10 +1,10 @@
 import React, { useState, createContext, useContext } from 'react';
 import Image from 'next/image';
 import { BsSearch, BsList, BsX, BsHouseFill } from 'react-icons/bs';
-import { WiSleet } from 'react-icons/wi';
 import Link from 'next/link';
 import headerStyles from '../styles/Header.module.css';
 import Logo from '../public/assets/environews_logo.png';
+import { GetStaticProps } from 'next';
 
 import {
 	FaFacebookSquare,
@@ -13,6 +13,12 @@ import {
 	FaTwitter,
 	FaYoutubeSquare,
 } from 'react-icons/fa';
+import { spawn } from 'node:child_process';
+
+interface IdProps {
+	id?: number;
+	ip?: number;
+}
 
 //toogle menu context
 type toggleMenuState = {
@@ -99,7 +105,7 @@ const categoriesList = [
 	},
 ];
 
-const Appbar: React.FC = () => {
+const Appbar = ({ data }) => {
 	const { toggleMenu, setToggleMenu } = useContext(toggleMenuContext);
 	const { toggleSearch, setToggleSearch } = useContext(toggleSearchContext);
 	return (
@@ -121,7 +127,7 @@ const Appbar: React.FC = () => {
 				</svg>
 				<div className={headerStyles.weather_date}>
 					<span> Tuesday, 24th July 2021</span>
-					<span> 22 C</span>
+					<span> {data} C</span>
 				</div>
 				<BsSearch
 					onClick={() => {
@@ -153,7 +159,7 @@ const NavBar: React.FC = () => {
 	return (
 		<div className={headerStyles.nav_container}>
 			<div className={`container ${headerStyles.nav}`}>
-				<Link href='/' passHref>
+				<Link href='/' as='/' passHref>
 					<a className={`${headerStyles.link} ${headerStyles.linkIcon}`}>
 						<BsHouseFill fontSize={19} />
 					</a>
@@ -249,21 +255,21 @@ const HiddenMenu: React.FC = () => {
 						ENVIRONEWS TV
 					</h6>
 					<ul className={`${headerStyles.submenu_link_list}`}>
-						<Link href='/'>
+						<Link href='/environewstv'>
 							<a
 								onClick={() => setToggleMenu(false)}
 								className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
 								<li>La TV</li>
 							</a>
 						</Link>
-						<Link href='/'>
+						<Link href='/environewstv'>
 							<a
 								onClick={() => setToggleMenu(false)}
 								className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
 								<li>Programme de diffusion</li>
 							</a>
 						</Link>
-						<Link href='/'>
+						<Link href='/environewstv#emission'>
 							<a
 								onClick={() => setToggleMenu(false)}
 								className={`${headerStyles.submenu_link} ${headerStyles.submenu_link}`}>
@@ -342,7 +348,7 @@ const SearchBar: React.FC = () => {
 	);
 };
 
-const Header: React.FC = () => {
+const Header = ({ data }) => {
 	const [toggleMenu, setToggleMenu] = useState<boolean>(
 		toggleMenuDefaultValue.toggleMenu
 	);
@@ -354,7 +360,7 @@ const Header: React.FC = () => {
 		<toggleMenuContext.Provider value={{ toggleMenu, setToggleMenu }}>
 			<toggleSearchContext.Provider value={{ toggleSearch, setToggleSearch }}>
 				<div className={headerStyles.container}>
-					<Appbar />
+					<Appbar data={data} />
 					<HiddenMenu />
 					<SearchBar />
 					<NavBar />
@@ -365,3 +371,16 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+export const getStaticProps: GetStaticProps = () => {
+	//const fetchId = await fetch(
+	//'https://jsonplaceholder.typicode.com/users?_limit=4'
+	//);
+	//const data = fetchId.json();
+	//console.log(data);
+	const data = 100;
+	return {
+		props: {
+			data,
+		},
+	};
+};
