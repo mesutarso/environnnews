@@ -5,18 +5,14 @@ import heroStyles from '../styles/Hero.module.css';
 
 const BreakingNews: React.FC<IProps> = ({ breakingNews }) => {
 	const renderBreakingNews = (): JSX.Element[] => {
-		return breakingNews.map((news) => {
+		const filteredBreakingNews = breakingNews.filter((item, key) => key < 4);
+		return filteredBreakingNews.map((news) => {
 			return (
 				<div key={news.id} className={heroStyles.dashed_border_breaking}>
 					<div className={heroStyles.breaking_news}>
 						<h6 data-testid='title' className={heroStyles.breaking_news__title}>
-							{news.title}
+							{news.node.title}
 						</h6>
-						<p
-							data-testid='description'
-							className={heroStyles.breaking_news__description}>
-							{news.description}
-						</p>
 					</div>
 				</div>
 			);

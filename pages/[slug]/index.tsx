@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
-import articleStyles from '../../../styles/Article.module.css';
+import articleStyles from '../../styles/Article.module.css';
 import Image from 'next/image';
-import Comments from '../../../components/Comment';
+import Comments from '../../components/Comment';
 import {
 	FaFacebookSquare,
 	FaInstagramSquare,
@@ -11,8 +11,8 @@ import {
 	FaYoutubeSquare,
 } from 'react-icons/fa';
 import Link from 'next/link';
-import { IArticles } from '../..';
-import { TopArticle } from '../../../components/Articles';
+import { IArticles } from '../';
+import { TopArticle } from '../../components/Articles';
 
 export interface IComments {
 	comments: {
@@ -24,40 +24,7 @@ export interface IComments {
 }
 
 const Article = () => {
-	const [articles, setArticles] = useState<IArticles['articles']>([
-		{
-			id: '1',
-			image: '/assets/bird.jpg',
-			category: 'climat',
-			description:
-				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
-			author: 'Emmanuella Mulanga',
-		},
-		{
-			id: '2',
-			image: '/assets/bird.jpg',
-			category: 'biodiversite',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consequuntur perferendis tenetur vero laborum quia sequi ',
-			author: 'Beni Map',
-		},
-		{
-			id: '3',
-			image: '/assets/bird.jpg',
-			category: 'conservation',
-			description:
-				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
-			author: 'Marcos Musafiri',
-		},
-		{
-			id: '4',
-			image: '/assets/bird.jpg',
-			category: 'conservation',
-			description:
-				'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
-			author: 'Marcos Musafiri',
-		},
-	]);
+	const [articles, setArticles] = useState<IArticles['articles']>([]);
 
 	const [comments, setComments] = useState<IComments['comments']>([
 		{
