@@ -1,11 +1,10 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Image from 'next/image';
 import { BsSearch, BsList, BsX, BsHouseFill } from 'react-icons/bs';
 import Link from 'next/link';
 import headerStyles from '../styles/Header.module.css';
 import Logo from '../public/assets/environews_logo.png';
-import { GetStaticProps } from 'next';
-
+import axios from 'axios';
 import {
 	FaFacebookSquare,
 	FaInstagramSquare,
@@ -13,51 +12,19 @@ import {
 	FaTwitter,
 	FaYoutubeSquare,
 } from 'react-icons/fa';
-import { spawn } from 'node:child_process';
+import {
+	toggleMenuContext,
+	toggleSearchContext,
+	toggleMenuDefaultValue,
+	toggleSearchDefaultValue,
+} from '../components/contexts/toggleContext';
 
-interface IdProps {
-	id?: number;
-	ip?: number;
-}
+import {
+	ISituation,
+	IMetric,
+	ITemperature,
+} from '../components/interface/HeaderInterface';
 
-//toogle menu context
-type toggleMenuState = {
-	toggleMenu: boolean;
-	setToggleMenu: (dispatch: any) => void;
-};
-
-const toggleMenuDefaultValue: toggleMenuState = {
-	toggleMenu: false,
-	setToggleMenu: () => {},
-};
-
-const toggleMenuContext = createContext<toggleMenuState>(
-	toggleMenuDefaultValue
-);
-
-//toggle search context
-type toggleSearchState = {
-	toggleSearch: boolean;
-	setToggleSearch: (dispatch: any) => void;
-};
-
-const toggleSearchDefaultValue: toggleSearchState = {
-	toggleSearch: false,
-	setToggleSearch: () => {},
-};
-
-const toggleSearchContext = createContext<toggleSearchState>(
-	toggleSearchDefaultValue
-);
-
-interface NavProps {
-	nav: {
-		id: number;
-		categorie_name: string;
-	}[];
-}
-
-//categorie table
 const categoriesList = [
 	{
 		id: 1,
@@ -106,8 +73,81 @@ const categoriesList = [
 ];
 
 const Appbar = () => {
+	const [userIp, setUserIp] = useState('');
+	const [userLocation, setUserLocation] = useState('109888');
+
+	const [currentSituation, SetCurrrentSituation] = useState<
+		ISituation['current']
+	>({
+		EpochTime: 1,
+		WeatherIcon: 1,
+		Temperature: {
+			Metric: {
+				Value: 25,
+			},
+		},
+	});
+
 	const { toggleMenu, setToggleMenu } = useContext(toggleMenuContext);
 	const { toggleSearch, setToggleSearch } = useContext(toggleSearchContext);
+
+	useEffect(() => {
+		const getIpAdress = (async () => {
+			try {
+				const ipData_apiKey =
+					'ed25b075de2fd63a7d9ede85bdf87efb368297aaa547c858218d8620';
+				console.log('hello world christiane', process.env.REACT_APP_IPDATA_KEY);
+				const ipDataUrl = `https://api.ipdata.co?api-key=${ipData_apiKey}`;
+				console.log(ipDataUrl);
+				const res = await axios.get(ipDataUrl);
+				const data = await res.data.ip;
+				setUserIp(data);
+			} catch (error) {
+				console.log(error.response);
+				// throw error;
+			}
+		})();
+		const accuWeather_apiKey = 'z2pgUOjAb7Y6JCObqZpPhA8T3T2hfOmz';
+
+		const getlocationKey = (async () => {
+			try {
+				const res = await axios.get(
+					`http://dataservice.accuweather.com/locations/v1/cities/ipaddress?apikey=${accuWeather_apiKey}&q=${userIp}&language=fr`
+				);
+				const data = await res.data.Key;
+				setUserLocation(data);
+			} catch (error) {
+				console.log(error.response);
+
+				// throw error;
+			}
+		})();
+		const getCurrentSituation = (async () => {
+			try {
+				const res = await axios.get(
+					`http://dataservice.accuweather.com/currentconditions/v1/${userLocation}?apikey=${accuWeather_apiKey}&language=fr`
+				);
+				const data = await res.data[0];
+				console.log(data);
+				SetCurrrentSituation(data);
+			} catch (error) {
+				console.log(error.response);
+			}
+		})();
+	}, [userIp, userLocation]);
+
+	const stringDay =
+		currentSituation.EpochTime &&
+		new Date(currentSituation.EpochTime * 1000).toLocaleDateString(undefined, {
+			weekday: 'long',
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric',
+		});
+
+	const stringDayCapitalize =
+		stringDay && stringDay.charAt(0).toUpperCase() + stringDay.slice(1);
+
 	return (
 		<div className={`container ${headerStyles.header}`}>
 			<Link href='/' passHref>
@@ -116,18 +156,22 @@ const Appbar = () => {
 				</a>
 			</Link>
 			<div className={headerStyles.weather}>
-				<svg
-					xmlns='http://www.w3.org/2000/svg'
-					width='40'
-					height='40'
-					fill='currentColor'
-					className={`bi bi-cloud-drizzle-fill ${headerStyles.icons} ${headerStyles.colored_icon}`}
-					viewBox='0 0 20 20'>
-					<path d='M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm-3.5 1.5a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm.747-8.498a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973z' />
-				</svg>
-				<div className={headerStyles.weather_date}>
-					<span> Tuesday, 24th July 2021</span>
-					<span> </span>
+				<Image
+					src={`/weather_icons/${
+						currentSituation.WeatherIcon &&
+						Math.floor(currentSituation.WeatherIcon)
+					}.svg`}
+					width={60}
+					height={60}
+					alt='weather icon'
+				/>
+				<div className={` ${headerStyles.weather_date}`}>
+					<span>{stringDayCapitalize}</span>
+					<span>
+						{currentSituation.Temperature &&
+							Math.floor(currentSituation.Temperature.Metric.Value)}{' '}
+						°C
+					</span>
 				</div>
 				<BsSearch
 					onClick={() => {
@@ -186,8 +230,8 @@ const HiddenMenu: React.FC = () => {
 			className={`${headerStyles.submenu} ${
 				toggleMenu ? headerStyles.toggle_submenu : ''
 			}`}>
-			<div className='row justify-content-md-center pt-5'>
-				<div className='col-2 '>
+			<div className='row justify-content-center px-4 py-5'>
+				<div className='col-6 col-md-2 '>
 					<h6 className='border-start px-2 border-success border-5'>
 						ACTUALITES
 					</h6>
@@ -208,7 +252,7 @@ const HiddenMenu: React.FC = () => {
 						))}
 					</ul>
 				</div>
-				<div className='col-2'>
+				<div className='col-6 col-md-2 '>
 					<h6 className='border-start px-2 border-success border-5'>
 						SERVICES
 					</h6>
@@ -250,7 +294,7 @@ const HiddenMenu: React.FC = () => {
 						</Link>
 					</ul>
 				</div>
-				<div className='col-2'>
+				<div className='col-6 col-md-2 '>
 					<h6 className='border-start px-2 border-success border-5'>
 						ENVIRONEWS TV
 					</h6>
@@ -278,8 +322,7 @@ const HiddenMenu: React.FC = () => {
 						</Link>
 					</ul>
 				</div>
-				<div
-					className={`text-dark col-2 ${headerStyles.icons} ${headerStyles.left_border}`}>
+				<div className={`text-dark col-6 col-md-2 ${headerStyles.left_border}`}>
 					<span className='px-1'>Suivez-nous sur</span>
 					<div>
 						<Link href='https://web.facebook.com/EnvironewsRDC/?_rdc=1&_rdr'>
@@ -329,7 +372,7 @@ const HiddenMenu: React.FC = () => {
 	);
 };
 
-export const SearchBar: React.FC = () => {
+const SearchBar: React.FC = () => {
 	const { toggleSearch, setToggleSearch } = useContext(toggleSearchContext);
 	return (
 		<div
