@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 
 const MyApp = ({ Component, pageProps }) => {
 	return (
-		<Layout data={pageProps.data}>
+		<Layout>
 			<Component {...pageProps} />
 		</Layout>
 	);
