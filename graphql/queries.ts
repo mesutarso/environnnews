@@ -90,3 +90,33 @@ export const GET_POSTS = (name: string) => {
 	}
 `;
 };
+
+export const GET_POSTS_SLUG = (slug: string) => gql`
+{
+  post(id: "${slug}", idType: URI) {
+    title
+    content
+    featuredImage {
+      node {
+        mediaItemUrl
+        sourceUrl
+        seo {
+          metaKeywords
+        }
+      }
+    }
+    comments {
+      edges {
+        node {
+          content
+          author {
+            node {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;

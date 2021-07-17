@@ -3,10 +3,10 @@ import PartnerSection from '../components/Partner';
 
 import Footer from './Footer';
 
-const Layout = ({ children, data }) => {
+const Layout = ({ children }) => {
 	return (
 		<div>
-			<Header data-testid='layout-header' data={data} />
+			<Header data-testid='layout-header' />
 			{children}
 
 			<PartnerSection data-testid='layout-partnersection' />
