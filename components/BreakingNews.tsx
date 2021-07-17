@@ -8,7 +8,7 @@ const BreakingNews: React.FC<IProps> = ({ breakingNews }) => {
 		const filteredBreakingNews = breakingNews.filter((item, key) => key < 4);
 		return filteredBreakingNews.map((news) => {
 			return (
-				<div key={news.id} className={heroStyles.dashed_border_breaking}>
+				<div key={news.node.id} className={heroStyles.dashed_border_breaking}>
 					<div className={heroStyles.breaking_news}>
 						<h6 data-testid='title' className={heroStyles.breaking_news__title}>
 							{news.node.title}

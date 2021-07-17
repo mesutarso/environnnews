@@ -13,7 +13,7 @@ const Opportunities: React.FC<IOpportunities> = ({ opportunities }) => {
 			</h5>
 			{filteredOpportunities.map((opportunity) => (
 				<div
-					key={opportunity.id}
+					key={opportunity.node.id}
 					className={`${heroStyles.opportunities_body} ${heroStyles.dashed_border}`}>
 					<p data-testid='description'>{opportunity.node.title}</p>
 				</div>

@@ -105,7 +105,7 @@ const categoriesList = [
 	},
 ];
 
-const Appbar = ({ data }) => {
+const Appbar = () => {
 	const { toggleMenu, setToggleMenu } = useContext(toggleMenuContext);
 	const { toggleSearch, setToggleSearch } = useContext(toggleSearchContext);
 	return (
@@ -127,7 +127,7 @@ const Appbar = ({ data }) => {
 				</svg>
 				<div className={headerStyles.weather_date}>
 					<span> Tuesday, 24th July 2021</span>
-					<span> {data} C</span>
+					<span> </span>
 				</div>
 				<BsSearch
 					onClick={() => {
@@ -348,7 +348,7 @@ export const SearchBar: React.FC = () => {
 	);
 };
 
-const Header = ({ data }) => {
+const Header = () => {
 	const [toggleMenu, setToggleMenu] = useState<boolean>(
 		toggleMenuDefaultValue.toggleMenu
 	);
@@ -360,7 +360,7 @@ const Header = ({ data }) => {
 		<toggleMenuContext.Provider value={{ toggleMenu, setToggleMenu }}>
 			<toggleSearchContext.Provider value={{ toggleSearch, setToggleSearch }}>
 				<div className={headerStyles.container}>
-					<Appbar data={data} />
+					<Appbar />
 					<HiddenMenu />
 					<SearchBar />
 					<NavBar />
@@ -371,16 +371,3 @@ const Header = ({ data }) => {
 };
 
 export default Header;
-export const getStaticProps: GetStaticProps = async () => {
-	// const fetchId = await fetch(
-	// 	'https://jsonplaceholder.typicode.com/users?_limit=4'
-	// );
-	// const data = fetchId.json();
-	// console.log('data', data);
-	const data = 100;
-	return {
-		props: {
-			data,
-		},
-	};
-};
