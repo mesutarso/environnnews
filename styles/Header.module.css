@@ -24,6 +24,10 @@
 	align-items: flex-start;
 }
 
+.weather_date:nth-child(1) {
+	display: block;
+}
+
 .weather span {
 	font-size: smaller;
 }
@@ -177,4 +181,10 @@
 
 .hidden {
 	display: none;
+}
+
+@media (max-width: 768px) {
+	.weather_date span:nth-child(1) {
+		display: none;
+	}
 }
