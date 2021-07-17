@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image';
 import Link from 'next/link';
 import { IArticles } from '../pages';
@@ -5,28 +6,31 @@ import { IArticles } from '../pages';
 import articleStyles from '../styles/Article.module.css';
 
 export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
+	let postImgCat =
+		(article.node.featuredImage !== null
+			? article.node.featuredImage.node.mediaItemUrl
+			: '/assets/not_found.jpg') || article.node.featuredImage.node.sourceUrl;
+
 	return (
 		<div className={`col-md-${size} mb-4 col-12 ${articleStyles.card}`}>
-			<Link
-				href={`../articles/${article.slug} ` || `articles/${article.slug} `}>
+			<Link href='[slug]' as={`${article.node.uri.toString()}`}>
 				<a>
-					<Image
-						data-testid='article-image'
-						src={article.image}
-						alt={article.description}
-						width={imageWidth}
+					<img
+						src={`${postImgCat}`}
+						alt={article.node.title}
+						className='w-100'
 						height={imageHeight}
+						style={{ objectFit: 'cover' }}
 					/>
-					<h5 className={` ${articleStyles.title}`} data-testid='article-title'>
-						{article.category}
-					</h5>
-					<span
-						className={articleStyles.description}
-						data-testid='article-description'>
-						{article.description}
-					</span>
 					<br />
-					<span className={articleStyles.author}>{article.author}</span>
+					<h5 className={` ${articleStyles.title}`}>{article.node.title}</h5>
+					<article
+						className={articleStyles.description}
+						dangerouslySetInnerHTML={{
+							__html: article.node.content.slice(0, 180),
+						}}></article>
+
+					<span className={articleStyles.author}>Marcos Musafiri</span>
 				</a>
 			</Link>
 		</div>
@@ -36,18 +40,17 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 export const TopArticle = ({ article, index }) => {
 	return (
 		<div className={articleStyles.topArticle}>
-			<Link href='/articles/[id]' as={`articles/${article.id}`} passHref>
+			<Link href='/articles/[id]' as={`articles/${article.node.id}`} passHref>
 				<a>
 					<div className='row'>
 						<div className='col-md-1'>
 							<h1>{index + 1}</h1>
 						</div>
 						<div className='col-md-3'>
-							<Image
-								src={article.image}
-								alt={article.description}
-								width={130}
-								height={75}
+							<img
+								src={`${article.node.featuredImage.node.sourceUrl}`}
+								alt={article.node.title}
+								className='w-100'
 							/>
 						</div>
 						<div className='col-md-7'>
@@ -57,7 +60,7 @@ export const TopArticle = ({ article, index }) => {
 									color: '#089047',
 									textTransform: 'uppercase',
 								}}>
-								{article.category}
+								{article.node.title}
 							</h5>
 							<div
 								style={{
@@ -65,9 +68,7 @@ export const TopArticle = ({ article, index }) => {
 									overflow: 'hidden',
 									whiteSpace: 'nowrap',
 									textOverflow: 'ellipsis',
-								}}>
-								{article.description}
-							</div>
+								}}></div>
 							<span
 								style={{
 									color: '#a09b9b',

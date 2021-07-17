@@ -1,4 +1,4 @@
-import { IComments } from '../pages/articles/[id]';
+import { IComments } from '../pages/[slug]';
 import articleStyles from '../styles/Article.module.css';
 
 const Comments: React.FC<IComments> = ({ comments }) => {
