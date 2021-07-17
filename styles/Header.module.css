@@ -78,7 +78,7 @@
 	text-decoration: none;
 	padding: 15px 20px;
 	font-weight: bold;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	color: white;
 	text-transform: uppercase;
 	text-align: center;
@@ -177,8 +177,20 @@
 	opacity: 0;
 	visibility: hidden;
 }
+@media screen and (max-width: 1300px) {
+	.link {
+		font-size: 0.7rem;
+		padding: 10px 15px;
+	}
+}
 
 @media screen and (max-width: 1200px) {
+	.link {
+		font-size: 0.65rem;
+		padding: 10px 15px;
+	}
+}
+@media screen and (max-width: 1100px) {
 	.link {
 		font-size: 0.65rem;
 		padding: 10px 15px;

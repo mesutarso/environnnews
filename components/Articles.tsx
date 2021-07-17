@@ -12,7 +12,8 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 			: '/assets/not_found.jpg') || article.node.featuredImage.node.sourceUrl;
 
 	return (
-		<div className={`col-md-${size} mb-4 col-12 ${articleStyles.card}`}>
+		<div
+			className={`col-sm-${size} mb-4 col-12 col-lg-${size} ${articleStyles.card}`}>
 			<Link href='[slug]' as={`${article.node.uri.toString()}`}>
 				<a>
 					<img
