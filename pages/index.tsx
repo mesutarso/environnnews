@@ -10,7 +10,7 @@ import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
 import client from '../graphql/uri';
-
+import AdSense from 'react-adsense';
 import {
 	GET_OPPORTUNITIES,
 	GET_NEWS,
@@ -160,7 +160,22 @@ export default function Home({
 						<br />
 						<Opportunities opportunities={opportunities_} />
 						<br />
-						<div className={heroStyles.pub}></div>
+						<div className={heroStyles.pub}>
+							{/* <AdSense.Google
+								client='ca-pub-2034102263729175'
+								slot='674827658'
+								// style={{ width: 500, height: 300, float: 'left' }}
+								// format=''
+							/> */}
+
+							<AdSense.Google
+								client='ca-pub-2034102263729175'
+								slot='674827658'
+								style={{ display: 'block' }}
+								// layout='in-article'
+								format='fluid'
+							/>
+						</div>
 					</div>
 				</div>
 
