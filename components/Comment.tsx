@@ -1,6 +1,13 @@
-import { IComments } from '../pages/[slug]';
 import articleStyles from '../styles/Article.module.css';
 
+export interface IComments {
+	comments: {
+		id: string;
+		pseudo: string;
+		description: string;
+		date: string;
+	}[];
+}
 const Comments: React.FC<IComments> = ({ comments }) => {
 	const renderComment = (): JSX.Element[] => {
 		return comments.map((comment) => (

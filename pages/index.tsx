@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import Head from 'next/head';
@@ -22,27 +23,19 @@ import AliceCarousel from 'react-alice-carousel';
 
 export interface IState {
 	breakingNews: {
-		id?: string;
 		title: string;
-		description?: string;
 		node: any;
 	}[];
 }
 
 export interface IArticles {
 	articles: {
-		id?: string;
-		image?: string;
-		category?: string;
-		description?: string;
-		author?: string;
 		node: any;
 	}[];
 }
 
 export interface IOpportunities {
 	opportunities: {
-		id?: string;
 		node: any;
 	}[];
 }
@@ -56,10 +49,6 @@ export default function Home({
 	artcleByCategoryBiodiversite,
 	artcleByCategoryEnvironnement,
 }) {
-	console.log('News:', news);
-	console.log('Pubs:', pubs);
-	console.log('Cat:', artcleByCategoryBiodiversite);
-
 	const [breakingNews_, setBreakingNews] =
 		useState<IState['breakingNews']>(breakingNews);
 
@@ -74,6 +63,14 @@ export default function Home({
 	const filteredArticlesBiodiversite = artcleByCategoryBiodiversite.filter(
 		(item, key) => key < 4
 	);
+	let randomId = Math.floor(Math.random() * 20);
+	const article = articles.filter((value, key) => key == randomId);
+
+	const pointsPos = article[0].node.title.indexOf(':');
+
+	const getCat = article[0].node.title.slice(0, pointsPos).toUpperCase();
+
+	const deleteCat = article[0].node.title.slice(pointsPos + 1);
 
 	const [opportunities_, setOpportunities] =
 		useState<IOpportunities['opportunities']>(opportunities);
@@ -137,18 +134,16 @@ export default function Home({
 								<a>
 									<h5
 										className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
-										CORONAVIRUS
+										{getCat}
 									</h5>
-									<Image
-										src='/assets/bird.jpg'
-										alt='feature image'
-										height={350}
-										width={800}
+									<img
+										src={`${article[0].node.featuredImage.node.sourceUrl}`}
+										alt={article[0].node.title}
+										className='w-100'
+										style={{ objectFit: 'cover' }}
 									/>
-									<h4>
-										Tshisekedi et les mesures draconiennes, et si la solution à
-										la 3ème vague était congolaise ?
-									</h4>
+
+									<h4>{deleteCat}</h4>
 									<span>Christopher Buhendwa</span>
 								</a>
 							</Link>

@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from 'next/image';
 import Link from 'next/link';
 import { IArticles } from '../pages';
 
@@ -12,9 +11,8 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 			: '/assets/not_found.jpg') || article.node.featuredImage.node.sourceUrl;
 
 	return (
-		<div
-			className={`col-sm-${size} mb-4 col-12 col-lg-${size} ${articleStyles.card}`}>
-			<Link href='[slug]' as={`${article.node.uri.toString()}`}>
+		<div className={`col-md-${size} mb-4 col-12 ${articleStyles.card}`}>
+			<Link href='/[annee]/[mois]/[jour]/[slug]' as={`${article.node.uri}`}>
 				<a>
 					<img
 						src={`${postImgCat}`}
@@ -41,7 +39,7 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 export const TopArticle = ({ article, index }) => {
 	return (
 		<div className={articleStyles.topArticle}>
-			<Link href='/articles/[id]' as={`articles/${article.node.id}`} passHref>
+			<Link href='[slug]' as={`${article.node.slug}`} passHref>
 				<a>
 					<div className='row'>
 						<div className='col-md-1'>
@@ -91,7 +89,7 @@ const Articles: React.FC<IArticles> = ({ articles }) => {
 		<div className='row d-flex justify-content-center'>
 			{articles.map((article) => (
 				<ArticleCard
-					key={article.id}
+					key={article.node.id}
 					article={article}
 					size={6}
 					imageHeight={250}
