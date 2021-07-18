@@ -122,6 +122,7 @@ export const GET_POSTS_SLUG = (slug: string) => gql`
   post(id: "${slug}", idType: URI) {
     title
     content
+	date
     featuredImage {
       node {
         mediaItemUrl
