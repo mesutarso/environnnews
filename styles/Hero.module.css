@@ -60,6 +60,20 @@
 	background-color: #089047;
 }
 
+/* Editor Choice */
+
+.editorChoice {
+	border-right: 1px rgb(54, 53, 53) dashed;
+	padding: 10px;
+}
+
+.editorChoiceContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
 /* Environews TV */
 .environews_tv {
 	position: relative;

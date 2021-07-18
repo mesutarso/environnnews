@@ -292,13 +292,16 @@ export default function Home({
 			</div>
 			<div className='container'>
 				<div className='row py-5'>
-					<div className='col-md-7 col-sm-12'>
+					<div className={`col-md-6 col-sm-12 px-3 ${heroStyles.editorChoice}`}>
 						<h5 className='border-start px-2 border-success border-5'>
 							CHOIX DE L’EDITEUR
 						</h5>
+						<div className={heroStyles.editorChoiceContainer}>
+							<Articles articles={filteredArticlesSix} />
+						</div>
 					</div>
 					<div
-						className={`col-md-5 col-sm-12 ${articleStyles.similarContainer}`}>
+						className={`col-md-5 col-sm-12 px-3 ${articleStyles.similarContainer}`}>
 						<h5 className='border-start px-2 border-success border-5'>
 							TOP ARTICLES
 						</h5>
