@@ -37,8 +37,6 @@ const Article = ({ article }) => {
 		`style='display:none'`
 	);
 
-	console.log('sociale :', article);
-
 	const [comments, setComments] = useState<IComments['comments']>([
 		{
 			id: '34',
@@ -55,8 +53,16 @@ const Article = ({ article }) => {
 	]);
 	return (
 		<div className={`container ${articleStyles.articleContent}`}>
-			<h4 className='border-start px-3 border-success border-5'>CORONAVIRUS</h4>
-			<h5>{article.title}</h5>
+			<h3 className='border-start px-2 mt-4 border-success border-5'>
+				{article.title.split(':').length == 2
+					? article.title.split(':')[0]
+					: null}
+			</h3>
+			<h5 className={articleStyles.article_title}>
+				{article.title.split(':').length == 2
+					? article.title.split(':')[1]
+					: article.title.split(':')[0]}
+			</h5>
 			<div className='row'>
 				<div className='col-md-9 col-sm-12'>
 					<img
