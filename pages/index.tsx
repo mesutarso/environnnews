@@ -130,8 +130,11 @@ export default function Home({
 								animationDuration={10000}
 							/>
 							<br />
-							<Link href='/articles/[id]' as='/articles/1'>
-								<a>
+							<br />
+							<Link
+								href='/[annee]/[mois]/[jour]/[slug]'
+								as={`${article[0].node.uri}`}>
+								<a style={{ color: 'inherit' }}>
 									<h5
 										className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
 										{getCat}
@@ -144,10 +147,11 @@ export default function Home({
 									/>
 
 									<h4>{deleteCat}</h4>
-									<span>Christopher Buhendwa</span>
 								</a>
 							</Link>
 						</div>
+						<br />
+						<br />
 						<Articles articles={filteredArticlesSix} />
 					</div>
 					<div className='col-md-4 col-sm-12'>

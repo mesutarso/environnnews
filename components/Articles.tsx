@@ -32,7 +32,6 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 							? article.node.title.split(':')[1]
 							: article.node.title.split(':')[0]}
 					</span>
-					<span className={articleStyles.author}>Marcos Musafiri</span>
 				</a>
 			</Link>
 		</div>
