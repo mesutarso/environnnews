@@ -19,7 +19,7 @@ export const Partner = ({ image, alt }) => {
 					src={image}
 					alt={alt}
 					className='img-fluid'
-					style={{ width: '100px', height: '60px', objectFit: 'contain' }}
+					style={{ width: '160px', height: '96px', objectFit: 'contain' }}
 				/>
 			</div>
 		</>
@@ -62,7 +62,7 @@ const PartnerSection = () => {
 	]);
 	return (
 		<div className={`mb-0`}>
-			<div className='container-fluid bg-light p-5'>
+			<div className={`container-fluid bg-light p-5 ${AboutStyle.partner}`}>
 				<div className='row justify-content-center'>
 					<div className='col-12 mb-5'>
 						<h3 className={`text-center ${AboutStyle.title}`}>

@@ -27,7 +27,10 @@
 	width: 20%;
 	margin: 1%;
 }
-
+/* .partner {
+	 padding: 100px auto !important; 
+	padding: 5%;
+} */
 @media (max-width: 768px) {
 	.card_row {
 		display: flex;

@@ -22,13 +22,16 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 						style={{ objectFit: 'cover' }}
 					/>
 					<br />
-					<h5 className={` ${articleStyles.title}`}>{article.node.title}</h5>
-					<article
-						className={articleStyles.description}
-						dangerouslySetInnerHTML={{
-							__html: article.node.content.slice(0, 180),
-						}}></article>
-
+					<h5 className={`mt-3 mb-1 ${articleStyles.title}`}>
+						{article.node.title.split(':').length == 2
+							? article.node.title.split(':')[0]
+							: null}
+					</h5>
+					<span className={articleStyles.description}>
+						{article.node.title.split(':').length == 2
+							? article.node.title.split(':')[1]
+							: article.node.title.split(':')[0]}
+					</span>
 					<span className={articleStyles.author}>Marcos Musafiri</span>
 				</a>
 			</Link>
