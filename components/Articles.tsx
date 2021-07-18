@@ -12,26 +12,31 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 
 	return (
 		<div className={`col-md-${size} mb-4 col-12 ${articleStyles.card}`}>
-			<Link href='/[annee]/[mois]/[jour]/[slug]' as={`${article.node.uri}`}>
+			<Link
+				href='/[annee]/[mois]/[jour]/[slug]'
+				as={`${article.node.uri}`}
+				passHref>
 				<a>
-					<img
-						src={`${postImgCat}`}
-						alt={article.node.title}
-						className='w-100'
-						height={imageHeight}
-						style={{ objectFit: 'cover' }}
-					/>
-					<br />
-					<h5 className={`mt-3 mb-1 ${articleStyles.title}`}>
-						{article.node.title.split(':').length == 2
-							? article.node.title.split(':')[0]
-							: null}
-					</h5>
-					<span className={articleStyles.description}>
-						{article.node.title.split(':').length == 2
-							? article.node.title.split(':')[1]
-							: article.node.title.split(':')[0]}
-					</span>
+					<div className={articleStyles.content}>
+						<img
+							src={`${postImgCat}`}
+							alt={article.node.title}
+							className='w-100'
+							height={imageHeight}
+							style={{ objectFit: 'cover' }}
+						/>
+						<br />
+						<h5 className={`mt-3 mb-1 ${articleStyles.title}`}>
+							{article.node.title.split(':').length == 2
+								? article.node.title.split(':')[0]
+								: 'Environews'}
+						</h5>
+						<span className={articleStyles.description}>
+							{article.node.title.split(':').length == 2
+								? article.node.title.split(':')[1]
+								: article.node.title.split(':')[0] + '.'}
+						</span>
+					</div>
 				</a>
 			</Link>
 		</div>
@@ -100,14 +105,7 @@ export const SimilarArticle = ({ article }) => {
 							/>
 						</div>
 						<div className='col-md-7'>
-							<h5
-								style={{
-									fontSize: '0.75rem',
-									color: '#089047',
-									textTransform: 'uppercase',
-								}}>
-								{article.node.title}
-							</h5>
+							<h5 className={articleStyles.topTitle}>{article.node.title}</h5>
 							<div
 								style={{
 									fontSize: '0.70rem',

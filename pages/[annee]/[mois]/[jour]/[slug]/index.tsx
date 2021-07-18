@@ -156,17 +156,13 @@ const Article = ({ article, news }) => {
 				</div>
 				<div className='col-md-3 col-sm-12'>
 					<div className={articleStyles.pub}></div>
-					<div style={{ paddingTop: '20px' }}>
+					<div className={articleStyles.similarContainer}>
 						<h6 className='border-start px-2 border-success border-5'>
 							A LIRE AUSSI
 						</h6>
-						<div className={articleStyles.similar}>
-							<div>
-								{filteredArticlesSix.map((article) => (
-									<SimilarArticle key={article.node.id} article={article} />
-								))}
-							</div>
-						</div>
+						{filteredArticlesSix.map((article) => (
+							<SimilarArticle key={article.node.id} article={article} />
+						))}
 					</div>
 					<div className={articleStyles.newsLetter}>
 						<h3>NEWSLETTER</h3>

@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import heroStyles from '../styles/Hero.module.css';
+import articleStyles from '../styles/Article.module.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import BreakingNews from '../components/BreakingNews';
 import Articles, { TopArticle } from '../components/Articles';
@@ -296,7 +297,8 @@ export default function Home({
 							CHOIX DE L’EDITEUR
 						</h5>
 					</div>
-					<div className='col-md-5 col-sm-12'>
+					<div
+						className={`col-md-5 col-sm-12 ${articleStyles.similarContainer}`}>
 						<h5 className='border-start px-2 border-success border-5'>
 							TOP ARTICLES
 						</h5>

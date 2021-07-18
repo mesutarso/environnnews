@@ -1,9 +1,11 @@
-.card {
-	background: #fffbfb;
-}
 .card a {
-	text-decoration: none;
-	color: inherit;
+	color: #222;
+}
+.content {
+	margin: 2.5px;
+	padding: 5px;
+	background: #eefaee;
+	border-radius: 5px;
 }
 .title {
 	text-transform: uppercase;
@@ -12,11 +14,15 @@
 	color: #089047;
 	/* margin-bottom: 5px !important; */
 }
-.description,
-.breaking_news__description {
+.description {
 	font-size: 0.9rem;
 	font-weight: bold;
 	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
 .author {
 	color: #a09b9b;
@@ -47,6 +53,17 @@
 
 .topArticle {
 	padding: 5px 0px;
+}
+
+.topTitle {
+	font-size: small;
+	color: #089047;
+	text-transform: uppercase;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
 
 /* SINGLE ARTICLE PAGE STYLES */
@@ -167,6 +184,17 @@
 	align-items: flex-start;
 }
 
+.similarContainer {
+	margin-top: 5px;
+	padding: 5px;
+	background: #eefaee;
+	border-radius: 5px;
+}
+
+.similarContainer a {
+	color: inherit;
+}
+
 .similar h5 {
 	font-size: 1rem;
 	color: #089047;
@@ -174,7 +202,7 @@
 	text-transform: uppercase;
 }
 .similar span {
-	font-size: 0.75rem;
+	font-size: 0.5rem;
 	text-overflow: ellipsis;
 }
 
