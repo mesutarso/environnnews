@@ -24,7 +24,6 @@ const LayoutArticle: React.FC<LayoutProps> = ({
 							<div className='row'>
 								{articles.map((article) => (
 									<ArticleCard
-										data-testid='layout-article'
 										key={article.id}
 										article={article}
 										size={articleCardSize}
@@ -36,9 +35,13 @@ const LayoutArticle: React.FC<LayoutProps> = ({
 						</div>
 						<div className={`col-md-${col2} mt-1`}>
 							{col1 == 12 ? (
-								<div className={PubliciteStyle.squeleton_hr}></div>
+								<div className={PubliciteStyle.squeleton_hr}>
+									<div className={PubliciteStyle.sqhr_container}></div>
+								</div>
 							) : (
-								<div className={PubliciteStyle.squeleton}></div>
+								<div className={PubliciteStyle.squeleton}>
+									<div className={PubliciteStyle.sq_container}></div>
+								</div>
 							)}
 						</div>
 					</div>
