@@ -14,7 +14,7 @@ export interface PartnerProps {
 export const Partner = ({ image, alt }) => {
 	return (
 		<>
-			<div className='col-6 col-md-2 mt-5 mt-sm-0 text-center'>
+			<div className='col-6 col-md-2 mt-2 mt-sm-5 text-center'>
 				<img
 					src={image}
 					alt={alt}
@@ -64,7 +64,7 @@ const PartnerSection = () => {
 		<div className={`mb-0`}>
 			<div className={`container-fluid bg-light p-5 ${AboutStyle.partner}`}>
 				<div className='row justify-content-center'>
-					<div className='col-12 mb-5'>
+					<div className='col-12'>
 						<h3 className={`text-center ${AboutStyle.title}`}>
 							<span
 								data-testid='section-partner-title'
