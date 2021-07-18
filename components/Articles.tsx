@@ -105,22 +105,7 @@ export const SimilarArticle = ({ article }) => {
 							/>
 						</div>
 						<div className='col-md-7'>
-							<h5 className={articleStyles.topTitle}>{article.node.title}</h5>
-							<div
-								style={{
-									fontSize: '0.70rem',
-									overflow: 'hidden',
-									whiteSpace: 'nowrap',
-									textOverflow: 'ellipsis',
-								}}></div>
-							<span
-								style={{
-									color: '#a09b9b',
-									fontSize: 'small',
-									fontWeight: 'lighter',
-								}}>
-								{article.author}
-							</span>
+							<p className={articleStyles.topTitle}>{article.node.title}</p>
 						</div>
 					</div>
 				</a>

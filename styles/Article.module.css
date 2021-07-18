@@ -57,6 +57,7 @@
 
 .topTitle {
 	font-size: small;
+	font-weight: 500;
 	color: #089047;
 	text-transform: uppercase;
 	overflow: hidden;
