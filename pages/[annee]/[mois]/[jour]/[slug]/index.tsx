@@ -28,8 +28,12 @@ export interface IComments {
 }
 
 const Article = ({ article }) => {
+	const featuredImage =
+		article.featuredImage == null
+			? '/assets/not_found.jpg'
+			: article.featuredImage.node.mediaItemUrl;
 	let deleteFig = article.content.replace(
-		/(figure)/,
+		/(figure|img)/,
 		'$1 style="display:none"'
 	);
 	const content = deleteFig.replace(
@@ -37,6 +41,7 @@ const Article = ({ article }) => {
 		`style='display:none'`
 	);
 
+	console.log('content:', content);
 	const [comments, setComments] = useState<IComments['comments']>([
 		{
 			id: '34',
@@ -66,7 +71,7 @@ const Article = ({ article }) => {
 			<div className='row'>
 				<div className='col-md-9 col-sm-12'>
 					<img
-						src={article.featuredImage.node.mediaItemUrl}
+						src={featuredImage}
 						alt={article.title}
 						className='w-100'
 						height={500}
