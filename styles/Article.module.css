@@ -1,5 +1,5 @@
 .card {
-	padding: 5px;
+	background: #fffbfb;
 }
 .card a {
 	text-decoration: none;
@@ -184,8 +184,17 @@
 	font-size: small;
 	font-weight: 500;
 }
-.article_title {
-	font-size: 2.7rem !important;
+
+.tags {
+	margin-top: 10px;
+	font-size: 1rem;
+	color: #a09b9b;
+	display: flex;
+}
+
+.tags li {
+	list-style: none;
+	margin-right: 10px;
 }
 
 @media screen and (max-width: 1300px) {

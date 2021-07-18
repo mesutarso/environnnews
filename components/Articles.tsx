@@ -93,6 +93,51 @@ export const TopArticle = ({ article, index }) => {
 	);
 };
 
+export const SimilarArticle = ({ article }) => {
+	return (
+		<div className={articleStyles.topArticle}>
+			<Link href='[slug]' as={`${article.node.slug}`} passHref>
+				<a>
+					<div className='row'>
+						<div className='col-md-4'>
+							<img
+								src={`${article.node.featuredImage.node.sourceUrl}`}
+								alt={article.node.title}
+								className='w-100'
+							/>
+						</div>
+						<div className='col-md-7'>
+							<h5
+								style={{
+									fontSize: '0.75rem',
+									color: '#089047',
+									textTransform: 'uppercase',
+								}}>
+								{article.node.title}
+							</h5>
+							<div
+								style={{
+									fontSize: '0.70rem',
+									overflow: 'hidden',
+									whiteSpace: 'nowrap',
+									textOverflow: 'ellipsis',
+								}}></div>
+							<span
+								style={{
+									color: '#a09b9b',
+									fontSize: 'small',
+									fontWeight: 'lighter',
+								}}>
+								{article.author}
+							</span>
+						</div>
+					</div>
+				</a>
+			</Link>
+		</div>
+	);
+};
+
 const Articles: React.FC<IArticles> = ({ articles }) => {
 	return (
 		<div className='row d-flex justify-content-center'>

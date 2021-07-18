@@ -161,14 +161,6 @@ const Services = () => {
 					<div className={`col-md-2 col-sm-12`}></div>
 				</div>
 				<h6 className='text-center text-success'>REALISATIONS</h6>
-				<h6 className='text-success' style={{ paddingTop: '20px' }}>
-					<Link href='/' passHref>
-						<a>
-							Lire les articles
-							<FaCaretRight />
-						</a>
-					</Link>
-				</h6>
 			</section>
 			<section id='documentaire'>
 				<h5
@@ -212,19 +204,12 @@ const Services = () => {
 					<div className={`col-md-2 col-sm-12`}></div>
 				</div>
 				<h6 className='text-center text-success'>REALISATIONS</h6>
-				<h6 className='text-success' style={{ paddingTop: '20px' }}>
-					<Link href='/' passHref>
-						<a>
-							Lire les articles
-							<FaCaretRight />
-						</a>
-					</Link>
-				</h6>
+
 				<div className='row'>
 					<div className='col-md-3'>
 						<Image
 							src='/assets/documentaire.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt=' documentaire'
 						/>
@@ -232,7 +217,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/documentaire.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt=' documentaire'
 						/>
@@ -240,7 +225,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/documentaire.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt=' documentaire'
 						/>
@@ -248,7 +233,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/documentaire.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt=' documentaire'
 						/>
@@ -259,7 +244,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/documentaire.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt=' documentaire'
 						/>
@@ -267,7 +252,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/documentaire.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt=' documentaire'
 						/>
@@ -275,7 +260,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/documentaire.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt=' documentaire'
 						/>
@@ -283,12 +268,20 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/documentaire.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt=' documentaire'
 						/>
 					</div>
 				</div>
+				<h6 className='text-success' style={{ paddingTop: '20px' }}>
+					<Link href='/' passHref>
+						<a>
+							Voir plus de vidéos
+							<FaCaretRight />
+						</a>
+					</Link>
+				</h6>
 			</section>
 			<section id='motion_design'>
 				<h5
@@ -405,7 +398,7 @@ const Services = () => {
 				<h6 className='text-success' style={{ paddingTop: '20px' }}>
 					<Link href='/' passHref>
 						<a>
-							Lire les articles
+							Voir plus de vidéos
 							<FaCaretRight />
 						</a>
 					</Link>
@@ -456,7 +449,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/spot.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt='spot publicitaire'
 						/>
@@ -464,7 +457,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/spot.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt='spot publicitaire'
 						/>
@@ -472,7 +465,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/spot.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt='spot publicitaire'
 						/>
@@ -480,7 +473,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/spot.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt='spot publicitaire'
 						/>
@@ -490,7 +483,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/spot.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt='spot publicitaire'
 						/>
@@ -498,7 +491,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/spot.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt='spot publicitaire'
 						/>
@@ -506,7 +499,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/spot.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt='spot publicitaire'
 						/>
@@ -514,7 +507,7 @@ const Services = () => {
 					<div className='col-md-3'>
 						<Image
 							src='/assets/spot.jpg'
-							width={300}
+							width={275}
 							height={175}
 							alt='spot publicitaire'
 						/>
@@ -523,7 +516,7 @@ const Services = () => {
 				<h6 className='text-success' style={{ paddingTop: '20px' }}>
 					<Link href='/' passHref>
 						<a>
-							Lire les articles
+							Voir plus de vidéos
 							<FaCaretRight />
 						</a>
 					</Link>
