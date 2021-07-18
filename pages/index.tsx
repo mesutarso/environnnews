@@ -55,6 +55,7 @@ export default function Home({
 
 	const [articles, setArticles] = useState<IArticles['articles']>(news);
 	const filteredArticlesSix = articles.filter((item, key) => key < 4);
+	const topArcticles = articles.slice(5, 10);
 	const filteredArticlesEnvironments = artcleByCategoryEnvironnement.filter(
 		(item, key) => key < 4
 	);
@@ -274,7 +275,7 @@ export default function Home({
 			<div className='container'>
 				<div className='row py-5'>
 					<div className={`col-md-6 col-sm-12 px-3 ${heroStyles.editorChoice}`}>
-						<h5 className='border-start px-2 border-success border-5'>
+						<h5 className='border-start px-2 mb-4 border-success border-5'>
 							CHOIX DE L’EDITEUR
 						</h5>
 						<div className={heroStyles.editorChoiceContainer}>
@@ -287,7 +288,7 @@ export default function Home({
 							TOP ARTICLES
 						</h5>
 						<div>
-							{filteredArticlesSix.map((article, index) => (
+							{topArcticles.map((article, index) => (
 								<TopArticle
 									key={article.node.id}
 									article={article}

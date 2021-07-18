@@ -12,20 +12,29 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 
 	return (
 		<div className={`col-md-${size} mb-4 col-12 ${articleStyles.card}`}>
-			<Link
-				href='/[annee]/[mois]/[jour]/[slug]'
-				as={`${article.node.uri}`}
-				passHref>
-				<a>
-					<div className={articleStyles.content}>
+			<div className={`${articleStyles.card_image}`}>
+				<Link
+					href='/[annee]/[mois]/[jour]/[slug]'
+					as={`${article.node.uri}`}
+					passHref>
+					<a>
 						<img
 							src={`${postImgCat}`}
 							alt={article.node.title}
 							className='w-100'
 							height={imageHeight}
 							style={{ objectFit: 'cover' }}
-						/>
-						<br />
+						/>{' '}
+					</a>
+				</Link>
+			</div>
+
+			<div className={`${articleStyles.card_text}`}>
+				<Link
+					href='/[annee]/[mois]/[jour]/[slug]'
+					as={`${article.node.uri}`}
+					passHref>
+					<a>
 						<h5 className={`mt-3 mb-1 ${articleStyles.title}`}>
 							{article.node.title.split(':').length == 2
 								? article.node.title.split(':')[0]
@@ -36,52 +45,40 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 								? article.node.title.split(':')[1]
 								: article.node.title.split(':')[0] + '.'}
 						</span>
-					</div>
-				</a>
-			</Link>
+					</a>
+				</Link>
+			</div>
 		</div>
 	);
 };
 
 export const TopArticle = ({ article, index }) => {
 	return (
-		<div className={articleStyles.topArticle}>
+		<div
+			className={` py-4 ${articleStyles.topArticle} ${articleStyles.dashed_border_breaking} `}>
 			<Link href='[slug]' as={`${article.node.slug}`} passHref>
 				<a>
 					<div className='row'>
-						<div className='col-md-1'>
-							<h1>{index + 1}</h1>
+						<div className={`col-md-1 col-1 px-2`}>
+							<h1 className={`${articleStyles.number}`}>{index + 1}</h1>
 						</div>
-						<div className='col-md-3'>
+						<div className='col-md-4 col-4'>
 							<img
 								src={`${article.node.featuredImage.node.sourceUrl}`}
 								alt={article.node.title}
 								className='w-100'
 							/>
 						</div>
-						<div className='col-md-7'>
-							<h5
-								style={{
-									fontSize: '0.75rem',
-									color: '#089047',
-									textTransform: 'uppercase',
-								}}>
-								{article.node.title}
+						<div className='col-md-6 col-6'>
+							<h5 className={`mb-1 ${articleStyles.title}`}>
+								{article.node.title.split(':').length == 2
+									? article.node.title.split(':')[0]
+									: 'Environews'}
 							</h5>
-							<div
-								style={{
-									fontSize: '0.70rem',
-									overflow: 'hidden',
-									whiteSpace: 'nowrap',
-									textOverflow: 'ellipsis',
-								}}></div>
-							<span
-								style={{
-									color: '#a09b9b',
-									fontSize: 'small',
-									fontWeight: 'lighter',
-								}}>
-								{article.author}
+							<span className={articleStyles.description}>
+								{article.node.title.split(':').length == 2
+									? article.node.title.split(':')[1]
+									: article.node.title.split(':')[0] + '.'}
 							</span>
 						</div>
 					</div>
