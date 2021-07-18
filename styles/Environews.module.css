@@ -2,19 +2,29 @@
 	font-weight: bold;
 }
 .video {
-	background-color: green;
+	background-color: rgb(168, 175, 168, 0.4);
 	width: 100%;
 	height: 300px;
+	position: relative;
+}
+
+.video_container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	animation: fadeX 1.5s ease-in-out infinite;
 }
 
 .annonce {
-	background-color: green;
+	background-color: rgb(50, 100, 50);
 	width: 100%;
 	height: 100%;
 }
 
 .annonceTrend {
-	background-color: green;
+	background-color: rgb(50, 100, 50);
 	width: 100%;
 	height: 545px;
 }
@@ -26,4 +36,18 @@
 .margin_lt {
 	margin-top: -3px;
 	margin-left: 5px;
+}
+
+@keyframes fadeX {
+	0% {
+		background-color: rgba(192, 196, 192, 0.1);
+
+		right: 99.4%;
+	}
+	50% {
+		background-color: rgba(78, 99, 78, 0.1);
+	}
+	100% {
+		background-color: rgba(192, 196, 192, 0.1);
+	}
 }
