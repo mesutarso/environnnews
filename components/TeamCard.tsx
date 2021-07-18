@@ -1,29 +1,27 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Image from 'next/image';
 import TeamProfile from '../public/assets/benie.jpg';
 import TeamCardStyle from './../styles/TeamCard.module.css';
 
-const TeamCard = () => {
+const TeamCard = ({ contact }) => {
 	return (
 		<>
 			<div className='text-center p-3'>
-				<Image
-					src={TeamProfile}
+				<img
+					src={contact.node.featuredImage.node.sourceUrl}
 					className='img-fluid rounded-circle'
 					alt='profile Environnews'
-					width={150}
-					height={150}
 				/>
-				<div className='mt-2'>
+				<div className='mt-4'>
 					<h5 className={`${TeamCardStyle.text} ${TeamCardStyle.name}`}>
-						Annie TOWELA
+						{contact.node.title}
 					</h5>
 					<h6 className={`text-success ${TeamCardStyle.text}`}>
-						Reporter en Chef
+						{contact.node.roles.edges.map((roles) => {
+							return <span key={roles.node.name}>{roles.node.name} </span>;
+						})}
 					</h6>
-					<p className={`${TeamCardStyle.text}`}>
-						Présentatrice de l&apos;emission Informatique verte
-					</p>
 				</div>
 			</div>
 		</>

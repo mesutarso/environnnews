@@ -78,27 +78,28 @@ const Article = ({ article }) => {
 						style={{ objectFit: 'cover' }}
 					/>
 					<div>
+						<br />
 						<Link href='/'>
 							<a>
 								<FaFacebookSquare
-									className='mx-1 mt-3'
-									style={{ fontSize: '1.5rem' }}
+									className='mx-1 mt-3 text-primary'
+									style={{ fontSize: '2rem' }}
 								/>
 							</a>
 						</Link>
 						<Link href='/'>
 							<a>
 								<FaTwitter
-									className='mx-1 mt-3'
-									style={{ fontSize: '1.5rem' }}
+									className='mx-1 mt-3 text-info'
+									style={{ fontSize: '2rem' }}
 								/>
 							</a>
 						</Link>
 						<Link href='/'>
 							<a>
 								<FaLinkedinIn
-									className='mx-1 mt-3'
-									style={{ fontSize: '1.5rem' }}
+									className='mx-1 mt-3 '
+									style={{ fontSize: '2rem', color: '#0077b5' }}
 								/>
 							</a>
 						</Link>
@@ -106,20 +107,21 @@ const Article = ({ article }) => {
 							<a>
 								{' '}
 								<FaInstagramSquare
-									className='mx-1 mt-3'
-									style={{ fontSize: '1.5rem' }}
+									className='mx-1 mt-3 '
+									style={{ fontSize: '2rem', color: '#ac2bac' }}
 								/>
 							</a>
 						</Link>
 						<Link href='/'>
 							<a>
 								<FaYoutubeSquare
-									className='mx-1 mt-3'
-									style={{ fontSize: '1.5rem' }}
+									className='mx-1 mt-3 text-danger'
+									style={{ fontSize: '2rem' }}
 								/>
 							</a>
 						</Link>
 					</div>
+					<br />
 
 					<article dangerouslySetInnerHTML={{ __html: content }}></article>
 

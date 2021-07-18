@@ -5,6 +5,12 @@ import { IArticles } from '../pages';
 import articleStyles from '../styles/Article.module.css';
 
 export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
+	let author = article.node.content.replace(
+		/(<strong>(.){1,}<\/strong>)/,
+		'$1 est ici'
+	);
+	//console.log('author est ', author);
+	console.log(article.node.content);
 	let postImgCat =
 		(article.node.featuredImage !== null
 			? article.node.featuredImage.node.mediaItemUrl
@@ -42,7 +48,7 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 export const TopArticle = ({ article, index }) => {
 	return (
 		<div className={articleStyles.topArticle}>
-			<Link href='[slug]' as={`${article.node.slug}`} passHref>
+			<Link href='/[annee]/[mois]/[jour]/[slug]' as={`${article.node.uri}`}>
 				<a>
 					<div className='row'>
 						<div className='col-md-1'>
@@ -56,14 +62,16 @@ export const TopArticle = ({ article, index }) => {
 							/>
 						</div>
 						<div className='col-md-7'>
-							<h5
-								style={{
-									fontSize: '0.75rem',
-									color: '#089047',
-									textTransform: 'uppercase',
-								}}>
-								{article.node.title}
+							<h5 className={`mb-1 ${articleStyles.title}`}>
+								{article.node.title.split(':').length == 2
+									? article.node.title.split(':')[0]
+									: null}
 							</h5>
+							<span className={articleStyles.description}>
+								{article.node.title.split(':').length == 2
+									? article.node.title.split(':')[1]
+									: article.node.title.split(':')[0]}
+							</span>
 							<div
 								style={{
 									fontSize: '0.70rem',

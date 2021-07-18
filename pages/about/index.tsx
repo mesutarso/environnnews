@@ -1,8 +1,10 @@
 import React from 'react';
 import AboutStyle from '../../styles/About.module.css';
 import TeamCard from '../../components/TeamCard';
+import client from '../../graphql/uri';
+import { GET_CONTACT } from '../../graphql/queries';
 
-const Apropos = () => {
+const Apropos = ({ contacts }) => {
 	return (
 		<>
 			<div className={`container ${AboutStyle.mt_container}`}>
@@ -59,30 +61,11 @@ const Apropos = () => {
 					</div>
 				</div>
 				<div className={`mb-5 ${AboutStyle.card_row}`}>
-					<div className={`${AboutStyle.col_3}`}>
-						<TeamCard />
-					</div>
-					<div className={` ${AboutStyle.col_3}`}>
-						<TeamCard />
-					</div>
-					<div className={` ${AboutStyle.col_3}`}>
-						<TeamCard />
-					</div>
-					<div className={`${AboutStyle.col_3}`}>
-						<TeamCard />
-					</div>
-					<div className={`${AboutStyle.col_3}`}>
-						<TeamCard />
-					</div>
-					<div className={`${AboutStyle.col_3}`}>
-						<TeamCard />
-					</div>
-					<div className={`${AboutStyle.col_3}`}>
-						<TeamCard />
-					</div>
-					<div className={`${AboutStyle.col_3}`}>
-						<TeamCard />
-					</div>
+					{contacts.map((contact, key) => (
+						<div key={key} className={`${AboutStyle.col_3}`}>
+							<TeamCard contact={contact} />
+						</div>
+					))}
 				</div>
 			</div>
 		</>
@@ -90,3 +73,13 @@ const Apropos = () => {
 };
 
 export default Apropos;
+
+export const getStaticProps = async () => {
+	const contacts = await client.query({ query: GET_CONTACT });
+
+	return {
+		props: {
+			contacts: contacts.data.contacts.edges,
+		},
+	};
+};

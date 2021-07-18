@@ -103,7 +103,7 @@ const Appbar = () => {
 				const data = await res.data.ip;
 				setUserIp(data);
 			} catch (error) {
-				console.log(error.response);
+				//console.log(error.response);
 				// throw error;
 			}
 		})();
@@ -117,8 +117,7 @@ const Appbar = () => {
 				const data = await res.data.Key;
 				setUserLocation(data);
 			} catch (error) {
-				console.log(error.response);
-
+				//	console.log(error.response);
 				// throw error;
 			}
 		})();
@@ -131,7 +130,7 @@ const Appbar = () => {
 				console.log(data);
 				SetCurrrentSituation(data);
 			} catch (error) {
-				console.log(error.response);
+				//	console.log(error.response);
 			}
 		})();
 	}, [userIp, userLocation]);

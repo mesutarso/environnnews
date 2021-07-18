@@ -69,6 +69,32 @@ export const GET_BREAKING_NEWS = gql`
 	}
 `;
 
+export const GET_CONTACT = gql`
+	{
+		contacts {
+			edges {
+				node {
+					title
+					featuredImage {
+						node {
+							mediaItemUrl
+							sourceUrl
+						}
+					}
+					uri
+					roles {
+						edges {
+							node {
+								name
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+`;
+
 export const GET_POSTS = (name: string) => {
 	return gql`
 	{

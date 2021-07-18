@@ -130,7 +130,9 @@ export default function Home({
 								animationDuration={10000}
 							/>
 							<br />
-							<Link href='/articles/[id]' as='/articles/1'>
+							<Link
+								href='/[annee]/[mois]/[jour]/[slug]'
+								as={`${article[0].node.uri}`}>
 								<a>
 									<h5
 										className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
@@ -342,6 +344,10 @@ export async function getServerSideProps() {
 		query: GET_POSTS('biodiversite'),
 	});
 
+	const artcleByCategoryForet = await client.query({
+		query: GET_POSTS('foret'),
+	});
+
 	return {
 		props: {
 			news: news.data.posts.edges,
@@ -353,6 +359,7 @@ export async function getServerSideProps() {
 			artcleByCategoryEnvironnement:
 				artcleByCategoryEnvironnement.data.posts.edges,
 			artcleByCategorySante: artcleByCategorySante.data.posts.edges,
+			artcleByCategoryForet: artcleByCategoryForet.data.posts.edges,
 		},
 	};
 }
