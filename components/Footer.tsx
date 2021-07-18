@@ -43,16 +43,6 @@ const Footer = () => (
 										<li>Contacts</li>
 									</a>
 								</Link>
-								<Link href='/'>
-									<a>
-										<li>Publicité</li>
-									</a>
-								</Link>
-								<Link href='/'>
-									<a>
-										<li>Newsletter</li>
-									</a>
-								</Link>
 							</ul>
 						</div>
 						<div className='col-md-2 col-10 mt-md-0 mt-4 '>
@@ -118,7 +108,6 @@ const Footer = () => (
 										/>
 									</a>
 								</Link>
-								<br />
 								<Link href='https://www.linkedin.com/company/environews-rdc/'>
 									<a data-testid='link-linkedinIn'>
 										<FaLinkedinIn

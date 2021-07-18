@@ -7,14 +7,16 @@
 }
 .title {
 	text-transform: uppercase;
-	font-weight: 600;
-	font-size: 0.9rem;
+	font-weight: 400;
+	font-size: 1rem;
 	color: #089047;
+	/* margin-bottom: 5px !important; */
 }
 .description,
 .breaking_news__description {
 	font-size: 0.9rem;
 	font-weight: bold;
+	display: block;
 }
 .author {
 	color: #a09b9b;
@@ -180,4 +182,7 @@
 	color: #a09b9b;
 	font-size: small;
 	font-weight: 500;
+}
+.article_title {
+	font-size: 2.7rem !important;
 }
