@@ -12,29 +12,35 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 
 	return (
 		<div className={`col-md-${size} mb-4 col-12 ${articleStyles.card}`}>
-			<Link href='/[annee]/[mois]/[jour]/[slug]' as={`${article.node.uri}`}>
-				<a>
-					<img
-						src={`${postImgCat}`}
-						alt={article.node.title}
-						className='w-100'
-						height={imageHeight}
-						style={{ objectFit: 'cover' }}
-					/>
-					<br />
-					<h5 className={`mt-3 mb-1 ${articleStyles.title}`}>
-						{article.node.title.split(':').length == 2
-							? article.node.title.split(':')[0]
-							: null}
-					</h5>
-					<span className={articleStyles.description}>
-						{article.node.title.split(':').length == 2
-							? article.node.title.split(':')[1]
-							: article.node.title.split(':')[0]}
-					</span>
-					<span className={articleStyles.author}>Marcos Musafiri</span>
-				</a>
-			</Link>
+			<div className={`${articleStyles.card_image}`}>
+				<Link href='/[annee]/[mois]/[jour]/[slug]' as={`${article.node.uri}`}>
+					<a>
+						<img
+							src={`${postImgCat}`}
+							alt={article.node.title}
+							className='w-100'
+							height={imageHeight}
+							style={{ objectFit: 'cover' }}
+						/>
+					</a>
+				</Link>
+			</div>
+			<div className={`${articleStyles.card_text}`}>
+				<Link href='/[annee]/[mois]/[jour]/[slug]' as={`${article.node.uri}`}>
+					<a>
+						<h5 className={`mt-3 mb-1 ${articleStyles.title}`}>
+							{article.node.title.split(':').length == 2
+								? article.node.title.split(':')[0]
+								: null}
+						</h5>
+						<span className={articleStyles.description}>
+							{article.node.title.split(':').length == 2
+								? article.node.title.split(':')[1]
+								: article.node.title.split(':')[0]}
+						</span>
+					</a>
+				</Link>
+			</div>
 		</div>
 	);
 };
