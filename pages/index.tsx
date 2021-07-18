@@ -118,7 +118,7 @@ export default function Home({
 
 			<div className='container'>
 				<div className={`row ${heroStyles.hero}`}>
-					<div className='col-md-8 col-sm-12'>
+					<div className='col-md-9 col-sm-12'>
 						<div className={heroStyles.topNews}>
 							<AliceCarousel
 								mouseTracking
@@ -154,7 +154,7 @@ export default function Home({
 						<br />
 						<Articles articles={filteredArticlesSix} />
 					</div>
-					<div className='col-md-4 col-sm-12'>
+					<div className='col-md-3 col-sm-12'>
 						<BreakingNews breakingNews={breakingNews_} />
 						<br />
 						<Opportunities opportunities={opportunities_} />
