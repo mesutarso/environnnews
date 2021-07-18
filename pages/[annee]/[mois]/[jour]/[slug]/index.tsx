@@ -11,12 +11,17 @@ import {
 	FaLinkedinIn,
 	FaTwitter,
 	FaYoutubeSquare,
+	FaCalendar,
+	FaEye,
+	FaRegUser,
+	FaWhatsappSquare,
 } from 'react-icons/fa';
+
 import Link from 'next/link';
-import { IArticles } from '../../../../';
-import { TopArticle } from '../../../../../components/Articles';
 import client from '../../../../../graphql/uri';
-import { GET_POSTS_SLUG } from '../../../../../graphql/queries';
+import { GET_NEWS, GET_POSTS_SLUG } from '../../../../../graphql/queries';
+import { IArticles } from '../../../../categories/[name]/index';
+import { SimilarArticle } from '../../../../../components/Articles';
 
 export interface IComments {
 	comments: {
@@ -27,7 +32,7 @@ export interface IComments {
 	}[];
 }
 
-const Article = ({ article }) => {
+const Article = ({ article, news }) => {
 	let deleteFig = article.content.replace(
 		/(figure)/,
 		'$1 style="display:none"'
@@ -36,8 +41,6 @@ const Article = ({ article }) => {
 		/(style='width:44px;left: -10px;top: 100px;-webkit-box-shadow:none;box-shadow:none;')/,
 		`style='display:none'`
 	);
-
-	console.log('sociale :', article);
 
 	const [comments, setComments] = useState<IComments['comments']>([
 		{
@@ -52,7 +55,17 @@ const Article = ({ article }) => {
 			description: 'This is what you want I guess',
 			date: '24th july 2012',
 		},
+		{
+			id: '35',
+			pseudo: ' Beni Mampunina',
+			description: 'This is what you want I guess',
+			date: '24th july 2012',
+		},
 	]);
+
+	const [articles, setArticles] = useState<IArticles['articles']>(news);
+	const filteredArticlesSix = articles.filter((item, key) => key < 4);
+
 	return (
 		<div className={`container ${articleStyles.articleContent}`}>
 			<h4 className='border-start px-3 border-success border-5'>CORONAVIRUS</h4>
@@ -66,12 +79,24 @@ const Article = ({ article }) => {
 						height={500}
 						style={{ objectFit: 'cover' }}
 					/>
-					<div>
+					<div className={articleStyles.tags}>
+						<li>
+							<FaRegUser /> Christian Mwanya
+						</li>
+						<li>
+							<FaCalendar /> 24/7/2021 12h00
+						</li>
+						<li>
+							<FaEye /> 243
+						</li>
+					</div>
+
+					<div style={{ padding: '0px 0px 0px 10px' }}>
 						<Link href='/'>
 							<a>
 								<FaFacebookSquare
 									className='mx-1 mt-3'
-									style={{ fontSize: '1.5rem' }}
+									style={{ fontSize: '1.5rem', color: 'darkblue' }}
 								/>
 							</a>
 						</Link>
@@ -79,7 +104,15 @@ const Article = ({ article }) => {
 							<a>
 								<FaTwitter
 									className='mx-1 mt-3'
-									style={{ fontSize: '1.5rem' }}
+									style={{ fontSize: '1.5rem', color: 'steelblue' }}
+								/>
+							</a>
+						</Link>
+						<Link href='/'>
+							<a>
+								<FaWhatsappSquare
+									className='mx-1 mt-3'
+									style={{ fontSize: '1.5rem', color: 'green' }}
 								/>
 							</a>
 						</Link>
@@ -87,32 +120,13 @@ const Article = ({ article }) => {
 							<a>
 								<FaLinkedinIn
 									className='mx-1 mt-3'
-									style={{ fontSize: '1.5rem' }}
-								/>
-							</a>
-						</Link>
-						<Link href='/'>
-							<a>
-								{' '}
-								<FaInstagramSquare
-									className='mx-1 mt-3'
-									style={{ fontSize: '1.5rem' }}
-								/>
-							</a>
-						</Link>
-						<Link href='/'>
-							<a>
-								<FaYoutubeSquare
-									className='mx-1 mt-3'
-									style={{ fontSize: '1.5rem' }}
+									style={{ fontSize: '1.5rem', color: 'blue' }}
 								/>
 							</a>
 						</Link>
 					</div>
-
-					<article dangerouslySetInnerHTML={{ __html: content }}></article>
-
 					<br />
+					<article dangerouslySetInnerHTML={{ __html: content }}></article>
 
 					<div className={`row ${articleStyles.footer}`}>
 						<div className='col-md-5 col-sm-12'>
@@ -147,38 +161,11 @@ const Article = ({ article }) => {
 							A LIRE AUSSI
 						</h6>
 						<div className={articleStyles.similar}>
-							{/*
-        {articles.map((article) => {
-								return (
-									<Link
-										key={article.node.id}
-										href='/articles/[id]'
-										as={`/articles/${article.node.id}`}
-										passHref>
-										<a>
-											<div className='row'>
-												<div className='col-md-4'>
-													<Image
-														src={article.node.featuredImage.node.mediaItemUrl}
-														alt={article.node.title}
-														width={150}
-														height={100}
-													/>
-												</div>
-												<div className='col-md-8'>
-													<h5>{article.node.title}</h5>
-													<span>{article.node.title}</span>
-													<br />
-													<span className={articleStyles.author_}>
-														{article.node.author}
-													</span>
-												</div>
-											</div>
-										</a>
-									</Link>
-								);
-							})}
-        */}
+							<div>
+								{filteredArticlesSix.map((article) => (
+									<SimilarArticle key={article.node.id} article={article} />
+								))}
+							</div>
 						</div>
 					</div>
 					<div className={articleStyles.newsLetter}>
@@ -207,10 +194,12 @@ export const getServerSideProps = async (context) => {
 	const article = await client.query({
 		query: GET_POSTS_SLUG(context.params.slug),
 	});
+	const news = await client.query({ query: GET_NEWS });
 
 	return {
 		props: {
 			article: article.data.post,
+			news: news.data.posts.edges,
 		},
 	};
 };

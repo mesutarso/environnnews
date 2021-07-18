@@ -181,3 +181,15 @@
 	font-size: small;
 	font-weight: 500;
 }
+
+.tags {
+	margin-top: 10px;
+	font-size: 1rem;
+	color: #a09b9b;
+	display: flex;
+}
+
+.tags li {
+	list-style: none;
+	margin-right: 10px;
+}
