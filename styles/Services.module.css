@@ -1,5 +1,8 @@
 .content {
-	padding: 180px 5vw;
+	padding-top: 180px;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	padding-bottom: 50px;
 }
 
 .content p {
@@ -27,14 +30,15 @@
 	width: calc(20% - 20px);
 	margin: 20px;
 	padding: 20px;
-	border: 1px solid black;
+	border: 1px solid gray;
 	text-align: center;
 }
 
 .menu_item h5 {
-	font-size: 0.75rem;
+	font-size: 1rem;
 	font-weight: 600;
 	color: gray;
+	margin-top: 5px;
 }
 
 .divider {
