@@ -175,6 +175,10 @@
 	outline: none;
 	background: none;
 }
+.active_link {
+	color: #fff;
+	background-color: #1f7045;
+}
 
 .hidden {
 	transition: 0.5s ease;
