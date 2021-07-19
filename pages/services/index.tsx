@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import serviceStyles from '../../styles/Services.module.css';
@@ -62,70 +63,64 @@ const Services = () => {
 				bibendum. Aliquet enim arcu consequat, magna nunc nec fermentum aliquet.
 			</p>
 
-			<div className={serviceStyles.menu}>
-				<div className={serviceStyles.menu_item}>
+			<div className={`row ${serviceStyles.menu}`}>
+				<div className={`col-4 col-md-2 ${serviceStyles.menu_item}`}>
 					<Link href='#redaction' passHref>
 						<a>
-							<Image
+							<img
 								src='/icons/redaction.svg'
 								alt='Redaction'
-								width={60}
-								height={60}
+								className={`img-fluid  mx-auto d-block ${serviceStyles.item_image}`}
 							/>
-
-							<h5>REDACTION</h5>
+							<span>REDACTION</span>
 						</a>
 					</Link>
 				</div>
-				<div className={serviceStyles.menu_item}>
+				<div className={`col-4 col-md-2  ${serviceStyles.menu_item}`}>
 					<Link href='#infographie' passHref>
 						<a>
-							<Image
+							<img
 								src='/icons/ingographie.svg'
-								alt='Infographie'
-								width={60}
-								height={60}
+								alt='infographie'
+								className={`img-fluid  mx-auto d-block ${serviceStyles.item_image}`}
 							/>
-							<h5>INFOGRAPHIE</h5>
+							<span>INFOGRAPHIE</span>
 						</a>
 					</Link>
 				</div>
-				<div className={serviceStyles.menu_item}>
+				<div className={`col-4 col-md-2  ${serviceStyles.menu_item}`}>
 					<Link href='#documentaire' passHref>
 						<a>
 							<img
 								src='/icons/documentaire.svg'
-								alt='Documentaire'
-								width={60}
-								height={60}
+								alt='documentaire'
+								className={`img-fluid  mx-auto d-block ${serviceStyles.item_image}`}
 							/>
-							<h5>DOCUMENTAIRE</h5>
+							<span>DOCUMENTAIRE</span>
 						</a>
 					</Link>
 				</div>
-				<div className={serviceStyles.menu_item}>
+				<div className={`col-4 col-md-2  ${serviceStyles.menu_item}`}>
 					<Link href='#motion_design' passHref>
 						<a>
-							<Image
+							<img
 								src='/icons/motion.svg'
-								alt='Motion Design'
-								width={60}
-								height={60}
+								alt='motion'
+								className={`img-fluid  mx-auto d-block ${serviceStyles.item_image}`}
 							/>
-							<h5>MOTION DESIGN</h5>
+							<span>MOTION DESIGN</span>
 						</a>
 					</Link>
 				</div>
-				<div className={serviceStyles.menu_item}>
+				<div className={`col-4 col-md-2  ${serviceStyles.menu_item}`}>
 					<Link href='#spot_pub' passHref>
 						<a>
-							<Image
+							<img
 								src='/icons/spot_pub.svg'
 								alt='Spot Publicitaire'
-								width={60}
-								height={60}
+								className={`img-fluid  mx-auto d-block ${serviceStyles.item_image}`}
 							/>
-							<h5>SPOT PUBLICITAIRE</h5>
+							<span>SPOT PUBLICITAIRE</span>
 						</a>
 					</Link>
 				</div>
