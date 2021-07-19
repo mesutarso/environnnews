@@ -18,15 +18,15 @@ const Footer = () => (
 			<div className='row justify-content-center py-4'>
 				<div className='col-12'>
 					<div className='row justify-content-center'>
-						<div className='col-md-2 col-10 '>
+						<div className='col-12 col-md-2 justify-content-center'>
 							<img
 								data-testid='logo-environews'
 								src='/assets/environews_logo.png'
 								alt="logo d'environ news"
-								className={`img-fluid  ${footerStyles.img_top}`}
+								className={`img-fluid  mx-auto d-block ${footerStyles.img_top}`}
 							/>
 						</div>
-						<div className='col-md-2 col-10 mt-md-0 mt-4 '>
+						<div className='col-md-2 col-5 mt-md-0 mt-4 '>
 							<h6
 								data-testid='title-environews'
 								className='text-white border-start px-2 border-success border-5'>
@@ -45,7 +45,7 @@ const Footer = () => (
 								</Link>
 							</ul>
 						</div>
-						<div className='col-md-2 col-10 mt-md-0 mt-4 '>
+						<div className='col-md-2 col-5 mt-md-0 mt-4 '>
 							<h6
 								data-testid='title-environews'
 								className='text-white border-start px-2 border-success border-5'>
@@ -89,7 +89,7 @@ const Footer = () => (
 							</h6>
 						</div>
 						<div
-							className={`text-white col-md-2 col-10 mt-md-0 mt-4 ${footerStyles.icons}`}>
+							className={`text-white col-md-2 col-12 text-center mt-md-0 mt-4 ${footerStyles.icons}`}>
 							<span className='px-1'>Suivez-nous sur</span>
 							<div>
 								<Link href='https://web.facebook.com/EnvironewsRDC/?_rdc=1&_rdr'>
