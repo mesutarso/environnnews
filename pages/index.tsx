@@ -11,7 +11,7 @@ import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
 import client from '../graphql/uri';
-
+import AdSense from 'react-adsense';
 import {
 	GET_OPPORTUNITIES,
 	GET_NEWS,
@@ -118,7 +118,7 @@ export default function Home({
 
 			<div className='container'>
 				<div className={`row ${heroStyles.hero}`}>
-					<div className='col-md-8 col-sm-12'>
+					<div className='col-md-9 col-sm-12'>
 						<div className={heroStyles.topNews}>
 							<AliceCarousel
 								mouseTracking
@@ -130,8 +130,11 @@ export default function Home({
 								animationDuration={10000}
 							/>
 							<br />
-							<Link href='/articles/[id]' as='/articles/1'>
-								<a>
+							<br />
+							<Link
+								href='/[annee]/[mois]/[jour]/[slug]'
+								as={`${article[0].node.uri}`}>
+								<a style={{ color: 'inherit' }}>
 									<h5
 										className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
 										{getCat}
@@ -144,18 +147,34 @@ export default function Home({
 									/>
 
 									<h4>{deleteCat}</h4>
-									<span>Christopher Buhendwa</span>
 								</a>
 							</Link>
 						</div>
+						<br />
+						<br />
 						<Articles articles={filteredArticlesSix} />
 					</div>
-					<div className='col-md-4 col-sm-12'>
+					<div className='col-md-3 col-sm-12'>
 						<BreakingNews breakingNews={breakingNews_} />
 						<br />
 						<Opportunities opportunities={opportunities_} />
 						<br />
-						<div className={heroStyles.pub}></div>
+						<div className={heroStyles.pub}>
+							{/* <AdSense.Google
+								client='ca-pub-2034102263729175'
+								slot='674827658'
+								// style={{ width: 500, height: 300, float: 'left' }}
+								// format=''
+							/> */}
+
+							<AdSense.Google
+								client='ca-pub-2034102263729175'
+								slot='674827658'
+								style={{ display: 'block' }}
+								// layout='in-article'
+								format='fluid'
+							/>
+						</div>
 					</div>
 				</div>
 

@@ -1,10 +1,5 @@
 .card {
-	padding: 5px;
-	width: 100%;
-}
-
-.contentwrapper {
-	width: 100%;
+	background: #fffbfb;
 }
 .card a {
 	text-decoration: none;
@@ -12,14 +7,17 @@
 }
 .title {
 	text-transform: uppercase;
-	font-weight: 600;
-	font-size: 0.9rem;
+	font-weight: 400;
+	font-size: 1rem;
 	color: #089047;
+	/* margin-bottom: 5px !important; */
 }
 .description,
+.card_text,
 .breaking_news__description {
-	font-size: 0.9rem;
+	font-size: 0.9rem !important;
 	font-weight: bold;
+	display: block;
 }
 .author {
 	color: #a09b9b;
@@ -185,4 +183,64 @@
 	color: #a09b9b;
 	font-size: small;
 	font-weight: 500;
+}
+
+.tags {
+	margin-top: 10px;
+	font-size: 1rem;
+	color: #a09b9b;
+	display: flex;
+}
+
+.tags li {
+	list-style: none;
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 1300px) {
+}
+
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 1100px) {
+}
+@media screen and (max-width: 960px) {
+	.card_text h5,
+	.card_text span {
+		font-size: 0.9rem !important;
+	}
+}
+@media screen and (max-width: 767px) {
+	.card {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	.card_image {
+		width: 30%;
+	}
+
+	.card_image img {
+		width: 100px;
+		height: 100px;
+	}
+	.card_text {
+		margin-left: 10px !important;
+		width: 70%;
+	}
+	.card_text h5 {
+		margin: 0 !important;
+	}
+}
+@media screen and (max-width: 480px) {
+	.card_text h5,
+	.card_text span {
+		margin: 0 !important;
+		font-size: 0.8rem !important;
+	}
+	.card_image img {
+		width: 80px;
+		height: 80px;
+	}
 }
