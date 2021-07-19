@@ -84,7 +84,7 @@ const Article = ({ article, news }) => {
 							<FaRegUser /> Christian Mwanya
 						</li>
 						<li>
-							<FaCalendar /> 24/7/2021 12h00
+							<FaCalendar /> 2{new Date(article.date).toLocaleString()}
 						</li>
 						<li>
 							<FaEye /> 243
@@ -126,6 +126,10 @@ const Article = ({ article, news }) => {
 						</Link>
 					</div>
 					<br />
+
+					<article dangerouslySetInnerHTML={{ __html: content }}></article>
+
+					<br />
 					<article dangerouslySetInnerHTML={{ __html: content }}></article>
 
 					<div className={`row ${articleStyles.footer}`}>
@@ -156,17 +160,13 @@ const Article = ({ article, news }) => {
 				</div>
 				<div className='col-md-3 col-sm-12'>
 					<div className={articleStyles.pub}></div>
-					<div style={{ paddingTop: '20px' }}>
+					<div className={articleStyles.similarContainer}>
 						<h6 className='border-start px-2 border-success border-5'>
 							A LIRE AUSSI
 						</h6>
-						<div className={articleStyles.similar}>
-							<div>
-								{filteredArticlesSix.map((article) => (
-									<SimilarArticle key={article.node.id} article={article} />
-								))}
-							</div>
-						</div>
+						{filteredArticlesSix.map((article) => (
+							<SimilarArticle key={article.node.id} article={article} />
+						))}
 					</div>
 					<div className={articleStyles.newsLetter}>
 						<h3>NEWSLETTER</h3>

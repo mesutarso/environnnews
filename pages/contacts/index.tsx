@@ -1,10 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import { FaEnvelopeSquare, FaMobileAlt, FaMapMarkerAlt } from 'react-icons/fa';
-
 import contactStyles from '../../styles/Contact.module.css';
 import AboutStyle from '../../styles/About.module.css';
+import client from '../../graphql/uri';
+import { GET_CONTACT } from '../../graphql/queries';
 
-const Contact = () => {
+const Contact = ({ contacts }) => {
+	console.log('contacts ', contacts);
 	return (
 		<div className={contactStyles.content}>
 			<div className='container'>
@@ -114,3 +116,13 @@ const Contact = () => {
 };
 
 export default Contact;
+
+export const getServerSideProps = async () => {
+	const contacts = await client.query({ query: GET_CONTACT });
+
+	return {
+		props: {
+			contacts: contacts.data.contacts.edges,
+		},
+	};
+};

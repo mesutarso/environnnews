@@ -1,23 +1,22 @@
-.card {
-	background: #fffbfb;
-}
 .card a {
-	text-decoration: none;
-	color: inherit;
+	color: #222;
 }
+
 .title {
 	text-transform: uppercase;
 	font-weight: 400;
 	font-size: 1rem;
 	color: #089047;
-	/* margin-bottom: 5px !important; */
 }
-.description,
-.card_text,
-.breaking_news__description {
-	font-size: 0.9rem !important;
+.description {
+	font-size: 0.9rem;
 	font-weight: bold;
 	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
 .author {
 	color: #a09b9b;
@@ -49,6 +48,13 @@
 .topArticle {
 	padding: 5px 0px;
 }
+.dashed_border_breaking:nth-child(n + 2) {
+	border-top: 1px black dashed;
+}
+.number {
+	font-size: 3.5rem !important;
+	font-weight: 900;
+}
 
 /* SINGLE ARTICLE PAGE STYLES */
 
@@ -66,9 +72,6 @@
 	padding: 10px 0;
 }
 
-.divider {
-	border-left: 1px solid #089047;
-}
 .footer {
 	padding: 30px 0px;
 }
@@ -168,6 +171,17 @@
 	align-items: flex-start;
 }
 
+.similarContainer {
+	margin-top: 5px;
+	padding: 5px;
+	/* background: #f7fff7; */
+	border-radius: 5px;
+}
+
+.similarContainer a {
+	color: inherit;
+}
+
 .similar h5 {
 	font-size: 1rem;
 	color: #089047;
@@ -175,7 +189,7 @@
 	text-transform: uppercase;
 }
 .similar span {
-	font-size: 0.75rem;
+	font-size: 0.5rem;
 	text-overflow: ellipsis;
 }
 
@@ -187,9 +201,10 @@
 
 .tags {
 	margin-top: 10px;
-	font-size: 1rem;
+	font-size: 13px;
 	color: #a09b9b;
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .tags li {
