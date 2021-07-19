@@ -9,8 +9,7 @@ export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
 		/(<strong>(.){1,}<\/strong>)/,
 		'$1 est ici'
 	);
-	//console.log('author est ', author);
-	console.log(article.node.content);
+
 	let postImgCat =
 		(article.node.featuredImage !== null
 			? article.node.featuredImage.node.mediaItemUrl

@@ -24,6 +24,7 @@ import {
 	IMetric,
 	ITemperature,
 } from '../components/interface/HeaderInterface';
+import { useRouter } from 'next/router';
 
 const categoriesList = [
 	{
@@ -199,11 +200,16 @@ const Appbar = () => {
 
 const NavBar: React.FC = () => {
 	const [categories, setCategories] = useState(categoriesList);
+	const router = useRouter();
+
 	return (
 		<div className={headerStyles.nav_container}>
 			<div className={`container ${headerStyles.nav}`}>
 				<Link href='/' as='/' passHref>
-					<a className={`${headerStyles.link} ${headerStyles.linkIcon}`}>
+					<a
+						className={`${headerStyles.link}  ${
+							router.asPath === `/` ? headerStyles.active_link : null
+						}`}>
 						<BsHouseFill fontSize={19} />
 					</a>
 				</Link>
@@ -213,7 +219,14 @@ const NavBar: React.FC = () => {
 						href='/categories/[name]'
 						as={`/categories/${categorie.categorie_name}`}
 						passHref>
-						<a className={`${headerStyles.link}`}>{categorie.categorie_name}</a>
+						<a
+							className={`${headerStyles.link} ${
+								router.asPath === `/categories/${categorie.categorie_name}`
+									? headerStyles.active_link
+									: null
+							}`}>
+							{categorie.categorie_name}
+						</a>
 					</Link>
 				))}
 			</div>
