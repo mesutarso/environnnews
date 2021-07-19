@@ -69,6 +69,32 @@ export const GET_BREAKING_NEWS = gql`
 	}
 `;
 
+export const GET_CONTACT = gql`
+	{
+		contacts {
+			edges {
+				node {
+					title
+					featuredImage {
+						node {
+							mediaItemUrl
+							sourceUrl
+						}
+					}
+					uri
+					roles {
+						edges {
+							node {
+								name
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+`;
+
 export const GET_POSTS = (name: string) => {
 	return gql`
 	{
@@ -96,6 +122,7 @@ export const GET_POSTS_SLUG = (slug: string) => gql`
   post(id: "${slug}", idType: URI) {
     title
     content
+	date
     featuredImage {
       node {
         mediaItemUrl

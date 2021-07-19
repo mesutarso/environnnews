@@ -25,6 +25,10 @@
 	margin-right: 10px !important;
 }
 
+.weather_date:nth-child(1) {
+	display: block;
+}
+
 .weather span {
 	font-size: smaller;
 }
@@ -194,5 +198,11 @@
 	.link {
 		font-size: 0.65rem;
 		padding: 10px 15px;
+	}
+}
+
+@media (max-width: 768px) {
+	.weather_date span:nth-child(1) {
+		display: none;
 	}
 }

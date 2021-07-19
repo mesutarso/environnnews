@@ -55,6 +55,7 @@ export default function Home({
 
 	const [articles, setArticles] = useState<IArticles['articles']>(news);
 	const filteredArticlesSix = articles.filter((item, key) => key < 4);
+	const topArcticles = articles.slice(5, 10);
 	const filteredArticlesEnvironments = artcleByCategoryEnvironnement.filter(
 		(item, key) => key < 4
 	);
@@ -115,7 +116,7 @@ export default function Home({
 
 			<div className='container'>
 				<div className={`row ${heroStyles.hero}`}>
-					<div className='col-md-9 col-sm-12'>
+					<div className='col-md-8 col-sm-12'>
 						<div className={heroStyles.topNews}>
 							<AliceCarousel
 								mouseTracking
@@ -151,7 +152,7 @@ export default function Home({
 						<br />
 						<Articles articles={filteredArticlesSix} />
 					</div>
-					<div className='col-md-3 col-sm-12'>
+					<div className='col-md-4 col-sm-12'>
 						<BreakingNews breakingNews={breakingNews_} />
 						<br />
 						<Opportunities opportunities={opportunities_} />
@@ -274,7 +275,7 @@ export default function Home({
 			<div className='container'>
 				<div className='row py-5'>
 					<div className={`col-md-6 col-sm-12 px-3 ${heroStyles.editorChoice}`}>
-						<h5 className='border-start px-2 border-success border-5'>
+						<h5 className='border-start px-2 mb-4 border-success border-5'>
 							CHOIX DE L’EDITEUR
 						</h5>
 						<div className={heroStyles.editorChoiceContainer}>
@@ -287,7 +288,7 @@ export default function Home({
 							TOP ARTICLES
 						</h5>
 						<div>
-							{filteredArticlesSix.map((article, index) => (
+							{topArcticles.map((article, index) => (
 								<TopArticle
 									key={article.node.id}
 									article={article}
@@ -332,6 +333,10 @@ export async function getServerSideProps() {
 		query: GET_POSTS('biodiversite'),
 	});
 
+	const artcleByCategoryForet = await client.query({
+		query: GET_POSTS('foret'),
+	});
+
 	return {
 		props: {
 			news: news.data.posts.edges,
@@ -343,6 +348,7 @@ export async function getServerSideProps() {
 			artcleByCategoryEnvironnement:
 				artcleByCategoryEnvironnement.data.posts.edges,
 			artcleByCategorySante: artcleByCategorySante.data.posts.edges,
+			artcleByCategoryForet: artcleByCategoryForet.data.posts.edges,
 		},
 	};
 }

@@ -84,7 +84,7 @@ const Article = ({ article, news }) => {
 							<FaRegUser /> Christian Mwanya
 						</li>
 						<li>
-							<FaCalendar /> 24/7/2021 12h00
+							<FaCalendar /> 2{new Date(article.date).toLocaleString()}
 						</li>
 						<li>
 							<FaEye /> 243
@@ -125,6 +125,10 @@ const Article = ({ article, news }) => {
 							</a>
 						</Link>
 					</div>
+					<br />
+
+					<article dangerouslySetInnerHTML={{ __html: content }}></article>
+
 					<br />
 					<article dangerouslySetInnerHTML={{ __html: content }}></article>
 

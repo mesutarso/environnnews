@@ -1,12 +1,54 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
+import React, { useState } from 'react';
 import serviceStyles from '../../styles/Services.module.css';
 import AboutStyle from '../../styles/About.module.css';
 import { FaEdit, FaCaretRight, FaBullhorn } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
 
+interface IVideos {
+	video: {
+		videoId: string;
+	}[];
+}
+
+interface IInfography {
+	infography: {
+		image_path: string;
+		label: string;
+	}[];
+}
+
 const Services = () => {
+	const [spot, setSpot] = useState<IVideos['video']>([
+		{ videoId: 'FSAcjnnRRv4' },
+		{ videoId: 'nS10PWcS8o8' },
+		{ videoId: 'u8jOlC1LMZk' },
+		{ videoId: '7mcMOWvL9rg' },
+	]);
+	const [motionDesign, setMotionDesign] = useState<IVideos['video']>([
+		{ videoId: 'ZXI9H9OPpug' },
+		{ videoId: 'qF74PxT2L3U' },
+		{ videoId: 'myfPAkGDci8' },
+		{ videoId: 'fE5xTw5TFs8' },
+	]);
+	const [documentary, setSDocumentary] = useState<IVideos['video']>([
+		{ videoId: 'fE5xTw5TFs8' },
+		{ videoId: 'PLPWF9iGWoY' },
+		{ videoId: 'V9_H3xyfI-Q' },
+		{ videoId: '5tX_YcM7zV4' },
+	]);
+
+	const [infography, setInfography] = useState<IInfography['infography']>([
+		{ image_path: '/assets/services/Cap_black.webp', label: 'Cap Black' },
+		{ image_path: '/assets/services/Cap.webp', label: 'Cap' },
+		{ image_path: '/assets/services/Blank-tshirt.webp', label: 'Tshirt Black' },
+		{
+			image_path: '/assets/services/Banderole-INPESS.webp',
+			label: 'Banderole-INPESS',
+		},
+	]);
 	return (
 		<div className={`container ${serviceStyles.content}`}>
 			<h3 className={`text-center ${AboutStyle.title}`}>
@@ -21,44 +63,64 @@ const Services = () => {
 				bibendum. Aliquet enim arcu consequat, magna nunc nec fermentum aliquet.
 			</p>
 
-			<div className={serviceStyles.menu}>
-				<div className={serviceStyles.menu_item}>
+			<div className={`row ${serviceStyles.menu}`}>
+				<div className={`col-4 col-md-2 ${serviceStyles.menu_item}`}>
 					<Link href='#redaction' passHref>
 						<a>
-							<FaEdit style={{ fontSize: '5rem', paddingBottom: '10px' }} />
-							<h5>REDACTION</h5>
+							<img
+								src='/icons/redaction.svg'
+								alt='Redaction'
+								className={`img-fluid  mx-auto d-block ${serviceStyles.item_image}`}
+							/>
+							<span>REDACTION</span>
 						</a>
 					</Link>
 				</div>
-				<div className={serviceStyles.menu_item}>
+				<div className={`col-4 col-md-2  ${serviceStyles.menu_item}`}>
 					<Link href='#infographie' passHref>
 						<a>
-							<FaEdit style={{ fontSize: '5rem', paddingBottom: '10px' }} />
-							<h5>INFOGRAPHIE</h5>
+							<img
+								src='/icons/ingographie.svg'
+								alt='infographie'
+								className={`img-fluid  mx-auto d-block ${serviceStyles.item_image}`}
+							/>
+							<span>INFOGRAPHIE</span>
 						</a>
 					</Link>
 				</div>
-				<div className={serviceStyles.menu_item}>
+				<div className={`col-4 col-md-2  ${serviceStyles.menu_item}`}>
 					<Link href='#documentaire' passHref>
 						<a>
-							<FaEdit style={{ fontSize: '5rem', paddingBottom: '10px' }} />
-							<h5>DOCUMENTAIRE</h5>
+							<img
+								src='/icons/documentaire.svg'
+								alt='documentaire'
+								className={`img-fluid  mx-auto d-block ${serviceStyles.item_image}`}
+							/>
+							<span>DOCUMENTAIRE</span>
 						</a>
 					</Link>
 				</div>
-				<div className={serviceStyles.menu_item}>
+				<div className={`col-4 col-md-2  ${serviceStyles.menu_item}`}>
 					<Link href='#motion_design' passHref>
 						<a>
-							<FaEdit style={{ fontSize: '5rem', paddingBottom: '10px' }} />
-							<h5>MOTION DESIGN</h5>
+							<img
+								src='/icons/motion.svg'
+								alt='motion'
+								className={`img-fluid  mx-auto d-block ${serviceStyles.item_image}`}
+							/>
+							<span>MOTION DESIGN</span>
 						</a>
 					</Link>
 				</div>
-				<div className={serviceStyles.menu_item}>
+				<div className={`col-4 col-md-2  ${serviceStyles.menu_item}`}>
 					<Link href='#spot_pub' passHref>
 						<a>
-							<FaBullhorn style={{ fontSize: '5rem', paddingBottom: '10px' }} />
-							<h5>SPOT PUBLICITQIRE</h5>
+							<img
+								src='/icons/spot_pub.svg'
+								alt='Spot Publicitaire'
+								className={`img-fluid  mx-auto d-block ${serviceStyles.item_image}`}
+							/>
+							<span>SPOT PUBLICITAIRE</span>
 						</a>
 					</Link>
 				</div>
@@ -117,8 +179,7 @@ const Services = () => {
 						</h6>
 					</div>
 					<div className={`col-md-1 col-sm-12`}></div>
-					<div className={`col-md-1 col-sm-12`}></div>
-					<div className={`col-md-2 col-sm-12 ${serviceStyles.pub}`}></div>
+					<div className={`col-md-3 col-sm-12 ${serviceStyles.pub}`}></div>
 				</div>
 			</section>
 			<section id='infographie'>
@@ -135,7 +196,7 @@ const Services = () => {
 					}}>
 					<div className={`col-md-5 col-sm-12 ${serviceStyles.divider}`}>
 						<Image
-							src='/assets/info.png'
+							src='/assets/services/graphique-design.webp'
 							height={350}
 							width={500}
 							alt='image info'
@@ -160,7 +221,25 @@ const Services = () => {
 					</div>
 					<div className={`col-md-2 col-sm-12`}></div>
 				</div>
-				<h6 className='text-center text-success'>REALISATIONS</h6>
+				<h6
+					className='text-center text-success '
+					style={{ marginBottom: '20px' }}>
+					REALISATIONS
+				</h6>
+
+				<div className='row'>
+					{infography.map((info, index) => (
+						<div className='col-md-3' key={index}>
+							<img
+								width={270}
+								height={250}
+								src={info.image_path}
+								alt={info.label}
+								style={{ objectFit: 'cover' }}
+							/>
+						</div>
+					))}
+				</div>
 			</section>
 			<section id='documentaire'>
 				<h5
@@ -176,7 +255,7 @@ const Services = () => {
 					}}>
 					<div className={`col-md-5 col-sm-12 ${serviceStyles.divider}`}>
 						<Image
-							src='/assets/info.png'
+							src='/assets/documentaire.jpg'
 							height={350}
 							width={500}
 							alt='image info'
@@ -203,76 +282,26 @@ const Services = () => {
 					</div>
 					<div className={`col-md-2 col-sm-12`}></div>
 				</div>
-				<h6 className='text-center text-success'>REALISATIONS</h6>
+				<h6
+					className='text-center text-success '
+					style={{ marginBottom: '20px' }}>
+					REALISATIONS
+				</h6>
 
 				<div className='row'>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/documentaire.jpg'
-							width={275}
-							height={175}
-							alt=' documentaire'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/documentaire.jpg'
-							width={275}
-							height={175}
-							alt=' documentaire'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/documentaire.jpg'
-							width={275}
-							height={175}
-							alt=' documentaire'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/documentaire.jpg'
-							width={275}
-							height={175}
-							alt=' documentaire'
-						/>
-					</div>
-				</div>
-
-				<div className='row'>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/documentaire.jpg'
-							width={275}
-							height={175}
-							alt=' documentaire'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/documentaire.jpg'
-							width={275}
-							height={175}
-							alt=' documentaire'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/documentaire.jpg'
-							width={275}
-							height={175}
-							alt=' documentaire'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/documentaire.jpg'
-							width={275}
-							height={175}
-							alt=' documentaire'
-						/>
-					</div>
+					{documentary.map((doc, index) => (
+						<div className='col-md-3' key={index}>
+							<iframe
+								width='270'
+								height='200'
+								src={`https://www.youtube.com/embed/${doc.videoId}`}
+								frameBorder='1'
+								allow='accelerometer; autoPlay; clipboardWrite; encryptedMedia; gyroscope; pictureInPicture'
+								allowFullScreen
+								title='Embedded youtube'
+							/>
+						</div>
+					))}
 				</div>
 				<h6 className='text-success' style={{ paddingTop: '20px' }}>
 					<Link href='/' passHref>
@@ -297,7 +326,7 @@ const Services = () => {
 					}}>
 					<div className={`col-md-5 col-sm-12 ${serviceStyles.divider}`}>
 						<Image
-							src='/assets/motion.png'
+							src='/assets/md.jpg'
 							height={350}
 							width={500}
 							alt='motion design'
@@ -325,75 +354,27 @@ const Services = () => {
 					</div>
 					<div className={`col-md-2 col-sm-12`}></div>
 				</div>
-				<h6 className='text-center text-success'>REALISATIONS</h6>
-				<div className='row'>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/motion.png'
-							height={350}
-							width={500}
-							alt='motion design'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/motion.png'
-							height={350}
-							width={500}
-							alt='motion design'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/motion.png'
-							height={350}
-							width={500}
-							alt='motion design'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/motion.png'
-							height={350}
-							width={500}
-							alt='motion design'
-						/>
-					</div>
-				</div>
+
+				<h6
+					className='text-center text-success '
+					style={{ marginBottom: '20px' }}>
+					REALISATIONS
+				</h6>
 
 				<div className='row'>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/motion.png'
-							height={350}
-							width={500}
-							alt='motion design'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/motion.png'
-							height={350}
-							width={500}
-							alt='motion design'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/motion.png'
-							height={350}
-							width={500}
-							alt='motion design'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/motion.png'
-							height={350}
-							width={500}
-							alt='motion design'
-						/>
-					</div>
+					{motionDesign.map((doc, index) => (
+						<div className='col-md-3' key={index}>
+							<iframe
+								width='270'
+								height='200'
+								src={`https://www.youtube.com/embed/${doc.videoId}`}
+								frameBorder='1'
+								allow='accelerometer; autoPlay; clipboardWrite; encryptedMedia; gyroscope; pictureInPicture'
+								allowFullScreen
+								title='Embedded youtube'
+							/>
+						</div>
+					))}
 				</div>
 				<h6 className='text-success' style={{ paddingTop: '20px' }}>
 					<Link href='/' passHref>
@@ -444,75 +425,29 @@ const Services = () => {
 					</div>
 					<div className={`col-md-2 col-sm-12`}></div>
 				</div>
-				<h6 className='text-center text-success'>REALISATIONS</h6>
+
+				<h6
+					className='text-center text-success '
+					style={{ marginBottom: '20px' }}>
+					REALISATIONS
+				</h6>
+
 				<div className='row'>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/spot.jpg'
-							width={275}
-							height={175}
-							alt='spot publicitaire'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/spot.jpg'
-							width={275}
-							height={175}
-							alt='spot publicitaire'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/spot.jpg'
-							width={275}
-							height={175}
-							alt='spot publicitaire'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/spot.jpg'
-							width={275}
-							height={175}
-							alt='spot publicitaire'
-						/>
-					</div>
+					{spot.map((doc, index) => (
+						<div className='col-md-3' key={index}>
+							<iframe
+								width='270'
+								height='200'
+								src={`https://www.youtube.com/embed/${doc.videoId}`}
+								frameBorder='1'
+								allow='accelerometer; autoPlay; clipboardWrite; encryptedMedia; gyroscope; pictureInPicture'
+								allowFullScreen
+								title='Embedded youtube'
+							/>
+						</div>
+					))}
 				</div>
-				<div className='row'>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/spot.jpg'
-							width={275}
-							height={175}
-							alt='spot publicitaire'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/spot.jpg'
-							width={275}
-							height={175}
-							alt='spot publicitaire'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/spot.jpg'
-							width={275}
-							height={175}
-							alt='spot publicitaire'
-						/>
-					</div>
-					<div className='col-md-3'>
-						<Image
-							src='/assets/spot.jpg'
-							width={275}
-							height={175}
-							alt='spot publicitaire'
-						/>
-					</div>
-				</div>
+
 				<h6 className='text-success' style={{ paddingTop: '20px' }}>
 					<Link href='/' passHref>
 						<a>

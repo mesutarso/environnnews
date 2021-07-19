@@ -32,6 +32,7 @@
 	margin: auto;
 }
 .img_top {
+	display: block;
 	width: 10rem;
 
 	/* margin-top: -2rem !important; */
@@ -45,4 +46,13 @@
 }
 .copyright {
 	color: #d0d0d0 !important;
+}
+
+@media screen and (max-width: 767px) {
+	.img_top {
+		display: block;
+		width: 10rem;
+		text-align: center;
+		/* margin-top: -2rem !important; */
+	}
 }

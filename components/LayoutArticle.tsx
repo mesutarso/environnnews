@@ -24,7 +24,7 @@ const LayoutArticle: React.FC<LayoutProps> = ({
 							<div className='row'>
 								{articles.map((article) => (
 									<ArticleCard
-										key={article.id}
+										key={article.node.id}
 										article={article}
 										size={articleCardSize}
 										imageHeight={250}
@@ -53,7 +53,7 @@ const LayoutArticle: React.FC<LayoutProps> = ({
 							<div className='row justify-content-center mb-3'>
 								{articles.map((article) => (
 									<ArticleCard
-										key={article.id}
+										key={article.node.id}
 										article={article}
 										size={articleCardSize}
 										imageHeight={250}
