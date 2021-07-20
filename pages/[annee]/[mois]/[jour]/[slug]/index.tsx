@@ -34,13 +34,15 @@ export interface IComments {
 
 const Article = ({ article, news }) => {
 	let deleteFig = article.content.replace(
-		/(figure)/,
+		/(figure|img)/,
 		'$1 style="display:none"'
 	);
 	const content = deleteFig.replace(
 		/(style='width:44px;left: -10px;top: 100px;-webkit-box-shadow:none;box-shadow:none;')/,
 		`style='display:none'`
 	);
+
+	console.log(content);
 
 	const [comments, setComments] = useState<IComments['comments']>([
 		{
@@ -68,12 +70,24 @@ const Article = ({ article, news }) => {
 
 	return (
 		<div className={`container ${articleStyles.articleContent}`}>
-			<h4 className='border-start px-3 border-success border-5'>CORONAVIRUS</h4>
-			<h5>{article.title}</h5>
+			<h4 className='border-start px-3 border-success border-5'>
+				{article.title.split(':').length === 2
+					? article.title.split(':')[0].toUpperCase()
+					: 'Environews'}
+			</h4>
+			<h5 className={articleStyles.articleTitle}>
+				{article.title.split(':').length === 2
+					? article.title.split(':')[1]
+					: article.title.split(':')[0]}
+			</h5>
 			<div className='row'>
 				<div className='col-md-9 col-sm-12'>
 					<img
-						src={article.featuredImage.node.mediaItemUrl}
+						src={
+							article.featuredImage === null
+								? '/assets/not_found.jpg'
+								: article.featuredImage.node.mediaItemUrl
+						}
 						alt={article.title}
 						className='w-100'
 						height={500}
@@ -84,7 +98,7 @@ const Article = ({ article, news }) => {
 							<FaRegUser /> Christian Mwanya
 						</li>
 						<li>
-							<FaCalendar /> 2{new Date(article.date).toLocaleString()}
+							<FaCalendar /> {new Date(article.date).toLocaleString()}
 						</li>
 						<li>
 							<FaEye /> 243
@@ -127,9 +141,6 @@ const Article = ({ article, news }) => {
 					</div>
 					<br />
 
-					<article dangerouslySetInnerHTML={{ __html: content }}></article>
-
-					<br />
 					<article dangerouslySetInnerHTML={{ __html: content }}></article>
 
 					<div className={`row ${articleStyles.footer}`}>

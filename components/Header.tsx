@@ -208,7 +208,7 @@ const NavBar: React.FC = () => {
 				<Link href='/' as='/' passHref>
 					<a
 						className={`${headerStyles.link}  ${
-							router.asPath === `/` ? headerStyles.active_link : null
+							router.asPath === `/` && headerStyles.active_link
 						}`}>
 						<BsHouseFill fontSize={19} />
 					</a>
@@ -221,9 +221,8 @@ const NavBar: React.FC = () => {
 						passHref>
 						<a
 							className={`${headerStyles.link} ${
-								router.asPath === `/categories/${categorie.categorie_name}`
-									? headerStyles.active_link
-									: null
+								router.asPath === `/categories/${categorie.categorie_name}` &&
+								headerStyles.active_link
 							}`}>
 							{categorie.categorie_name}
 						</a>

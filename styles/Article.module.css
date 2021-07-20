@@ -212,6 +212,10 @@
 	margin-right: 10px;
 }
 
+.articleTitle {
+	font-size: 3rem !important;
+}
+
 @media screen and (max-width: 1300px) {
 }
 
