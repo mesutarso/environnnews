@@ -97,14 +97,14 @@ const Appbar = () => {
 			try {
 				const ipData_apiKey =
 					'ed25b075de2fd63a7d9ede85bdf87efb368297aaa547c858218d8620';
-				console.log('hello world christiane', process.env.REACT_APP_IPDATA_KEY);
+
 				const ipDataUrl = `https://api.ipdata.co?api-key=${ipData_apiKey}`;
-				console.log(ipDataUrl);
+
 				const res = await axios.get(ipDataUrl);
 				const data = await res.data.ip;
 				setUserIp(data);
 			} catch (error) {
-				console.log(error.response);
+				// console.log(error.response);
 				// throw error;
 			}
 		};
@@ -118,7 +118,7 @@ const Appbar = () => {
 				const data = await res.data.Key;
 				setUserLocation(data);
 			} catch (error) {
-				console.log(error.response);
+				// console.log(error.response);
 				// throw error;
 			}
 		};
@@ -128,10 +128,9 @@ const Appbar = () => {
 					`http://dataservice.accuweather.com/currentconditions/v1/${userLocation}?apikey=${accuWeather_apiKey}&language=fr`
 				);
 				const data = await res.data[0];
-				console.log(data);
 				SetCurrrentSituation(data);
 			} catch (error) {
-				console.log(error.response);
+				// console.log(error.response);
 			}
 		};
 
@@ -139,8 +138,6 @@ const Appbar = () => {
 		getlocationKey();
 		getCurrentSituation();
 	}, [userIp, userLocation]);
-
-	console.log(new Date());
 
 	const stringDay =
 		currentSituation.EpochTime &&
