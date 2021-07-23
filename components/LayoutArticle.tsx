@@ -22,9 +22,9 @@ const LayoutArticle: React.FC<LayoutProps> = ({
 					<div className='row'>
 						<div className={`col-md-${col1}`}>
 							<div className='row'>
-								{articles.map((article) => (
+								{articles.map((article, key) => (
 									<ArticleCard
-										key={article.node.id}
+										key={key}
 										article={article}
 										size={articleCardSize}
 										imageHeight={250}
@@ -51,9 +51,9 @@ const LayoutArticle: React.FC<LayoutProps> = ({
 					<div className='row'>
 						<div className={`col-md-${col1}`}>
 							<div className='row justify-content-center mb-3'>
-								{articles.map((article) => (
+								{articles.map((article, key) => (
 									<ArticleCard
-										key={article.node.id}
+										key={key}
 										article={article}
 										size={articleCardSize}
 										imageHeight={250}

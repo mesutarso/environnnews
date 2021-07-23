@@ -42,8 +42,6 @@ const Article = ({ article, news }) => {
 		`style='display:none'`
 	);
 
-	console.log(content);
-
 	const [comments, setComments] = useState<IComments['comments']>([
 		{
 			id: '34',

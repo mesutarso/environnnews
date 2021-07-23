@@ -18,6 +18,6 @@ afterEach(() => {
 describe('should render component header', () => {
 	it('should render input search', () => {
 		const inputTest = getByPlaceholderText('Rechercher un article');
-		expect(inputTest).toBeInTheDocument();
+		expect(inputTest).not.toBeNull();
 	});
 });

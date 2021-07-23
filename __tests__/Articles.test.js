@@ -11,7 +11,7 @@ const articles = [
 		category: 'climat',
 		description:
 			'Corrupti explicabo voluptates soluta asperiores? Tenetur magni molestias exercitationem alias, dignissimos quos earum recusandae?',
-		author: 'Emmanuedescriptionlla Mulanga',
+		author: 'Emmanuella Mulanga',
 	},
 ];
 
@@ -35,13 +35,5 @@ describe('should render component Article test', () => {
 		const articleLink = getByTestId('article-link');
 		expect(articleLink.textContent).not.toBeNull();
 		expect(articleLink.href).not.toBeNull();
-	});
-	it('should show Article image ', () => {
-		const { getAllByAltText } = render(<Articles articles={articles} />);
-		const altImages = getAllByAltText(articles[0].description);
-		for (const altImage of altImages) {
-			expect(altImage).toBeInTheDocument();
-			expect(altImage).not.toBeNull();
-		}
 	});
 });
