@@ -113,7 +113,7 @@ const Appbar = () => {
 		const getlocationKey = async () => {
 			try {
 				const res = await axios.get(
-					`http://dataservice.accuweather.com/locations/v1/cities/ipaddress?apikey=${accuWeather_apiKey}&q=${userIp}&language=fr`
+					`https://dataservice.accuweather.com/locations/v1/cities/ipaddress?apikey=${accuWeather_apiKey}&q=${userIp}&language=fr`
 				);
 				const data = await res.data.Key;
 				setUserLocation(data);
@@ -125,7 +125,7 @@ const Appbar = () => {
 		const getCurrentSituation = async () => {
 			try {
 				const res = await axios.get(
-					`http://dataservice.accuweather.com/currentconditions/v1/${userLocation}?apikey=${accuWeather_apiKey}&language=fr`
+					`https://dataservice.accuweather.com/currentconditions/v1/${userLocation}?apikey=${accuWeather_apiKey}&language=fr`
 				);
 				const data = await res.data[0];
 				SetCurrrentSituation(data);
