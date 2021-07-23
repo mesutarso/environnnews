@@ -5,9 +5,10 @@ import BannerStyle from '../styles/Banner.module.css';
 interface BannerProps {
 	titre: string;
 	description: string;
+	imageLink: string;
 }
 
-const Banner: React.FC<BannerProps> = ({ titre, description }) => {
+const Banner: React.FC<BannerProps> = ({ titre, description, imageLink }) => {
 	return (
 		<>
 			<div className={`container  ${BannerStyle.mt_banner}`}>
@@ -16,9 +17,9 @@ const Banner: React.FC<BannerProps> = ({ titre, description }) => {
 						<div className={BannerStyle.img_dark}></div>
 						<img
 							data-testid='img-banner'
-							src='/assets/Plus_Récent.png'
+							src={imageLink}
 							alt='image a la une'
-							className={`w-100`}
+							className={`w-100 ${BannerStyle.image}`}
 						/>
 						<div className={BannerStyle.img_position_absolute}>
 							<h1

@@ -93,7 +93,7 @@ const Appbar = () => {
 	const { toggleSearch, setToggleSearch } = useContext(toggleSearchContext);
 
 	useEffect(() => {
-		const getIpAdress = (async () => {
+		const getIpAdress = async () => {
 			try {
 				const ipData_apiKey =
 					'ed25b075de2fd63a7d9ede85bdf87efb368297aaa547c858218d8620';
@@ -104,13 +104,13 @@ const Appbar = () => {
 				const data = await res.data.ip;
 				setUserIp(data);
 			} catch (error) {
-				//console.log(error.response);
+				console.log(error.response);
 				// throw error;
 			}
-		})();
+		};
 		const accuWeather_apiKey = 'z2pgUOjAb7Y6JCObqZpPhA8T3T2hfOmz';
 
-		const getlocationKey = (async () => {
+		const getlocationKey = async () => {
 			try {
 				const res = await axios.get(
 					`http://dataservice.accuweather.com/locations/v1/cities/ipaddress?apikey=${accuWeather_apiKey}&q=${userIp}&language=fr`
@@ -118,11 +118,11 @@ const Appbar = () => {
 				const data = await res.data.Key;
 				setUserLocation(data);
 			} catch (error) {
-				//	console.log(error.response);
+				console.log(error.response);
 				// throw error;
 			}
-		})();
-		const getCurrentSituation = (async () => {
+		};
+		const getCurrentSituation = async () => {
 			try {
 				const res = await axios.get(
 					`http://dataservice.accuweather.com/currentconditions/v1/${userLocation}?apikey=${accuWeather_apiKey}&language=fr`
@@ -131,10 +131,16 @@ const Appbar = () => {
 				console.log(data);
 				SetCurrrentSituation(data);
 			} catch (error) {
-				//	console.log(error.response);
+				console.log(error.response);
 			}
-		})();
+		};
+
+		getIpAdress();
+		getlocationKey();
+		getCurrentSituation();
 	}, [userIp, userLocation]);
+
+	console.log(new Date());
 
 	const stringDay =
 		currentSituation.EpochTime &&

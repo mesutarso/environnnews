@@ -1,6 +1,7 @@
 .mt_banner {
 	padding-top: 200px;
 	padding-bottom: 50px;
+	width: auto;
 }
 
 .banner_title {
@@ -20,6 +21,7 @@
 }
 .position_relative {
 	position: relative;
+	height: 500px !important;
 }
 .img_dark {
 	position: absolute;
@@ -29,8 +31,12 @@
 	right: 0;
 	background-color: rgba(14, 13, 13, 0.5);
 	z-index: 1;
+	height: 500px !important;
 }
-
+.image {
+	height: 500px !important;
+	object-fit: cover;
+}
 .img_position_absolute {
 	position: absolute;
 	top: 55%;
@@ -39,6 +45,7 @@
 	right: 0;
 	z-index: 2;
 }
+
 @media (max-width: 568px) {
 	.mt_banner {
 		padding-top: 170px;
@@ -58,16 +65,26 @@
 	.banner_description {
 		font-family: Roboto, sans-serif;
 		font-size: 14px;
-		width: 100%;
+		width: 95%;
 		color: #fff;
 	}
 	.img_position_absolute {
 		position: absolute;
-		top: 40%;
+		top: 60%;
 		left: 3%;
 		bottom: 0;
 		right: 0;
 		z-index: 2;
+	}
+	.image {
+		height: 250px !important;
+		object-fit: cover;
+	}
+	.position_relative {
+		height: 250px !important;
+	}
+	.img_dark {
+		height: 250px !important;
 	}
 }
 @media (min-width: 569px) and (max-width: 767.9px) {
@@ -94,11 +111,21 @@
 	}
 	.img_position_absolute {
 		position: absolute;
-		top: 40%;
+		top: 65%;
 		left: 3%;
 		bottom: 0;
 		right: 0;
 		z-index: 2;
+	}
+	.image {
+		height: 300px !important;
+		object-fit: cover;
+	}
+	.position_relative {
+		height: 300px !important;
+	}
+	.img_dark {
+		height: 300px !important;
 	}
 }
 
@@ -111,7 +138,7 @@
 	}
 	.img_position_absolute {
 		position: absolute;
-		top: 40%;
+		top: 50%;
 		left: 3%;
 		bottom: 0;
 		right: 0;
@@ -129,7 +156,53 @@
 	.banner_description {
 		font-family: Roboto, sans-serif;
 		font-size: 22px;
-		width: 80%;
+		width: 85%;
 		color: #fff;
+	}
+	.image {
+		height: 400px !important;
+		object-fit: cover;
+	}
+	.position_relative {
+		height: 400px !important;
+	}
+	.img_dark {
+		height: 400px !important;
+	}
+}
+@media (max-width: 413px) {
+	.mt_banner {
+		padding-top: 170px;
+		padding-bottom: 20px;
+		padding-left: 4%;
+		padding-right: 4%;
+	}
+	.banner_title {
+		font-size: 16px;
+	}
+
+	.banner_description {
+		font-family: Roboto, sans-serif;
+		font-size: 13px;
+		width: 100%;
+		color: #fff;
+	}
+	.img_position_absolute {
+		position: absolute;
+		top: 58%;
+		left: 3%;
+		bottom: 0;
+		right: 0;
+		z-index: 2;
+	}
+	.image {
+		height: 200px !important;
+		object-fit: cover;
+	}
+	.position_relative {
+		height: 200px !important;
+	}
+	.img_dark {
+		height: 200px !important;
 	}
 }

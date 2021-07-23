@@ -12,7 +12,7 @@ import Articles, { TopArticle } from '../components/Articles';
 import Opportunities from '../components/Opportunities';
 import Categories from '../components/Categories';
 import client from '../graphql/uri';
-import AdSense from 'react-adsense';
+
 import {
 	GET_OPPORTUNITIES,
 	GET_NEWS,
