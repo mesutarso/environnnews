@@ -30,9 +30,11 @@ const Categorie = ({ posts }) => {
 		(article, key) => key >= 10 && key < 18
 	);
 	const router = useRouter();
+
 	const { name } = router.query;
 	let postImgCat =
-		(articles[0].node.featuredImage !== null
+		(articles[0].node.featuredImage !== null ||
+		articles[0].node.featuredImage !== undefined
 			? articles[0].node.featuredImage.node.mediaItemUrl
 			: '/assets/not_found.jpg') ||
 		articles[0].node.featuredImage.node.sourceUrl;
@@ -42,6 +44,7 @@ const Categorie = ({ posts }) => {
 				titre={`${name}`}
 				description={articles[0].node.title}
 				imageLink={postImgCat}
+				link={articles[0].node.uri}
 			/>
 			<LayoutArticle
 				col1={9}

@@ -22,9 +22,9 @@ const Categories = ({ articles, title }) => {
 				</Link>
 			</div>
 			<div className={`row  ${articleStyles.category}`}>
-				{filteredArticles.map((articleItems) => (
+				{filteredArticles.map((articleItems, index) => (
 					<ArticleCard
-						key={articleItems.node.id}
+						key={index}
 						article={articleItems}
 						size={3}
 						imageHeight={200}
