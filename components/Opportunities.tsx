@@ -11,9 +11,9 @@ const Opportunities: React.FC<IOpportunities> = ({ opportunities }) => {
 			<h5 data-testid='title' className={`text-success ${heroStyles.title}`}>
 				OPPORTUNITES <FaCaretRight />
 			</h5>
-			{filteredOpportunities.map((opportunity) => (
+			{filteredOpportunities.map((opportunity, key) => (
 				<div
-					key={opportunity.node.id}
+					key={key}
 					className={`${heroStyles.opportunities_body} ${heroStyles.dashed_border}`}>
 					<p data-testid='description'>
 						{opportunity.node.title.split(':').length == 2
