@@ -67,12 +67,6 @@ export default function Home({
 	let randomId = Math.floor(Math.random() * 20);
 	const Toparticle = articles.filter((value, key) => key == randomId);
 
-	const pointsPos = Toparticle[0].node.title.indexOf(':');
-
-	const getCat = Toparticle[0].node.title.slice(0, pointsPos).toUpperCase();
-
-	const deleteCat = Toparticle[0].node.title.slice(pointsPos + 1);
-
 	const [opportunities_, setOpportunities] =
 		useState<IOpportunities['opportunities']>(opportunities);
 
@@ -138,7 +132,9 @@ export default function Home({
 								<a style={{ color: 'inherit' }}>
 									<h5
 										className={`border-start px-3 border-success border-5 ${heroStyles.title}`}>
-										{getCat}
+										{Toparticle[0].node.title.split(':').length == 2
+											? Toparticle[0].node.title.split(':')[0]
+											: 'Environews'}
 									</h5>
 									<img
 										src={`${Toparticle[0].node.featuredImage.node.sourceUrl}`}
@@ -147,7 +143,11 @@ export default function Home({
 										style={{ objectFit: 'cover' }}
 									/>
 
-									<h4>{deleteCat}</h4>
+									<h4>
+										{Toparticle[0].node.title.split(':').length == 2
+											? Toparticle[0].node.title.split(':')[1]
+											: Toparticle[0].node.title.split(':')[0] + '.'}
+									</h4>
 								</a>
 							</Link>
 						</div>
