@@ -182,7 +182,7 @@ export default function Home({
 				/>
 				<Categories articles={filteredArticlesSante} title='sante' />
 			</div>
-			<div className={`col-md-12 p-5 ${heroStyles.environews_tv}`}>
+			{/* <div className={`col-md-12 p-5 ${heroStyles.environews_tv}`}>
 				<div className='container'>
 					<h5
 						className={`border-start px-2 mb-5 border-success border-5 ${heroStyles.tv_title}`}>
@@ -282,7 +282,7 @@ export default function Home({
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> */}
 			<div className='container'>
 				<div className='row py-5'>
 					<div className={`col-md-6 col-sm-12 px-3 ${heroStyles.editorChoice}`}>
