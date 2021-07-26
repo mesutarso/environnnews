@@ -160,7 +160,7 @@ export default function Home({
 						<br />
 						<Opportunities opportunities={opportunities_} />
 						<br />
-						<div className={heroStyles.pub}>
+						{/* <div className={heroStyles.pub}>
 							<AdSense.Google
 								client='ca-pub-2034102263729175'
 								slot='5079102835'
@@ -168,7 +168,7 @@ export default function Home({
 								layout='in-article'
 								format='fluid'
 							/>
-						</div>
+						</div> */}
 					</div>
 				</div>
 
