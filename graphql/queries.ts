@@ -20,7 +20,7 @@ export const GET_OPPORTUNITIES = gql`
 
 export const GET_NEWS = gql`
 	{
-		posts(where: { categoryId: 3 }, first: 100) {
+		posts(where: { categoryId: 3 }, first: 20) {
 			edges {
 				node {
 					title
