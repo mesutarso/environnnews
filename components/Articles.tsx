@@ -61,7 +61,10 @@ export const TopArticle = ({ article, index }) => {
 	return (
 		<div
 			className={` py-4 ${articleStyles.topArticle} ${articleStyles.dashed_border_breaking} `}>
-			<Link href='[slug]' as={`${article.node.slug}`} passHref>
+			<Link
+				href='/[annee]/[mois]/[jour]/[slug]'
+				as={`${article.node.uri}`}
+				passHref>
 				<a>
 					<div className='row'>
 						<div className={`col-md-1 col-1 px-2`}>

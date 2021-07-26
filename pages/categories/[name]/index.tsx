@@ -18,10 +18,11 @@ export interface IArticles {
 	}[];
 }
 const Categorie = ({ posts }) => {
-	console.log('Posts:', posts);
 	const [articles, setArticles] = useState<IArticles['articles']>(posts);
 
-	const articlesTwoLines = articles.filter((article, key) => key < 6);
+	const articlesTwoLines = articles
+		.filter((article, key) => key < 7)
+		.slice(1, 7);
 	const articlesOneLine = articles.filter(
 		(article, key) => key >= 6 && key < 10
 	);
@@ -29,13 +30,21 @@ const Categorie = ({ posts }) => {
 		(article, key) => key >= 10 && key < 18
 	);
 	const router = useRouter();
-	const { name } = router.query;
 
+	const { name } = router.query;
+	let postImgCat =
+		(articles[0].node.featuredImage !== null ||
+		articles[0].node.featuredImage !== undefined
+			? articles[0].node.featuredImage.node.mediaItemUrl
+			: '/assets/not_found.jpg') ||
+		articles[0].node.featuredImage.node.sourceUrl;
 	return (
 		<div>
 			<Banner
 				titre={`${name}`}
-				description='Félix Lilakako, "Eruption volcanique de Nyiragongo, au-delà de la réaction gouvernementale…une planification d’intervention urgente s’impose"'
+				description={articles[0].node.title}
+				imageLink={postImgCat}
+				link={articles[0].node.uri}
 			/>
 			<LayoutArticle
 				col1={9}
