@@ -159,16 +159,6 @@ export default function Home({
 						<BreakingNews breakingNews={breakingNews_} />
 						<br />
 						<Opportunities opportunities={opportunities_} />
-						<br />
-						<div className={heroStyles.pub}>
-							<AdSense.Google
-								client='ca-pub-2034102263729175'
-								slot='5079102835'
-								style={{ display: 'block' }}
-								layout='in-article'
-								format='fluid'
-							/>
-						</div>
 					</div>
 				</div>
 
