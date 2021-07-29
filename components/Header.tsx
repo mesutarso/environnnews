@@ -41,7 +41,7 @@ const categoriesList = [
 	},
 	{
 		id: 4,
-		categorie_name: 'environement',
+		categorie_name: 'environnement',
 	},
 	{
 		id: 5,

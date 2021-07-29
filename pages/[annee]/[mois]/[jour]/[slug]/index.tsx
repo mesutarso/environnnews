@@ -42,6 +42,15 @@ const Article = ({ article, news }) => {
 		`style='display:none'`
 	);
 
+	let deleteFig2 = article.content.indexOf('src');
+	let deleteFig3 = article.content.lastIndexOf('jpg');
+	let img = article.content.slice(deleteFig2, deleteFig3);
+	let alt = img.indexOf('alt');
+	let src = img.slice(5, alt - 2);
+
+	console.log(src);
+	console.log(content);
+
 	const [comments, setComments] = useState<IComments['comments']>([
 		{
 			id: '34',

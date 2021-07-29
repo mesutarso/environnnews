@@ -95,7 +95,7 @@ export const GET_CONTACT = gql`
 	}
 `;
 
-export const GET_POSTS = (name: string) => {
+export const GET_POSTS = (name) => {
 	return gql`
 	{
 		posts(where: { categoryName: "${name}" }, first: 20) {
