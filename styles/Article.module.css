@@ -86,7 +86,11 @@
 	justify-content: space-around;
 	align-items: flex-start;
 }
-
+.form textarea,
+.form input,
+.form button {
+	border-radius: 0px;
+}
 .form input {
 	margin-bottom: 10px;
 	width: 100%;
@@ -150,6 +154,7 @@
 	height: 35px;
 	width: 100%;
 	padding: 5px;
+	border-radius: 0px;
 }
 
 .newsLetter p {
@@ -164,6 +169,7 @@
 	padding: 5px;
 	color: #089047;
 	font-weight: bold;
+	border-radius: 0px;
 }
 .similar {
 	display: flex;
