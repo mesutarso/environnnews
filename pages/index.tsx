@@ -307,7 +307,7 @@ export default function Home({
 					<input
 						className='form-control form-control-lg'
 						type='email'
-						placeholder='Email Address'></input>
+						placeholder='Adresse Email'></input>
 					<p>
 						Inscrivez-vous à notre newsletter pour vous tenir au courant de nos
 						activités.
