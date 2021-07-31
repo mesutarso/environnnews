@@ -91,6 +91,11 @@
 .form button {
 	border-radius: 0px;
 }
+
+.form textarea,
+.form input {
+	font-size: 1rem;
+}
 .form input {
 	margin-bottom: 10px;
 	width: 100%;
