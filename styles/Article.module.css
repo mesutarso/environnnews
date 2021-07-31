@@ -86,7 +86,16 @@
 	justify-content: space-around;
 	align-items: flex-start;
 }
+.form textarea,
+.form input,
+.form button {
+	border-radius: 0px;
+}
 
+.form textarea,
+.form input {
+	font-size: 1rem;
+}
 .form input {
 	margin-bottom: 10px;
 	width: 100%;
@@ -135,7 +144,7 @@
 	background-color: #089047;
 	color: white;
 	text-align: center;
-	padding: 10px;
+	padding: 28px;
 	margin: 20px 0px;
 }
 
@@ -149,7 +158,8 @@
 .newsLetter input {
 	height: 35px;
 	width: 100%;
-	padding: 5px;
+	font-size: 1rem;
+	border-radius: 0px;
 }
 
 .newsLetter p {
@@ -161,9 +171,10 @@
 .newsLetter button {
 	background: white;
 	border: none;
-	padding: 5px;
+	padding: 10px;
 	color: #089047;
 	font-weight: bold;
+	border-radius: 0px;
 }
 .similar {
 	display: flex;
