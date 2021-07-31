@@ -117,6 +117,28 @@ export const GET_POSTS = (name) => {
 `;
 };
 
+export const GET_POSTS_HOME = (name) => {
+	return gql`
+	{
+		posts(where: { categoryName: "${name}" }, first: 4) {
+			edges {
+				node {
+					date
+					title
+					uri
+					content
+					featuredImage {
+						node {
+							mediaItemUrl
+						}
+					}
+				}
+			}
+		}
+	}
+`;
+};
+
 export const GET_POSTS_SLUG = (slug: string) => gql`
 {
   post(id: "${slug}", idType: URI) {
@@ -146,4 +168,16 @@ export const GET_POSTS_SLUG = (slug: string) => gql`
     }
   }
 }
+`;
+
+export const GET_CATEGORIES = gql`
+	{
+		menuItems(where: { location: PRIMARY }, first: 24) {
+			edges {
+				node {
+					label
+				}
+			}
+		}
+	}
 `;

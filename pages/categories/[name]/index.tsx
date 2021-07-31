@@ -34,9 +34,9 @@ const Categorie = ({ posts }) => {
 		(article, key) => key >= 10 && key < 18
 	);
 
+	console.log(articles);
 	let postImgCat =
-		(articles[0].node.featuredImage !== null ||
-		articles[0].node.featuredImage !== undefined
+		(articles[0].node.featuredImage !== null
 			? articles[0].node.featuredImage.node.mediaItemUrl
 			: '/assets/not_found.jpg') ||
 		articles[0].node.featuredImage.node.sourceUrl;

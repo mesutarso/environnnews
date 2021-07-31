@@ -17,7 +17,7 @@ import {
 	GET_NEWS,
 	GET_PUBS,
 	GET_BREAKING_NEWS,
-	GET_POSTS,
+	GET_POSTS_HOME,
 } from '../graphql/queries';
 import AliceCarousel from 'react-alice-carousel';
 import AdSense from 'react-adsense';
@@ -55,22 +55,16 @@ export default function Home({
 	const [articles, setArticles] = useState<IArticles['articles']>(news);
 	const filteredArticlesSix = articles.filter((item, key) => key < 4);
 	const topArcticles = articles.slice(5, 10);
-	const filteredArticlesEnvironments = artcleByCategoryEnvironnement.filter(
-		(item, key) => key < 4
-	);
-	const filteredArticlesSante = artcleByCategorySante.filter(
-		(item, key) => key < 4
-	);
-	const filteredArticlesBiodiversite = artcleByCategoryBiodiversite.filter(
-		(item, key) => key < 4
-	);
+
 	let randomId = Math.floor(Math.random() * 20);
-	const Toparticle = articles.filter((value, key) => key == randomId);
+	const Toparticle = articles.filter((value, key, array) => key == 19);
 
 	const [opportunities_, setOpportunities] =
 		useState<IOpportunities['opportunities']>(opportunities);
 
 	const handleDragStart = (e) => e.preventDefault();
+
+	console.log('les articles ', artcleByCategorySante);
 
 	const items = [
 		<Image
@@ -163,14 +157,14 @@ export default function Home({
 				</div>
 
 				<Categories
-					articles={filteredArticlesEnvironments}
+					articles={artcleByCategoryEnvironnement}
 					title='environement'
 				/>
 				<Categories
-					articles={filteredArticlesBiodiversite}
+					articles={artcleByCategoryBiodiversite}
 					title='biodiversite'
 				/>
-				<Categories articles={filteredArticlesSante} title='sante' />
+				<Categories articles={artcleByCategorySante} title='sante' />
 			</div>
 			<div className={`col-md-12 p-5 ${heroStyles.environews_tv}`}>
 				<div className='container'>
@@ -325,13 +319,13 @@ export async function getStaticProps() {
 	const pubs = await client.query({ query: GET_PUBS });
 	const breakingNews = await client.query({ query: GET_BREAKING_NEWS });
 	const artcleByCategorySante = await client.query({
-		query: GET_POSTS('sante'),
+		query: GET_POSTS_HOME('Opportunités'),
 	});
 	const artcleByCategoryEnvironnement = await client.query({
-		query: GET_POSTS('environnement'),
+		query: GET_POSTS_HOME('environnement'),
 	});
 	const artcleByCategoryBiodiversite = await client.query({
-		query: GET_POSTS('biodiversite'),
+		query: GET_POSTS_HOME('biodiversite'),
 	});
 
 	return {

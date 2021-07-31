@@ -5,6 +5,8 @@ import Link from 'next/link';
 import headerStyles from '../styles/Header.module.css';
 import Logo from '../public/assets/environews_logo.png';
 import axios from 'axios';
+import client from '../graphql/uri';
+import { GET_CATEGORIES } from '../graphql/queries';
 import {
 	FaFacebookSquare,
 	FaInstagramSquare,
@@ -202,7 +204,19 @@ const Appbar = () => {
 };
 
 const NavBar: React.FC = () => {
-	const [categories, setCategories] = useState(categoriesList);
+	const [categories, setCategories] = useState([]);
+	const [cats, setCats] = useState([]);
+
+	useEffect(() => {
+		(async function () {
+			const categoriesFetch = await client.query({ query: GET_CATEGORIES });
+			const categories = await categoriesFetch.data.menuItems.edges;
+
+			setCategories(categories);
+		})();
+	}, []);
+
+	console.log('cats ', cats);
 	const router = useRouter();
 
 	return (
@@ -216,18 +230,18 @@ const NavBar: React.FC = () => {
 						<BsHouseFill fontSize={19} />
 					</a>
 				</Link>
-				{categories.map((categorie) => (
+				{categories.map((categorie, key) => (
 					<Link
-						key={categorie.id}
+						key={key}
 						href='/categories/[name]'
-						as={`/categories/${categorie.categorie_name}`}
+						as={`/categories/${categorie.node.label}`}
 						passHref>
 						<a
 							className={`${headerStyles.link} ${
-								router.asPath === `/categories/${categorie.categorie_name}` &&
+								router.asPath === `/categories/${categorie.node.label}` &&
 								headerStyles.active_link
 							}`}>
-							{categorie.categorie_name}
+							{categorie.node.label}
 						</a>
 					</Link>
 				))}
