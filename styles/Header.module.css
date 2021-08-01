@@ -76,6 +76,9 @@
 .nav::-webkit-scrollbar {
 	display: none;
 }
+.logo {
+	width: 100%;
+}
 
 .link {
 	display: inline-block;
@@ -205,8 +208,11 @@
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
 	.weather_date span:nth-child(1) {
-		display: none;
+		font-size: 0.7rem;
+	}
+	.logo {
+		width: 10% !important;
 	}
 }

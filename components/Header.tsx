@@ -157,7 +157,13 @@ const Appbar = () => {
 		<div className={`container ${headerStyles.header}`}>
 			<Link href='/' passHref>
 				<a>
-					<Image src={Logo} alt='Environews Logo' width={142} height={81} />
+					<Image
+						src={Logo}
+						alt='Environews Logo'
+						width={142}
+						height={81}
+						className={headerStyles.logo}
+					/>
 				</a>
 			</Link>
 			<div className={headerStyles.weather}>

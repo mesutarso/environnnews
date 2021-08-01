@@ -231,6 +231,9 @@
 }
 
 @media screen and (max-width: 1200px) {
+	.number {
+		font-size: 3rem !important;
+	}
 }
 @media screen and (max-width: 1100px) {
 }
@@ -238,6 +241,9 @@
 	.card_text h5,
 	.card_text span {
 		font-size: 0.9rem !important;
+	}
+	.number {
+		font-size: 2.8rem !important;
 	}
 }
 @media screen and (max-width: 767px) {
@@ -261,6 +267,9 @@
 	}
 	.card_text h5 {
 		margin: 0 !important;
+	}
+	.number {
+		font-size: 3.5rem !important;
 	}
 }
 @media screen and (max-width: 480px) {
