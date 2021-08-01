@@ -202,7 +202,7 @@ const Services = () => {
 							alt='image info'
 						/>
 					</div>
-					<div className={`col-md-5 col-sm-12`}>
+					<div className={`col-md-7 col-sm-12`}>
 						<h6 className='text-success'>SERVICES PROPOSES</h6>
 						<ul>
 							<li>Étude de votre projet</li>
@@ -261,7 +261,7 @@ const Services = () => {
 							alt='image info'
 						/>
 					</div>
-					<div className={`col-md-5 col-sm-12`}>
+					<div className={`col-md-7 col-sm-12`}>
 						<h6 className='text-success'>SERVICES PROPOSES</h6>
 						<ul>
 							<li>Étude de votre projet</li>
@@ -332,7 +332,7 @@ const Services = () => {
 							alt='motion design'
 						/>
 					</div>
-					<div className={`col-md-5 col-sm-12`}>
+					<div className={`col-md-7 col-sm-12`}>
 						<h6 className='text-success'>SERVICES PROPOSES</h6>
 						<ul>
 							<li>Étude de votre projet</li>
@@ -405,7 +405,7 @@ const Services = () => {
 							alt='spot publicitaire'
 						/>
 					</div>
-					<div className={`col-md-5 col-sm-12`}>
+					<div className={`col-md-7 col-sm-12`}>
 						<h6 className='text-success'>SERVICES PROPOSES</h6>
 						<ul>
 							<li>Étude de votre projet</li>

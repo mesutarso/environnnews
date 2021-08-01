@@ -18,8 +18,8 @@ import {
 	GET_BREAKING_NEWS,
 	GET_POSTS_HOME,
 } from '../graphql/queries';
-import AliceCarousel from 'react-alice-carousel';
 import AdSense from 'react-adsense';
+import AliceCaroussel from '../components/AliceCaroussel';
 export interface IState {
 	breakingNews: {
 		title: string;
@@ -61,37 +61,6 @@ export default function Home({
 	const [opportunities_, setOpportunities] =
 		useState<IOpportunities['opportunities']>(opportunities);
 
-	const handleDragStart = (e) => e.preventDefault();
-
-	console.log('les articles ', artcleByCategorySante);
-
-	const items = [
-		<Image
-			key={1}
-			src='/assets/image.webp'
-			width={800}
-			height={150}
-			onDragStart={handleDragStart}
-			alt='ad'
-		/>,
-		<Image
-			key={2}
-			src='/assets/image2.webp'
-			width={800}
-			height={150}
-			onDragStart={handleDragStart}
-			alt='ad'
-		/>,
-		<Image
-			key={3}
-			src='/assets/image3.webp'
-			width={800}
-			height={150}
-			onDragStart={handleDragStart}
-			alt='ad'
-		/>,
-	];
-
 	return (
 		<div>
 			<Head>
@@ -108,15 +77,7 @@ export default function Home({
 				<div className={`row ${heroStyles.hero}`}>
 					<div className='col-md-8 col-sm-12'>
 						<div className={heroStyles.topNews}>
-							<AliceCarousel
-								mouseTracking
-								items={items}
-								infinite
-								disableDotsControls
-								disableButtonsControls
-								autoPlay
-								animationDuration={10000}
-							/>
+							<AliceCaroussel />
 							<br />
 							<br />
 							<Link
@@ -321,7 +282,7 @@ export default function Home({
 						Inscrivez-vous à notre newsletter pour vous tenir au courant de nos
 						activités.
 					</p>
-					<button className='btn btn-success'>S'INSCRIRE</button>
+					<button className=''>S'INSCRIRE</button>
 				</form>
 			</div>
 		</div>

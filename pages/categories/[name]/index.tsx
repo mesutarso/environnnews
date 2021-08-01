@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import client from '../../../graphql/uri';
 import { GET_POSTS } from '../../../graphql/queries';
+import AliceCaroussel from '../../../components/AliceCaroussel';
 
 export interface IArticles {
 	articles: {
@@ -64,12 +65,15 @@ const Categorie = ({ posts }) => {
 					articleCardSize={4}
 					articles={articlesTwoLines}
 				/>
-				<LayoutArticle
+				<div className='container my-md-5 my-sm-4 my-3'>
+					<AliceCaroussel />
+				</div>
+				{/* <LayoutArticle
 					col1={12}
 					col2={12}
 					articleCardSize={3}
 					articles={articlesOneLine}
-				/>
+				/> */}
 				<LayoutArticle
 					col1={12}
 					articleCardSize={3}
