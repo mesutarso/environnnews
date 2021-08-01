@@ -139,18 +139,32 @@
 	height: 400px;
 	background: #089047;
 }
-
+.newsLetter button {
+	background: white;
+	border: 2px solid white;
+	border-radius: 0;
+	padding: 8px 10px;
+	color: #089047;
+	box-sizing: border-box;
+	font-weight: 600;
+	font-size: 1rem !important;
+}
+.newsLetter button:hover {
+	border: 2px solid white;
+	background: none;
+	color: white;
+}
 .newsLetter {
-	background-color: #089047;
+	position: relative;
+	background-color: rgba(8, 145, 72, 0.8);
 	color: white;
 	text-align: center;
-	padding: 28px;
+	padding: 25px 15px;
 	margin: 20px 0px;
 }
 
 .newsLetter h3 {
 	padding-bottom: 20px;
-	padding-top: 20px;
 	font-weight: 800;
 	font-size: 1.25rem;
 }
@@ -160,21 +174,26 @@
 	width: 100%;
 	font-size: 1rem;
 	border-radius: 0px;
+	text-align: center;
 }
 
 .newsLetter p {
 	font-size: 1rem;
 	font-weight: 400;
-	padding: 10px;
+	padding: 5px;
 }
 
-.newsLetter button {
-	background: white;
-	border: none;
-	padding: 10px;
-	color: #089047;
-	font-weight: bold;
-	border-radius: 0px;
+.newsLetter::after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: -1;
+	background-image: url('../public/newsletter_bg.jpg');
+	background-position: center;
+	background-size: cover;
 }
 .similar {
 	display: flex;
@@ -236,6 +255,9 @@
 	}
 }
 @media screen and (max-width: 1100px) {
+	.articleTitle {
+		font-size: 2.5rem !important;
+	}
 }
 @media screen and (max-width: 960px) {
 	.card_text h5,
@@ -244,6 +266,9 @@
 	}
 	.number {
 		font-size: 2.8rem !important;
+	}
+	.articleTitle {
+		font-size: 2rem !important;
 	}
 }
 @media screen and (max-width: 767px) {
@@ -281,5 +306,13 @@
 	.card_image img {
 		width: 80px;
 		height: 80px;
+	}
+	.articleTitle {
+		font-size: 1.6rem !important;
+	}
+}
+@media screen and (max-width: 320px) {
+	.articleTitle {
+		font-size: 1.3rem !important;
 	}
 }

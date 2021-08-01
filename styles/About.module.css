@@ -21,10 +21,6 @@
 	padding: 3%;
 }
 
-.col_3:hover {
-	box-shadow: 1px 3px 6px rgba(75, 187, 75, 0.4);
-}
-
 .col_3 {
 	width: 20%;
 	margin: 1%;
