@@ -87,6 +87,23 @@ const Footer = () => (
 									<a>ENVIRONEWS TV</a>
 								</Link>
 							</h6>
+							<ul className={footerStyles.footerlinkstyle}>
+								<Link href='/environewstv'>
+									<a>
+										<li>La TV</li>
+									</a>
+								</Link>
+								<Link href='/environewstv'>
+									<a>
+										<li>Programme de diffusion</li>
+									</a>
+								</Link>
+								<Link href='/environewstv#emission'>
+									<a>
+										<li>Emissions</li>
+									</a>
+								</Link>
+							</ul>
 						</div>
 						<div
 							className={`text-white col-md-2 col-12 text-center mt-md-0 mt-4 ${footerStyles.icons}`}>

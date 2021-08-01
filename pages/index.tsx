@@ -282,7 +282,7 @@ export default function Home({
 						Inscrivez-vous à notre newsletter pour vous tenir au courant de nos
 						activités.
 					</p>
-					<button className=''>S'INSCRIRE</button>
+					<button>S'INSCRIRE</button>
 				</form>
 			</div>
 		</div>
