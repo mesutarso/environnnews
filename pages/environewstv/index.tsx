@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import AboutStyle from '../../styles/About.module.css';
 import EnvironewsStyle from '../../styles/Environews.module.css';
 import TvInfo from '../../components/TvInfo';
+import Videos from '../../components/Videos';
 
 interface EmissionProps {
 	emission: {
@@ -109,69 +110,7 @@ const EnvironewsTV = () => {
 					</div>
 				</div>
 			</div>
-
-			<div className='container mt-5  p-5 bg-light'>
-				<div className='row'>
-					<div className={`col-md-4 offset-sm-8 `}>
-						<h2 className={` ${AboutStyle.title} `}>ANNONCES</h2>
-					</div>
-					<div className='col-8 mt-3'>
-						<div className={`${EnvironewsStyle.annonceTrend}`}></div>
-					</div>
-					<div className='col-4 '>
-						<div className='row mt-3'>
-							<div className='col-md-4'>
-								<div className={`${EnvironewsStyle.annonce}`}></div>
-							</div>
-							<div className='col-md-8'>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							</div>
-						</div>
-
-						<div className='row mt-3'>
-							<div className='col-md-4'>
-								<div className={`${EnvironewsStyle.annonce}`}></div>
-							</div>
-							<div className='col-md-8'>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							</div>
-						</div>
-
-						<div className='row mt-3'>
-							<div className='col-md-4'>
-								<div className={`${EnvironewsStyle.annonce}`}></div>
-							</div>
-							<div className='col-md-8'>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							</div>
-						</div>
-
-						<div className='row mt-3'>
-							<div className='col-md-4'>
-								<div className={`${EnvironewsStyle.annonce}`}></div>
-							</div>
-							<div className='col-md-8'>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							</div>
-						</div>
-
-						<div className='row mt-3'>
-							<div className='col-md-4'>
-								<div className={`${EnvironewsStyle.annonce}`}></div>
-							</div>
-							<div className='col-md-8'>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
+			<Videos title='Annonces' />
 			<div className='container mt-5' id='emission'>
 				<div className='row'>
 					<div className='col-md-12'>

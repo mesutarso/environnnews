@@ -224,6 +224,7 @@ const NavBar: React.FC = () => {
 
 	console.log('cats ', cats);
 	const router = useRouter();
+	console.log(router);
 
 	return (
 		<div className={headerStyles.nav_container}>
@@ -244,7 +245,7 @@ const NavBar: React.FC = () => {
 						passHref>
 						<a
 							className={`${headerStyles.link} ${
-								router.asPath === `/categories/${categorie.node.label}` &&
+								router.query.name === `${categorie.node.label}` &&
 								headerStyles.active_link
 							}`}>
 							{categorie.node.label}
