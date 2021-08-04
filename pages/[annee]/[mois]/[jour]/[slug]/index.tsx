@@ -42,12 +42,23 @@ const Article = ({ article, news }) => {
 		`style='display:none'`
 	);
 
-	//let deleteFig2 = article.content.indexOf('src');
-	//let deleteFig3 = article.content.lastIndexOf('jpg');
-	//let img = article.content.slice(deleteFig2, deleteFig3);
-	//let alt = img.indexOf('alt');
-	//let src = img.slice(5, alt - 2);
+	const deleteFig2 = article.content.indexOf('src');
+	const deleteFig3 = article.content.lastIndexOf('jpg');
+	const img = article.content.slice(deleteFig2, deleteFig3);
+	const alt = img.indexOf('alt');
+	const src = img.slice(5, alt - 2);
+	const src2 = src.replace(
+		/http:\/\/environews-rdc.test:82/,
+		'https://a1-environews.kinshasadigital.academy/'
+	);
 
+	let image = '/assets/not_found.jpg';
+
+	if (src2.startsWith('https://a1-environews.kinshasadigital.academy/')) {
+		image = src2;
+	}
+
+	console.log('article reading', content, src2);
 	const [comments, setComments] = useState<IComments['comments']>([
 		{
 			id: '34',
@@ -89,7 +100,7 @@ const Article = ({ article, news }) => {
 					<img
 						src={
 							article.featuredImage === null
-								? '/assets/not_found.jpg'
+								? `${image}`
 								: article.featuredImage.node.mediaItemUrl
 						}
 						alt={article.title}
@@ -99,13 +110,13 @@ const Article = ({ article, news }) => {
 					/>
 					<div className={articleStyles.tags}>
 						<li>
-							<FaRegUser /> Christian Mwanya
+							<FaRegUser /> {article.author.node.name}
 						</li>
 						<li>
 							<FaCalendar /> {new Date(article.date).toLocaleString()}
 						</li>
 						<li>
-							<FaEye /> 243
+							<FaEye /> {article.commentCount}
 						</li>
 					</div>
 

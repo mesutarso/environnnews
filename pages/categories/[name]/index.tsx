@@ -34,12 +34,26 @@ const Categorie = ({ posts }) => {
 		(article, key) => key >= 10 && key < 18
 	);
 
-	console.log(articles);
+	let deleteFig2 = articles[0].node.content.indexOf('src');
+	let deleteFig3 = articles[0].node.content.lastIndexOf('jpg');
+	let img = articles[0].node.content.slice(deleteFig2, deleteFig3);
+	let alt = img.indexOf('alt');
+	let src = img.slice(5, alt - 2);
+	let src2 = src.replace(
+		/http:\/\/environews-rdc.test:82/,
+		'https://a1-environews.kinshasadigital.academy/'
+	);
+
+	let image = '/assets/not_found.jpg';
+
+	if (src2.startsWith('https://a1-environews.kinshasadigital.academy/')) {
+		image = src2;
+	}
+
 	let postImgCat =
 		(articles[0].node.featuredImage !== null
 			? articles[0].node.featuredImage.node.mediaItemUrl
-			: '/assets/not_found.jpg') ||
-		articles[0].node.featuredImage.node.sourceUrl;
+			: `${image}`) || articles[0].node.featuredImage.node.sourceUrl;
 
 	useEffect(() => {
 		(async function () {

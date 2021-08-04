@@ -71,7 +71,7 @@ const categoriesList = [
 	},
 	{
 		id: 11,
-		categorie_name: 'opportunite',
+		categorie_name: 'Opportunités',
 	},
 ];
 
@@ -216,7 +216,6 @@ const NavBar: React.FC = () => {
 		})();
 	}, []);
 
-	console.log('cats ', cats);
 	const router = useRouter();
 
 	return (

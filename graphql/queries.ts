@@ -139,12 +139,14 @@ export const GET_POSTS_HOME = (name) => {
 `;
 };
 
-export const GET_POSTS_SLUG = (slug: string) => gql`
+export const GET_POSTS_SLUG = (slug) => gql`
 {
   post(id: "${slug}", idType: URI) {
     title
     content
 	date
+	commentCount
+	uri
     featuredImage {
       node {
         mediaItemUrl
@@ -154,6 +156,11 @@ export const GET_POSTS_SLUG = (slug: string) => gql`
         }
       }
     }
+	author{
+		node{
+			name
+		}
+	}
     comments {
       edges {
         node {
@@ -178,6 +185,26 @@ export const GET_CATEGORIES = gql`
 					label
 				}
 			}
+		}
+	}
+`;
+
+export const GET_BREAKING_NEWS_POST = (slug) => gql`
+	{
+		breakingNew(
+			id: "${slug}"
+			idType: URI
+		) {
+			content
+			featuredImage {
+				node {
+					mediaItemUrl
+					sourceUrl
+				}
+			}
+			title
+			uri
+			slug
 		}
 	}
 `;

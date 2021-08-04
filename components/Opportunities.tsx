@@ -1,6 +1,7 @@
 import React from 'react';
 import { IOpportunities } from '../pages';
 import { FaCaretRight } from 'react-icons/fa';
+import Link from 'next/link';
 
 import heroStyles from '../styles/Hero.module.css';
 
@@ -15,11 +16,18 @@ const Opportunities: React.FC<IOpportunities> = ({ opportunities }) => {
 				<div
 					key={key}
 					className={`${heroStyles.opportunities_body} ${heroStyles.dashed_border}`}>
-					<p data-testid='description'>
-						{opportunity.node.title.split(':').length == 2
-							? opportunity.node.title.split(':')[1]
-							: opportunity.node.title.split(':')[0]}
-					</p>
+					<Link
+						href='/[annee]/[mois]/[jour]/[slug]'
+						as={`${opportunity.node.uri}`}
+						passHref>
+						<a>
+							<p data-testid='description'>
+								{opportunity.node.title.split(':').length == 2
+									? opportunity.node.title.split(':')[1]
+									: opportunity.node.title.split(':')[0]}
+							</p>
+						</a>
+					</Link>
 				</div>
 			))}
 		</div>

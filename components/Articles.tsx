@@ -5,15 +5,26 @@ import { IArticles } from '../pages';
 import articleStyles from '../styles/Article.module.css';
 
 export const ArticleCard = ({ article, size, imageHeight, imageWidth }) => {
-	let author = article.node.content.replace(
-		/(<strong>(.){1,}<\/strong>)/,
-		'$1 est ici'
+	let deleteFig2 = article.node.content.indexOf('src');
+	let deleteFig3 = article.node.content.lastIndexOf('jpg');
+	let img = article.node.content.slice(deleteFig2, deleteFig3);
+	let alt = img.indexOf('alt');
+	let src = img.slice(5, alt - 2);
+	let src2 = src.replace(
+		/http:\/\/environews-rdc.test:82/,
+		'https://a1-environews.kinshasadigital.academy/'
 	);
+
+	let image = '/assets/not_found.jpg';
+
+	if (src2.startsWith('https://a1-environews.kinshasadigital.academy/')) {
+		image = src2;
+	}
 
 	let postImgCat =
 		(article.node.featuredImage !== null
 			? article.node.featuredImage.node.mediaItemUrl
-			: '/assets/not_found.jpg') || article.node.featuredImage.node.sourceUrl;
+			: `${image}`) || article.node.featuredImage.node.sourceUrl;
 
 	return (
 		<div className={`col-md-${size} mb-4 col-12 ${articleStyles.card}`}>
