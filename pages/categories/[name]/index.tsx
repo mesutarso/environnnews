@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import client from '../../../graphql/uri';
 import { GET_POSTS } from '../../../graphql/queries';
+import AliceCaroussel from '../../../components/AliceCaroussel';
 
 export interface IArticles {
 	articles: {
@@ -25,8 +26,8 @@ const Categorie = ({ posts }) => {
 	const [articles, setArticles] = useState<IArticles['articles']>(posts);
 
 	const articlesTwoLines = articles
-		.filter((article, key) => key < 7)
-		.slice(1, 7);
+		.filter((article, key) => key < 9)
+		.slice(1, 9);
 	const articlesOneLine = articles.filter(
 		(article, key) => key >= 6 && key < 10
 	);
@@ -73,17 +74,14 @@ const Categorie = ({ posts }) => {
 					link={articles[0].node.uri}
 				/>
 				<LayoutArticle
-					col1={9}
-					col2={3}
-					articleCardSize={4}
+					col1={12}
+					// col2={3}
+					articleCardSize={3}
 					articles={articlesTwoLines}
 				/>
-				<LayoutArticle
-					col1={12}
-					col2={12}
-					articleCardSize={3}
-					articles={articlesOneLine}
-				/>
+				<div className='container my-md-5 my-sm-4 my-3'>
+					<AliceCaroussel />
+				</div>
 				<LayoutArticle
 					col1={12}
 					articleCardSize={3}

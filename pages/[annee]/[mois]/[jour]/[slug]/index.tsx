@@ -186,7 +186,7 @@ const Article = ({ article, news }) => {
 				</div>
 				<div className='col-md-3 col-sm-12'>
 					<div className={articleStyles.pub}></div>
-					<div className={articleStyles.similarContainer}>
+					<div className={`my-5 ${articleStyles.similarContainer}`}>
 						<h6 className='border-start px-2 border-success border-5'>
 							A LIRE AUSSI
 						</h6>
@@ -205,7 +205,7 @@ const Article = ({ article, news }) => {
 								Inscrivez-vous à notre newsletter pour vous tenir au courant de
 								nos activités.
 							</p>
-							<button className='btn btn-success'>S'INSCRIRE</button>
+							<button>S'INSCRIRE</button>
 						</form>
 					</div>
 				</div>

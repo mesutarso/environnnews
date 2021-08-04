@@ -157,7 +157,13 @@ const Appbar = () => {
 		<div className={`container ${headerStyles.header}`}>
 			<Link href='/' passHref>
 				<a>
-					<Image src={Logo} alt='Environews Logo' width={142} height={81} />
+					<Image
+						src={Logo}
+						alt='Environews Logo'
+						width={142}
+						height={81}
+						className={headerStyles.logo}
+					/>
 				</a>
 			</Link>
 			<div className={headerStyles.weather}>
@@ -217,6 +223,7 @@ const NavBar: React.FC = () => {
 	}, []);
 
 	const router = useRouter();
+	console.log(router);
 
 	return (
 		<div className={headerStyles.nav_container}>
@@ -237,7 +244,7 @@ const NavBar: React.FC = () => {
 						passHref>
 						<a
 							className={`${headerStyles.link} ${
-								router.asPath === `/categories/${categorie.node.label}` &&
+								router.query.name === `${categorie.node.label}` &&
 								headerStyles.active_link
 							}`}>
 							{categorie.node.label}

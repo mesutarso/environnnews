@@ -5,6 +5,7 @@
 .title {
 	font-weight: bold;
 	padding: 20px 0px;
+	/* line-height: 1rem; */
 }
 
 .about_us {
@@ -20,18 +21,43 @@
 	padding: 3%;
 }
 
-.col_3:hover {
-	box-shadow: 1px 3px 6px rgba(75, 187, 75, 0.4);
-}
-
 .col_3 {
 	width: 20%;
 	margin: 1%;
 }
-/* .partner {
-	 padding: 100px auto !important; 
-	padding: 5%;
-} */
+
+.contactText {
+	font-size: 1.2rem;
+	width: 80%;
+	text-align: center;
+	margin: 20px auto;
+}
+.form textarea,
+.form input {
+	outline: none !important;
+	border-radius: none !important;
+	resize: none;
+	width: 100%;
+	border: 1px solid rgb(122, 122, 122) !important;
+	padding-left: 10px;
+}
+.form input {
+	height: 3.5rem !important;
+}
+.form textarea {
+	height: 8rem !important;
+}
+
+.form button {
+	background: #089047;
+	border-radius: 0;
+	padding: 10px 20px;
+	color: white;
+	box-sizing: border-box;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
 @media (max-width: 768px) {
 	.card_row {
 		display: flex;

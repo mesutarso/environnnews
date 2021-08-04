@@ -113,38 +113,23 @@ export const SimilarArticle = ({ article }) => {
 			<Link href='/[annee]/[mois]/[jour]/[slug]' as={`${article.node.uri}`}>
 				<a>
 					<div className='row'>
-						<div className='col-md-4'>
+						<div className='col-md-5'>
 							<img
 								src={`${article.node.featuredImage.node.sourceUrl}`}
 								alt={article.node.title}
-								className='w-100'
+								className='w-100 h-100'
 							/>
 						</div>
 						<div className='col-md-7'>
-							<h5 className={`mb-1 ${articleStyles.title}`}>
+							<span className={`mb-1 ${articleStyles.title}`}>
 								{article.node.title.split(':').length == 2
 									? article.node.title.split(':')[0]
 									: null}
-							</h5>
+							</span>
 							<span className={articleStyles.description}>
 								{article.node.title.split(':').length == 2
 									? article.node.title.split(':')[1]
 									: article.node.title.split(':')[0]}
-							</span>
-							<div
-								style={{
-									fontSize: '0.70rem',
-									overflow: 'hidden',
-									whiteSpace: 'nowrap',
-									textOverflow: 'ellipsis',
-								}}></div>
-							<span
-								style={{
-									color: '#a09b9b',
-									fontSize: 'small',
-									fontWeight: 'lighter',
-								}}>
-								{article.author}
 							</span>
 						</div>
 					</div>
