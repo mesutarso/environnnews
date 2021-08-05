@@ -176,12 +176,15 @@ const Article = ({ article, news }) => {
 							</div>
 						</div>
 						<div className='col-md-1 col-sm-12'></div>
-						<div className='col-md-6 col-sm-12'>
+
+						{/** 
+							 * 	<div className='col-md-6 col-sm-12'>
 							<h4 className='border-start px-2 border-success border-5'>
 								DERNIERS COMMENTAIRES
 							</h4>
 							<Comments comments={comments} />
 						</div>
+							*/}
 					</div>
 				</div>
 				<div className='col-md-3 col-sm-12'>
