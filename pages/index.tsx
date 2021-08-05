@@ -53,7 +53,7 @@ export default function Home({
 		useState<IState['breakingNews']>(breakingNews);
 
 	const [articles, setArticles] = useState<IArticles['articles']>(news);
-	const filteredArticlesSix = articles.filter((item, key) => key < 4);
+	const filteredArticles = articles.filter((item, key) => key < 4);
 	const topArcticles = articles.slice(5, 10);
 
 	let randomId = Math.floor(Math.random() * 20);
@@ -61,6 +61,35 @@ export default function Home({
 
 	const [opportunities_, setOpportunities] =
 		useState<IOpportunities['opportunities']>(opportunities);
+
+	const handleDragStart = (e) => e.preventDefault();
+
+	const items = [
+		<Image
+			key={1}
+			src='/assets/image.webp'
+			width={800}
+			height={150}
+			onDragStart={handleDragStart}
+			alt='ad'
+		/>,
+		<Image
+			key={2}
+			src='/assets/image2.webp'
+			width={800}
+			height={150}
+			onDragStart={handleDragStart}
+			alt='ad'
+		/>,
+		<Image
+			key={3}
+			src='/assets/image3.webp'
+			width={800}
+			height={150}
+			onDragStart={handleDragStart}
+			alt='ad'
+		/>,
+	];
 
 	return (
 		<div>
@@ -108,7 +137,7 @@ export default function Home({
 						</div>
 						<br />
 						<br />
-						<Articles articles={filteredArticlesSix} />
+						<Articles articles={filteredArticles} />
 					</div>
 					<div className='col-md-4 col-sm-12'>
 						<BreakingNews breakingNews={breakingNews_} />
@@ -142,7 +171,7 @@ export default function Home({
 							CHOIX DE L’EDITEUR
 						</h5>
 						<div className={heroStyles.editorChoiceContainer}>
-							<Articles articles={filteredArticlesSix} />
+							<Articles articles={filteredArticles} />
 						</div>
 					</div>
 					<div
@@ -187,7 +216,7 @@ export async function getStaticProps() {
 	const pubs = await client.query({ query: GET_PUBS });
 	const breakingNews = await client.query({ query: GET_BREAKING_NEWS });
 	const artcleByCategorySante = await client.query({
-		query: GET_POSTS_HOME('Opportunités'),
+		query: GET_POSTS_HOME('sante'),
 	});
 	const artcleByCategoryEnvironnement = await client.query({
 		query: GET_POSTS_HOME('environnement'),
